@@ -1,0 +1,43 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+html {
+	font-size: 10px;
+}
+body {
+	font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;
+	color: rgb(29, 29, 29)
+}
+footer {
+	background-color: rgb(45, 74, 97);
+	text-align: center;
+	line-height: 2.5rem;
+	display: flex;
+	justify-content: center;
+	padding: 18px;
+}
+.footer_p {
+	color: #e6e6e6;
+	font-size: 14px;
+	font-weight: 900;
+	
+}
+.footer_des {
+	font-weight: 300;
+	color: #ffffff;
+	padding-left: 2px;
+	letter-spacing: 0.1rem;
+
+}
+.footer_sep {
+	font-weight: 300;
+	margin: 0 5;
+}
+.temp_bar {
+	height: 52px;
+	background: rgb(46, 64, 97);
+}
+a{
+	transition: 0.3s;
+}
