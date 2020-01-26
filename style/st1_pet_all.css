@@ -10,22 +10,21 @@ body {
 	color: rgb(29, 29, 29)
 }
 footer {
-	background-color: rgb(45, 74, 97);
-	text-align: center;
-	line-height: 2.5rem;
 	display: flex;
 	justify-content: center;
+	background-color: rgb(45, 74, 97);
+	line-height: 2.5rem;
 	padding: 18px;
 }
 .footer_p {
 	color: #e6e6e6;
 	font-size: 14px;
 	font-weight: 900;
-	
+	margin: 0 30px;
 }
 .footer_des {
 	font-weight: 300;
-	color: #ffffff;
+	color: #e6e6e6;
 	padding-left: 2px;
 	letter-spacing: 0.1rem;
 
@@ -33,6 +32,10 @@ footer {
 .footer_sep {
 	font-weight: 300;
 	margin: 0 5;
+}
+.footer_sep--large {
+	color: rgb(48, 70, 88);
+	font-size: 38px;
 }
 .temp_bar {
 	height: 52px;
