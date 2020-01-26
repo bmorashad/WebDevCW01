@@ -42,6 +42,48 @@ footer {
 	height: 52px;
 	background: rgb(46, 64, 97);
 }
+
+/* FONT STYLES*/
+/* <h1> - <h6> */
+h1 {
+    font-size: 5rem;
+    font-weight: 900;
+    color: rgb(15, 106, 167);
+    /* background:rgb(255, 169, 169); */
+    margin-bottom: 1.5rem;
+}
+h1.dramatic_h {
+	font-size: 6.1rem;
+}
+/* <p> */
+.dramatic_p {
+    font-weight:300;
+    font-size: 3rem;
+    /* background:rgb(255, 56, 56); */
+        
+}
+
+/* LINKS */
+
+/* BUTTONS <a>*/
 a{
 	transition: 0.3s;
+}
+.dramatic_a {	
+    display: table;		
+    font-family: Roboto Mono;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FF3E55;
+    border: 4px #FF3E55 solid;
+    box-sizing: border-box;
+    padding: 0.8rem 1rem;
+    margin-top: 50px;
+}
+.dramatic_a:hover {
+    background: #FF3E55;
+    color: #FFFFFF;
 }
