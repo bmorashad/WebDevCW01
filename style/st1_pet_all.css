@@ -4,10 +4,12 @@
 }
 html {
 	font-size: 10px;
+	height: 100%;
 }
 body {
 	font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;
-	color: rgb(29, 29, 29)
+	color: rgb(29, 29, 29);
+	height: 100%;
 }
 footer {
 	display: flex;
@@ -55,6 +57,7 @@ h1 {
 h1.dramatic_h {
 	font-size: 6.1rem;
 }
+
 /* <p> */
 .dramatic_p {
     font-weight:300;
@@ -62,7 +65,14 @@ h1.dramatic_h {
     /* background:rgb(255, 56, 56); */
         
 }
-
+.p1 {
+	font-size: 2rem;
+	font-weight: 900;
+	color: #ffffff;
+}
+.light {
+	font-weight: 300;	
+}
 /* LINKS */
 
 /* BUTTONS <a>*/
