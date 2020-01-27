@@ -57,7 +57,11 @@ h1 {
 h1.dramatic_h {
 	font-size: 6.1rem;
 }
-
+h2 {
+	font-size: 4.4rem;
+	color: rgb(15, 106, 167);
+	font-weight: 600;
+}
 /* <p> */
 .dramatic_p {
     font-weight:300;
@@ -69,6 +73,10 @@ h1.dramatic_h {
 	font-size: 2rem;
 	font-weight: 900;
 	color: #ffffff;
+}
+.p1_black {
+	font-weight: 300;
+	color: #222;
 }
 .light {
 	font-weight: 300;	
@@ -96,4 +104,16 @@ a{
 .dramatic_a:hover {
     background: #FF3E55;
     color: #FFFFFF;
+}
+/* Margins */
+.m {
+	margin-top: 70px;
+	margin-left: 130px;
+	margin-right: 50px;
+}
+
+hr {
+	border: 0.5px solid silver;
+	margin-top: 40px;
+	margin-bottom: 30px;
 }
