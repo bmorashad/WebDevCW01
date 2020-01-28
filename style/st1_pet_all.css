@@ -69,7 +69,7 @@ h4 {
 }
 /* <p> */
 .dramatic_p {
-    font-weight:200;
+    font-weight:300;
     font-size: 3rem;
     /* background:rgb(255, 56, 56); */
         
@@ -83,6 +83,9 @@ h4 {
 	font-weight: 300;
 	color: #222;
 }
+.regular {
+	font-weight: 400;
+}
 .light {
 	font-weight: 300;	
 }
@@ -94,8 +97,8 @@ a{
 }
 .dramatic_a {	
     display: table;		
-    font-family: Roboto Mono;
-    font-weight: bold;
+    font-family: 'Roboto Mono';
+    font-weight: 700;
     font-size: 1.5rem;
     text-decoration: none;
     text-align: center;
@@ -110,11 +113,19 @@ a{
     background: #FF3E55;
     color: #FFFFFF;
 }
+/* LINKS */
+a {
+	text-decoration: none;
+	color: #FF3E55;
+}
+a:hover {
+	color: rgb(28, 139, 212);
+}
 /* Margins */
 .m {
 	margin-top: 70px;
 	margin-left: 130px;
-	margin-right: 100px;
+	margin-right: 120px;
 }
 
 hr {
@@ -123,6 +134,6 @@ hr {
 	margin-bottom: 20px;
 }
 .title_sep {
-	margin: 10px 0;
+	margin: 10px 0 13px 0;
 	width: 100%;
 }
