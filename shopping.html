@@ -18,28 +18,30 @@
         .col1 {
             padding-left: 30px;
             padding-right: 50px;
+            padding-top: 100px;
             background: rgba(216, 225, 233, 0.1);
             border-right: 1px solid rgba(192, 192, 192, 0.534);
             display: flex;
-            align-items: center;
+            padding-bottom: 100px;
+            /* align-items: center; */
         }
-        .form_container {
-            margin: auto 0;
-        }
+
         .col2 {
             flex-grow: 1;
+            padding: 0 70px;
         }
         .showcase {
             display: flex;
             flex-wrap: wrap;
-            padding: 0 70px;
         }
         .item {
             display: flex;
             flex-direction: column;
-            flex-wrap: wrap;
-            flex-grow: 1;
-            max-width: 30rem;
+            /* flex-wrap: wrap; */
+            min-width: 18rem;
+            width: 25%;
+            /* flex-grow: 1; */
+            /* flex-shrink: 0; */
             padding: 10px 0;
             text-align: center;
             border: 1px solid #cecece;
@@ -50,8 +52,9 @@
             padding: 0 5px;
         }
         img {
-            width: 18rem;
-            height: 13rem;
+            /* width: 18rem; */
+            /* width: 100%; */
+            height: 15rem;
             object-fit:contain;
             align-self: center;
         }
@@ -99,7 +102,7 @@
             background: #a31b1b;
         }
         .shop_heading {
-            margin: 60px 70px;
+            margin: 60px 0;
 
         }
         input[type="text"] {
@@ -137,6 +140,16 @@
         .form_btn:active {
             background:rgba(32, 118, 179, 0.336);
             color: #007AD3;
+        }
+        .cart_title::after {
+            background-image: url('img/icon/cart.png');
+            background-size: contain;
+            display: inline-block; 
+            height: 26px;
+            width: 26px;
+            margin-left: 10px;
+            vertical-align:-30%;
+            content:"";
         }
     </style>
     <body>
@@ -232,6 +245,9 @@
                             <button class="add">Add Item</button>
                         </div>
                     </div>
+                </div>
+                <div class="cart">
+                    <p class="p1 p1_black medium cart_title">YOUR CART</p>
                 </div>
             </div>
         </div>
