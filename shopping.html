@@ -151,6 +151,33 @@
             vertical-align:-30%;
             content:"";
         }
+        /* CART */
+        .cart {
+            display: flex;
+        }
+        .cart_table_head{
+            display: flex;
+            flex-direction: column;
+            font-size: 1.8rem;
+            color: #0E4E7B;
+            font-weight: 600;
+            background:rgba(192, 192, 192, 0.534);
+            flex-grow: 1;
+        }   
+        .th, .td {
+            padding: 0 80px 0 0;
+            border-bottom: 1px solid black;
+            background: lightblue;
+            height: 50px;
+        }
+        .cart_img {
+            padding: 0 80px 0 0;
+            height: 50px;
+            align-self:flex-start;
+            object-fit: contain;
+            background: rgb(60, 121, 0);
+        }
+        
     </style>
     <body>
         <div class="temp_bar"></div>
@@ -246,8 +273,25 @@
                         </div>
                     </div>
                 </div>
+                <p class="p1 p1_black medium cart_title">YOUR CART</p>
                 <div class="cart">
-                    <p class="p1 p1_black medium cart_title">YOUR CART</p>
+                    <div class="cart_table_head">
+                       <span class="th">#</span>
+                       <span class="td">1</span>
+                    </div>
+                    <div class="cart_table_head">
+                        <span class="th">ITEM</span>
+                        <img src="img/shop/food/food101.jpg" class="cart_img">
+                    </div>
+                    <div class="cart_table_head">
+                        <span class="th">DESCRIPTION</span>
+                    </div>
+                    <div class="cart_table_head">
+                        <span class="th">QUANTITY</span>
+                    </div>
+                    <div class="cart_table_head">
+                        <span class="th">PRICE</span>
+                    </div>
                 </div>
             </div>
         </div>
