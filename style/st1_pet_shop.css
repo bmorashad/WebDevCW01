@@ -31,8 +31,8 @@
     padding: 10px 0;
     text-align: center;
     border: 1px solid #cecece;
-    margin-right: 60px;
-    margin-bottom: 50px;
+    margin-right: 50px;
+    margin-bottom: 35px;
 }
 .item_des {
     padding: 0 5px;
@@ -126,6 +126,9 @@ form {
 .form_btn:active {
     background:rgb(11, 57, 90);
     color: rgb(255, 255, 255);
+}
+.cart_title {
+    margin-top: 20px;
 }
 .cart_title::after {
     background-image: url('icons/cart.png');
