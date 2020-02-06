@@ -4,181 +4,13 @@
 		<link rel="icon" href="img/icon/favicon.png">
 		<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:300,400,600,700|IBM+Plex+Sans:200,300,400,600,700|Roboto+Mono:400,500,700&display=swap" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="style/st1_pet_all.css">
-		<link rel="stylesheet" type="text/css" href="style/st1_pet_article.css">
+		<link rel="stylesheet" type="text/css" href="style/st1_pet_shop.css">
 	
 		<script src="js/st1_pet_home.js"></script>
 		<script src="js/st1_pet_all.js"></script>
 
 		<title>PetCat-Shop Now</title>
     </head>
-    <style>
-        .container {
-            display: flex;
-        }
-        .col1 {
-            padding-left: 30px;
-            padding-right: 50px;
-            padding-top: 100px;
-            background: rgba(216, 225, 233, 0.1);
-            border-right: 1px solid rgba(192, 192, 192, 0.534);
-            display: flex;
-            padding-bottom: 100px;
-            /* align-items: center; */
-        }
-
-        .col2 {
-            flex-grow: 1;
-            padding: 0 70px;
-        }
-        .showcase {
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .item {
-            display: flex;
-            flex-direction: column;
-            /* flex-wrap: wrap; */
-            min-width: 18rem;
-            width: 25%;
-            /* flex-grow: 1; */
-            /* flex-shrink: 0; */
-            padding: 10px 0;
-            text-align: center;
-            border: 1px solid #cecece;
-            margin-right: 60px;
-            margin-bottom: 50px;
-        }
-        .item_des {
-            padding: 0 5px;
-        }
-        img {
-            /* width: 18rem; */
-            /* width: 100%; */
-            height: 15rem;
-            object-fit:contain;
-            align-self: center;
-        }
-        .quantity {
-            box-sizing: border-box;
-            display: flex;
-            background: #c3e1e280;
-            padding: 5px 8%;
-            margin-top: 12px;
-            justify-content: space-between;
-        }
-
-        .counter {
-            float: left;
-            box-sizing: border-box;
-            height: 1.8rem;
-            width: 1.8rem;
-            border: 0.1px solid #6e6e6e;
-            background: #e3e3e3;
-            color: #000000;
-            font-size: 16px;
-            margin: 0;
-        }
-        .counter:hover {
-            background: #c9c9c9;
-        }
-        .counter:active {
-            background: #b0b0b0;
-        }
-        .add {
-            box-sizing: border-box;
-            padding: 6px 35px;
-            border: 0.1px solid #c7c7c7;
-            background: #ff4646;
-            color: #ffffff;
-            font-size: 16px;
-            font-weight: 600;
-            margin-top: 10px;
-            transition: 0.2s;
-        }
-        .add:hover {
-            background: #e03232;
-        }
-        .add:active {
-            background: #a31b1b;
-        }
-        .shop_heading {
-            margin: 60px 0;
-
-        }
-        input[type="text"] {
-            box-sizing: border-box;
-            width: 230px;
-            padding: 5px;
-        }
-        textarea {
-            max-width: 230px;
-            min-width: 230px;
-            min-height: 150px;
-        }
-        form {
-            margin: 30px 0;
-        }
-        .form_btn {
-            background: #007AD3;
-            margin-right: 2px;
-            border: 2px solid #007AD3;
-            color: white;
-            padding: 5px 10px;
-            font-weight: 600;
-            font-size: 1.4rem;
-            transition: 0.2s;
-        }
-        .rest {
-            color: #007AD3;
-            background: transparent;
-        }
-        .form_btn:hover {
-            background: rgb(5, 108, 182);
-            border-color: rgb(5, 108, 182);
-            color: white;
-        }
-        .form_btn:active {
-            background:rgba(32, 118, 179, 0.336);
-            color: #007AD3;
-        }
-        .cart_title::after {
-            background-image: url('img/icon/cart.png');
-            background-size: contain;
-            display: inline-block; 
-            height: 26px;
-            width: 26px;
-            margin-left: 10px;
-            vertical-align:-30%;
-            content:"";
-        }
-        /* CART */
-        .cart {
-            display: flex;
-        }
-        .cart_table_head{
-            display: flex;
-            flex-direction: column;
-            font-size: 1.8rem;
-            color: #0E4E7B;
-            font-weight: 600;
-            background:rgba(192, 192, 192, 0.534);
-            flex-grow: 1;
-        }   
-        .th, .td {
-            padding: 0 80px 0 0;
-            border-bottom: 1px solid black;
-            background: lightblue;
-            height: 50px;
-        }
-        .cart_img {
-            padding: 0 80px 0 0;
-            height: 50px;
-            align-self:flex-start;
-            object-fit: contain;
-            background: rgb(60, 121, 0);
-        }
-        
-    </style>
     <body>
         <div class="temp_bar"></div>
         <div class="container">
@@ -213,13 +45,13 @@
                 </div>
                 <div class="showcase">    
                     <div class="item">
-                        <img src="img/shop/food/food101.jpg">
+                        <img class="itm_img"src="img/shop/food/food101.jpg">
                         <div class="item_des">
                             <hr class="item_title_sep">
                             <p class="item_title_p">CAT WHISKS</p>
                             <hr class="item_title_sep">
                         </div>
-                        <p class="item_price_p">PRICE: <span class="currency">RS <span id="price1">2000</span></span></p>
+                        <p class="item_price_p">PRICE: <span class="currency">RS <span class="itm_price">2000</span></span></p>
                         <div class="quantity">
                             <p style="font-size: 1.2rem; font-weight: 600; color: #555555;">Quantity:</p>
                             <div class="increaser">
@@ -233,13 +65,13 @@
                         </div>
                     </div>
                     <div class="item">
-                        <img src="img/shop/food/food201.jpg">
+                        <img class="itm_img"src="img/shop/food/food201.jpg">
                         <div class="item_des">
                             <hr class="item_title_sep">
                             <p class="item_title_p">CAT WHISKS</p>
                             <hr class="item_title_sep">
                         </div>
-                        <p class="item_price_p">PRICE: <span class="currency">RS <span id="price1">2000</span></span></p>
+                        <p class="item_price_p">PRICE: <span class="currency">RS <span class="itm_price">2000</span></span></p>
                         <div class="quantity">
                             <p style="font-size: 1.2rem; font-weight: 600; color: #555555;">Quantity:</p>
                             <div class="increaser">
@@ -253,13 +85,13 @@
                         </div>
                     </div>
                     <div class="item">
-                        <img src="img/shop/food/food301.jpg">
+                        <img class="itm_img" src="img/shop/food/food301.jpg">
                         <div class="item_des">
                             <hr class="item_title_sep">
                             <p class="item_title_p">CAT WHISKS</p>
                             <hr class="item_title_sep">
                         </div>
-                        <p class="item_price_p">PRICE: <span class="currency">RS <span id="price1">2000</span></span></p>
+                        <p class="item_price_p">PRICE: <span class="currency">RS <span class="itm_price">2000</span></span></p>
                         <div class="quantity">
                             <p style="font-size: 1.2rem; font-weight: 600; color: #555555;">Quantity:</p>
                             <div class="increaser">
@@ -275,22 +107,34 @@
                 </div>
                 <p class="p1 p1_black medium cart_title">YOUR CART</p>
                 <div class="cart">
-                    <div class="cart_table_head">
+                    <div class="cart_table_col">
                        <span class="th">#</span>
                        <span class="td">1</span>
                     </div>
-                    <div class="cart_table_head">
+                    <div class="cart_table_col">
                         <span class="th">ITEM</span>
-                        <img src="img/shop/food/food101.jpg" class="cart_img">
+                        <span class="td">
+                            <img src="img/shop/food/food101.jpg" class="cart_img">
+                        </span>
                     </div>
-                    <div class="cart_table_head">
+                    <div class="cart_table_col">
                         <span class="th">DESCRIPTION</span>
+                        <span class="td">Cat Whisks</span>
+
                     </div>
-                    <div class="cart_table_head">
+                    <div class="cart_table_col">
                         <span class="th">QUANTITY</span>
+                        <span class="td">2</span>
+
                     </div>
-                    <div class="cart_table_head">
-                        <span class="th">PRICE</span>
+                    <div class="cart_table_col">
+                        <span class="th"><div class="start">PRICE</div></span>
+                        <span class="td"><div class="cart_price">2000 X 2</div></span>
+                    </div>
+                    <div class="cart_table_col">
+                        <span class="th"></span>
+                        <span class="td" style="font-size: 25px;"><div class="cart_remove">X</div></span>
+
                     </div>
                 </div>
             </div>
