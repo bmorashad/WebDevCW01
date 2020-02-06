@@ -216,3 +216,8 @@ hr {
 .mono {
 	font-family: 'IBM Plex Mono';
 }
+/* SELECT MENU */
+
+select {
+	background: #b3d6ff70;
+}

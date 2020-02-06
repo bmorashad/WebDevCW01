@@ -128,7 +128,7 @@ form {
     color: rgb(255, 255, 255);
 }
 .cart_title::after {
-    background-image: url('img/icon/cart.png');
+    background-image: url('icons/cart.png');
     background-size: contain;
     display: inline-block; 
     height: 26px;
@@ -148,7 +148,7 @@ form {
     color: #0E4E7B;
     font-weight: 600;
     max-width: 180px;
-    min-width: 130px;
+    min-width: 100px;
     flex-grow: 1;
     /* justify-content: center; */
     /* border-right:1px solid#007AD3; */
@@ -159,7 +159,10 @@ form {
     min-width: 30px;
     /* max-width: 40px; */
 }   
-
+.currency_col {
+    min-width: 30px;
+    max-width: 50px;
+}
 .last_col {
     max-width: 100%;
     flex-grow: 1;
@@ -184,7 +187,12 @@ form {
 }
 .start, .cart_price {
     margin-left: auto;
+    margin-right: 30px;
     /* background: #222; */
+}
+.cart_qnt {
+    margin-right: auto;
+    margin-left: 5px;
 }
 .cart_total {
     border: 0px;
@@ -198,4 +206,22 @@ form {
     /* justify-content: center; */
     object-fit: contain;
     /* background: rgb(60, 121, 0); */
+}
+.clear_cart {
+    box-sizing: border-box;
+    padding: 8px 15px;
+    border: 0px solid #c7c7c7;
+    background: #ff4646;
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 80px;
+    transition: 0.2s;
+}
+.clear_cart:hover {
+    background: #e03232;
+}
+.clear_cart:active {
+    background: #a31b1b;
 }
