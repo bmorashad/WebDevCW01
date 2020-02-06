@@ -205,3 +205,14 @@ hr {
 	padding-bottom: 8px;
 	padding-top: 15px;
 }
+/* COLORS */
+.pink {
+	color: #FF3E55;
+}
+.primary_black {
+	color: #333;
+}
+/* MONO */
+.mono {
+	font-family: 'IBM Plex Mono';
+}

@@ -147,17 +147,23 @@ form {
     font-size: 1.6rem;
     color: #0E4E7B;
     font-weight: 600;
+    max-width: 180px;
+    min-width: 130px;
     flex-grow: 1;
-    min-width: 90px;
     /* justify-content: center; */
     /* border-right:1px solid#007AD3; */
     /* align-items: center; */
     /* background:rgba(192, 192, 192, 0.534); */
 }
-.cart_ID {
-    min-width: 20px;
-    max-width: 20px;
+.cart_id_col {
+    min-width: 30px;
+    /* max-width: 40px; */
 }   
+
+.last_col {
+    max-width: 100%;
+    flex-grow: 1;
+}
 .th, .td {
     border-bottom: 1px solid black;
     box-sizing: border-box;
@@ -180,8 +186,12 @@ form {
     margin-left: auto;
     /* background: #222; */
 }
+.cart_total {
+    border: 0px;
+}
 .cart_remove {
-    margin-left: 55%;
+    margin-left: auto;
+    margin-right: 25px;
 }
 .cart_img {
     height: 30px;
