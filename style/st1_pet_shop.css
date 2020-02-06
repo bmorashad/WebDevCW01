@@ -73,7 +73,7 @@
 .add {
     box-sizing: border-box;
     padding: 6px 35px;
-    border: 0.1px solid #c7c7c7;
+    border: 0px solid #c7c7c7;
     background: #ff4646;
     color: #ffffff;
     font-size: 16px;
@@ -198,6 +198,14 @@ form {
     margin-left: 5px;
 }
 .cart_total {
+    /* border-bottom: 1px solid black; */
+    color: black;
+    font-size: 1.8rem;
+    box-sizing: border-box;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: 0px;
 }
 .cart_remove {

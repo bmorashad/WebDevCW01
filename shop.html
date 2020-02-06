@@ -6,8 +6,6 @@
 		<link rel="stylesheet" type="text/css" href="style/st1_pet_all.css">
 		<link rel="stylesheet" type="text/css" href="style/st1_pet_shop.css">
 	
-		<script src="js/st1_pet_home.js"></script>
-		<script src="js/st1_pet_all.js"></script>
 
 		<title>PetCat-Shop</title>
     </head>
@@ -61,7 +59,7 @@
                             </div>
                         </div>
                         <div class="add_item">
-                            <button class="add">Add Item</button>
+                            <button class="add" id="add2">Add Item</button>
                         </div>
                     </div>
                     <div class="item">
@@ -96,7 +94,8 @@
                             <p style="font-size: 1.2rem; font-weight: 600; color: #555555;">Quantity:</p>
                             <div class="increaser">
                                 <button class="counter">+</button>
-                                <input type="text" value="1" style="font-size: 12px;float: left;  border: 0.1px solid #333;border-left: 0px; border-right: 0px; padding: 0; margin: 0; text-align: center; width: 1.8rem; height: 1.8rem; box-sizing: border-box;">
+                                <input type="text" value="1" style="font-size: 12px;float: left;  border: 0.1px solid #333;border-left: 0px; border-right: 0px; padding: 0; margin: 0; text-align: center; width: 1.8rem; height: 1.8rem; box-sizing: border-box;" 
+                                readonly>
                                 <button class="counter">-</button>
                             </div>
                         </div>
@@ -110,7 +109,7 @@
                     <div class="cart_table_col cart_id_col">
                        <span class="th">#</span>
                        <span class="td">1</span>
-                       <span class="td cart_total"><span class="pink">TOTAL</span></span>
+                       <span class="cart_total"><span class="pink">TOTAL</span></span>
 
                     </div>
                     <div class="cart_table_col">
@@ -161,5 +160,6 @@
                 <span class="footer_sep">|</span> Westminster-ID: <span class="footer_des">w1761930</span>
             </p>
         </footer>
+		<script src="js/st1_pet_shop.js"></script>
     </body>
 </html>
