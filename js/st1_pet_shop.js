@@ -3,7 +3,7 @@
 let addItem = document.querySelectorAll('.add')
 let qntIncrease = document.querySelectorAll('.increment')
 let qntDecrease = document.querySelectorAll('.decrement')
-
+let clear = document.querySelector('.clear_cart')
 // Event Handlers
 
 let qntIncrement = () => {
@@ -52,6 +52,7 @@ let addToCart = () => {
             if (lstRow) {
                 lstRow.after(span)
             } else {
+                clear.style.marginTop = '20px'
                 col.appendChild(span)
             }
             span.innerHTML = itmDetArr[i]
@@ -150,11 +151,23 @@ let setTotalPrice = () => {
         spanPrice.innerHTML = `<span class="cart_total"><span class="cart_price_total pink mono">${totalPrice}</span></span>`
     }
 }
+let clearCart = () => {
+    const cart = document.querySelectorAll('.cart_table_col')
+    cart.forEach(el => {
+        let span = el.querySelectorAll('span')
+        span.forEach(el => {
+            if (el.className != 'th') {
+                el.remove()
+            }
+        })
+    })
+}
  // Adding EventListener
 
 qntIncrease.forEach(counter => counter.addEventListener('click', qntIncrement))
 qntDecrease.forEach(counter => counter.addEventListener('click', qntDecrement))
 addItem.forEach(btn => btn.addEventListener('click', addToCart));
+clear.addEventListener('click', clearCart)
      /* let test = () => {
          let x = document.querySelector('#som')
          console.log(x)
