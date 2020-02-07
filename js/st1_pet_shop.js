@@ -46,13 +46,18 @@ let addToCart = () => {
         for(let i = 0; i < cartCols.length; i++) {
             const span = document.createElement('span');
             span.className = 'td'
-            const col = cartCols[i].querySelectorAll('.td')
-            const lstRow = col[col.length-1]
-            lstRow.after(span)
+            const col = cartCols[i]
+            const colRows = cartCols[i].querySelectorAll('.td')
+            const lstRow = colRows[colRows.length-1]
+            if (lstRow) {
+                lstRow.after(span)
+            } else {
+                col.appendChild(span)
+            }
             span.innerHTML = itmDetArr[i]
-        } 
+        }
+        setTotalPrice()
     }
-    
   
     // Object.values(itmDet).forEach(val => {
     //     let span = document.createElement('span');
@@ -111,15 +116,40 @@ let checkCart = (itmDes, itmQnt) => {
             let qnt = qntLst[i]
             if (parseInt(qnt.innerHTML) !== itmQnt) {
                 qnt.innerHTML = itmQnt
+                setTotalPrice()
             } 
             inCart = true
+            break
         } else {
             inCart = false
         }
     }
     return inCart
 }
-let getTotal
+let setTotalPrice = () => {
+    let totalPrice = 0
+    const totalPriceClass = document.querySelector('.cart_price_total')
+    const priceLst = document.querySelector('.cart_price_col').getElementsByClassName('cart_price')
+    const qntLst = document.querySelector('.cart_qnt_col').querySelectorAll('.td')
+    for(let i = 0; i < priceLst.length; i++) {
+        totalPrice += parseInt(priceLst[i].innerHTML) * parseInt(qntLst[i].innerHTML)
+    }
+    if(totalPriceClass) {
+        totalPriceClass.innerHTML = totalPrice
+    } else {
+        const totalCol = document.querySelector('.cart_id_col')
+        const spanTotal = document.createElement('span');
+        spanTotal.className = 'cart_total'
+        totalCol.appendChild(spanTotal)
+        spanTotal.innerHTML = '<span class="pink">TOTAL</span>'
+        
+        const priceCol = document.querySelector('.cart_price_col')
+        const spanPrice = document.createElement('span');
+        spanPrice.className = 'cart_total'
+        priceCol.appendChild(spanPrice)
+        spanPrice.innerHTML = `<span class="cart_total"><span class="cart_price_total pink mono">${totalPrice}</span></span>`
+    }
+}
  // Adding EventListener
 
 qntIncrease.forEach(counter => counter.addEventListener('click', qntIncrement))

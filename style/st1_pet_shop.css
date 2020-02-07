@@ -201,9 +201,11 @@ form {
     color: black;
     font-size: 1.8rem;
 }
-.start, .cart_price {
-    margin-left: auto;
-    margin-right: 30px;
+.start, .cart_price, .cart_price_total {
+    width: 100%;
+    text-align: right;
+    /* margin-left: auto;
+    margin-right: 30px; */
     /* background: #222; */
 }
 .cart_qnt {
@@ -215,6 +217,7 @@ form {
     color: black;
     font-size: 1.8rem;
     box-sizing: border-box;
+    width: 100%;
     height: 60px;
     display: flex;
     align-items: center;
