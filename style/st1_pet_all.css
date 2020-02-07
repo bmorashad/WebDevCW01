@@ -91,6 +91,7 @@ h5 {
 }
 .item_title_p {
 	font-size: 1.8rem;
+	text-transform: uppercase;
 	font-weight: 600;
 	color: rgb(54, 54, 54);
 }

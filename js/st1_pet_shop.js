@@ -25,24 +25,9 @@ let qntDecrement = () => {
     }
 }
 let addToCart = () => {
-    /* <span class="td">1</span>
-     <span class="td"><img src="img/shop/food/food101.jpg" class="cart_img"></span>
-     <span class="td">Cat Whisks</span>
-     <span class="td">2</span>
-     <span class="td"><span class="mono">rs</span></span>
-     <span class="td"><span class="cart_price pink mono">2000</span></span>
-     <span class="td cart_total"><span class="cart_price pink mono">101500</span></span>
-     <span class=    itmDet.forEach(el => console.log(el))
-"td cart_total"><span class="pink">TOTAL</span></span> */
+
     let btn = event.target
     let itm = btn.parentElement.parentElement
-    // let itmImg = itm.querySelector('img').src
-    // let itmDes = itm.querySelector('.item_title_p').innerHTML
-    // let itmQnt = parseInt(itm.querySelector('input').value)
-    // let itmCur = 'rs'
-    // let itmPrice = parseInt(itm.querySelector('.itm_price').innerHTML)
-    // let itmNo = document.querySelector('.cart_id_col').querySelectorAll('.td').length + 1
-    // let itmTotalPrice = itmQnt * itmPrice
 
     const itmDet = {
             itmNo: document.querySelector('.cart_id_col').querySelectorAll('.td').length + 1,
@@ -54,42 +39,44 @@ let addToCart = () => {
             itmRm: '<div class="cart_remove">X</div>'
         }
     const itmDetArr = Object.values(itmDet)
-    const cols = document.querySelectorAll('.cart_table_col')
+    const cartCols = document.querySelectorAll('.cart_table_col')
+
+    let inCart = checkCart(itmDet.itmDes, itmDet.itmQnt)
+    if (!inCart) {
+        for(let i = 0; i < cartCols.length; i++) {
+            const span = document.createElement('span');
+            span.className = 'td'
+            const col = cartCols[i].querySelectorAll('.td')
+            const lstRow = col[col.length-1]
+            lstRow.after(span)
+            span.innerHTML = itmDetArr[i]
+        } 
+    }
+    
+  
     // Object.values(itmDet).forEach(val => {
     //     let span = document.createElement('span');
     //     span.className = 'td'
     //     let itmTst = document.createTextNode(val)
     //     span.appendChild(itmTst)
-    //     let colTst = cols.querySelectorAll('.td')
-    //     let lastTd = colTst[colTst.length-1]
-    //     lastTd.after(span)
+    //     let col = cols.querySelectorAll('.td')
+    //     let lstRow = col[col.length-1]
+    //     lstRow.after(span)
     // })
     // cols.forEach(el => {
     //     let span = document.createElement('span');
     //     span.className = 'td'
     //     let itmTst = document.createTextNode(itmDetArr[])
     //     span.appendChild(itmTst)
-    //     let colTst = el.querySelectorAll('.td')
-    //     let lastTd = colTst[colTst.length-1]
-    //     lastTd.after(span)
+    //     let col = el.querySelectorAll('.td')
+    //     let lstRow = col[col.length-1]
+    //     lstRow.after(span)
     // })
-    for(let i = 0; i < cols.length; i++) {
-        let span = document.createElement('span');
-        span.className = 'td'
-        let colTst = cols[i].querySelectorAll('.td')
-        let lastTd = colTst[colTst.length-1]
-        lastTd.after(span)
-        span.innerHTML = itmDetArr[i]
-    }
-
-    console.log(itmDet)
-    let span = document.createElement('span');
-    span.className = 'td'
     // let itmTst = document.createTextNode(itmNo)
     // span.appendChild(itmTst)
-    // let colTst = document.querySelector('.cart_id_col').querySelectorAll('.td')
-    // let lastTd = colTst[colTst.length-1]
-    // lastTd.after(span)
+    // let col = document.querySelector('.cart_id_col').querySelectorAll('.td')
+    // let lstRow = col[col.length-1]
+    // lstRow.after(span)
     // let itmNoHtml = `<span class="td">${itmNo}</span>`
     // let itmImgHtml = `<span class="td"><img src="${itmImg}" class="cart_img"></span>`
     // let itmDesHtml = `<span class="td">${itmDes}</span>`
@@ -98,7 +85,15 @@ let addToCart = () => {
     // let itmPriceHtml = `<span class="td">${itmPrice}</span>`
     // let itmRmHtml = '<span class="td"><div class="cart_remove">X</div></span>'
 
-
+        /* <span class="td">1</span>
+     <span class="td"><img src="img/shop/food/food101.jpg" class="cart_img"></span>
+     <span class="td">Cat Whisks</span>
+     <span class="td">2</span>
+     <span class="td"><span class="mono">rs</span></span>
+     <span class="td"><span class="cart_price pink mono">2000</span></span>
+     <span class="td cart_total"><span class="cart_price pink mono">101500</span></span>
+     <span class=    itmDet.forEach(el => console.log(el))
+"td cart_total"><span class="pink">TOTAL</span></span> */
 
 
 
@@ -107,6 +102,24 @@ let addToCart = () => {
     //  console.log(itmTotalPrice)
 }
 
+let checkCart = (itmDes, itmQnt) => {
+    const itmLst = document.querySelector('.itm_des_col').querySelectorAll('.td')
+    const qntLst = document.querySelector('.cart_qnt_col').querySelectorAll('.td')
+    let inCart
+    for(let i = 0; i < itmLst.length; i++) {
+        if (itmLst[i].innerHTML == itmDes) {
+            let qnt = qntLst[i]
+            if (parseInt(qnt.innerHTML) !== itmQnt) {
+                qnt.innerHTML = itmQnt
+            } 
+            inCart = true
+        } else {
+            inCart = false
+        }
+    }
+    return inCart
+}
+let getTotal
  // Adding EventListener
 
 qntIncrease.forEach(counter => counter.addEventListener('click', qntIncrement))
