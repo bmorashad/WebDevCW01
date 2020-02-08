@@ -94,6 +94,14 @@ h5 {
 	text-transform: uppercase;
 	font-weight: 600;
 	color: rgb(54, 54, 54);
+	line-height:1.5em;
+	height: 4.5em;
+	/* display: flex; */
+	/* align-items: center; */
+	/* justify-content: center; */
+	/* text-overflow: ellipsis; */
+	overflow: hidden;
+	vertical-align: middle;
 }
 .item_price_p {
 	font-size: 1.5rem;
@@ -186,7 +194,7 @@ hr {
 }
 .item_title_sep {
 	border-color: #cecece;
-	margin: 6px 0;
+	margin: 8px 0;
 }
 .title_sep {
 	margin: 10px 0 13px 0;
