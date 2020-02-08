@@ -185,6 +185,8 @@ form {
 }
 .th, .td {
     border-bottom: 1px solid black;
+    overflow: hidden;
+    white-space: nowrap;
     box-sizing: border-box;
     height: 60px;
     display: flex;
@@ -201,12 +203,16 @@ form {
     color: black;
     font-size: 1.8rem;
 }
-.start, .cart_price, .cart_price_total {
+.cart_price, .cart_price_total {
     width: 100%;
     text-align: right;
     /* margin-left: auto;
     margin-right: 30px; */
     /* background: #222; */
+}
+.start {
+    width: 100%;
+    text-align: left;
 }
 .cart_qnt {
     margin-right: auto;

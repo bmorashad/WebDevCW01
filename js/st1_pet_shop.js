@@ -89,7 +89,7 @@ let addToCart = () => {
     const itmDet = {
             itmNo: document.querySelector('.cart_id_col').querySelectorAll('.td').length + 1,
             itmImg: `<img src='${itm.querySelector('img').src}' class="cart_img">`,
-            itmDes: itm.querySelector('.item_title_p').innerHTML,
+            itmDes: `<span class="start">${itm.querySelector('.item_title_p').innerHTML}</span>`,
             itmQnt: parseInt(itm.querySelector('input').value),
             itmCur: 'rs',
             itmPrice: `<span class="cart_price pink mono">${parseInt(itm.querySelector('.itm_price').innerHTML)}</span>`,
