@@ -108,7 +108,7 @@ let addToCart = () => {
             if (lstRow) {
                 lstRow.after(span)
             } else {
-                clear.style.marginTop = '20px'
+                // clear.style.marginTop = '20px'
                 col.appendChild(span)
             }
             span.innerHTML = itmDetArr[i]
