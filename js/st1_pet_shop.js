@@ -93,7 +93,7 @@ let addToCart = () => {
             itmQnt: parseInt(itm.querySelector('input').value),
             itmCur: 'rs',
             itmPrice: `<span class="cart_price pink mono">${parseInt(itm.querySelector('.itm_price').innerHTML)}</span>`,
-            itmRm: '<div class="cart_remove">X</div>'
+            itmRm: `<div class="cart_remove">X<span class="store_row_no">${document.querySelector('.cart_id_col').querySelectorAll('.td').length}</span></div>`
         }
     const itmDetArr = Object.values(itmDet)
     const cartCols = document.querySelectorAll('.cart_table_col')
@@ -114,6 +114,8 @@ let addToCart = () => {
             }
             span.innerHTML = itmDetArr[i]
         }
+        const removeItmInCart = document.querySelectorAll('.cart_remove')
+        removeItmInCart.forEach(btn => btn.addEventListener('click', removeItm)) // added
         setTotalPrice()
     }
   
@@ -349,7 +351,23 @@ let changeItems = () => {
     setSameHeightElement()
 }
 let removeItm = () => {
-    
+    const rowToRemove = parseInt(event.target.querySelector('.store_row_no').innerHTML)
+    const cols = document.querySelectorAll('.cart_table_col')
+    cols.forEach(col => {
+        col.querySelectorAll('.td')[rowToRemove].remove()
+    })
+    if (!cols.querySelector('.td')) {
+        
+    }
+    // cart.forEach(el => {
+    //     let span = el.querySelectorAll('span')
+    //     span.forEach(el => {
+    //         if (el.className != 'th') {
+    //             el.remove()
+    //         }
+    //     })
+    // })
+    setTotalPrice()
 }
 
 let setSameHeightElement = () => {
@@ -377,7 +395,6 @@ let setSameHeightElement = () => {
 // setSameHeightElement()
 // Imediate Exucution
 changeItems()
-
 // Adding Event Listeners
 category.addEventListener('change', changeItems)
 clear.addEventListener('click', clearCart)
