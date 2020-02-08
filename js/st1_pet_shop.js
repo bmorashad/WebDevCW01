@@ -358,13 +358,10 @@ let removeItm = () => {
     })
     if (!cols[0].querySelector('.td')) {
         const total = document.querySelectorAll('.cart_total')
-        total.forEach(el => {
-            if (el.className == '.cart_total') {
-                console.log(el)
-            }
-            el.remove()
-            console.log(el)
-        })
+        // forEach isn't working without throwing any error
+        for(let i = 0; i < total.length; i++) {
+            document.querySelectorAll('.cart_total')[i].remove()
+        }
     }
     // cart.forEach(el => {
     //     let span = el.querySelectorAll('span')
