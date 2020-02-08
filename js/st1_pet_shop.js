@@ -213,13 +213,19 @@ let setTotalPrice = () => {
 let clearCart = () => {
     const cart = document.querySelectorAll('.cart_table_col')
     cart.forEach(el => {
-        let span = el.querySelectorAll('span')
-        span.forEach(el => {
-            if (el.className != 'th') {
-                el.remove()
-            }
-        })
+        let span = el.querySelectorAll('.td')
+        let cartTotal = el.querySelectorAll('.cart_total')
+        span.forEach(el => el.remove())
+        cartTotal.forEach(el => el.remove())
     })
+        // cart.forEach(el => {
+    //     let span = el.querySelectorAll('span')
+    //     span.forEach(el => {
+    //         if (el.className != 'th') {
+    //             el.remove()
+    //         }
+    //     })
+    // })
 }
 
 let changeItems = () => {
@@ -359,19 +365,12 @@ let removeItm = () => {
     if (!cols[0].querySelector('.td')) {
         const total = document.querySelectorAll('.cart_total')
         // forEach isn't working without throwing any error
-        for(let i = 0; i < total.length; i++) {
-            document.querySelectorAll('.cart_total')[i].remove()
-        }
+        total.forEach(el => el.remove())
     }
-    // cart.forEach(el => {
-    //     let span = el.querySelectorAll('span')
-    //     span.forEach(el => {
-    //         if (el.className != 'th') {
-    //             el.remove()
-    //         }
-    //     })
-    // })
-    setTotalPrice()
+
+    if (document.querySelectorAll('.td').length != 0){
+        setTotalPrice()
+    }
 }
 
 let setSameHeightElement = () => {
