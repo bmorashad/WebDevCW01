@@ -24,7 +24,7 @@
     display: flex;
     flex-direction: column;
     /* flex-wrap: wrap; */
-    min-width: 18rem;
+    min-width: 18px;
     width: 25%;
     /* flex-grow: 1; */
     /* flex-shrink: 0; */
@@ -51,6 +51,7 @@
     padding: 5px 8%;
     margin-top: 12px;
     justify-content: space-between;
+    /* align-items: center; */
 }
 
 .counter {
@@ -214,7 +215,7 @@ form {
     font-size: 1.8rem;
 }
 .itm_des_col {
-    max-width: 180px;
+    max-width: 18rem;
 }
 .store_row_no {
     display: none;

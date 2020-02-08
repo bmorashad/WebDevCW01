@@ -230,6 +230,24 @@ hr {
 select {
 	background: #b3d6ff70;
 }
+
+/* Font Size Change */
+.font_size_increase, .font_size_decrease {
+	box-sizing: border-box;
+	width: 30px;
+	height: 30px;
+	font-size: 18px;
+	position: absolute;
+}
+.font_size_increase {
+	top: 100px;
+	right: 100px;
+}
+.font_size_decrease {
+	top: 100px;
+	right: 70px;
+}
+/* Responsive */
 @media only screen and (max-width: 988px) {
     html {
       font-size: 8.5px;
