@@ -348,6 +348,10 @@ let changeItems = () => {
     addItem.forEach(btn => btn.addEventListener('click', addToCart));
     setSameHeightElement()
 }
+let removeItm = () => {
+    
+}
+
 let setSameHeightElement = () => {
     // console.log('done')
     const itmNames = document.querySelectorAll('.item_title_p')
