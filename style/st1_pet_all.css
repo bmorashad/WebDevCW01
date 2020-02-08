@@ -94,12 +94,12 @@ h5 {
 	text-transform: uppercase;
 	font-weight: 600;
 	color: rgb(54, 54, 54);
-	line-height:1.5em; /* added experiment */
-	height: 3.5em; /* added */
 	display: flex; /* added */
 	align-items: center; /* added */
 	justify-content: center; /* added */
-	overflow-y: auto; /* added */
+	/* line-height:1.5em; added experiment */
+	/* height: 92px; */
+	/* overflow-y: auto; added */
 	/* text-overflow: ellipsis; */
 	/* vertical-align: middle; */
 }

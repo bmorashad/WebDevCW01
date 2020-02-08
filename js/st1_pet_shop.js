@@ -60,7 +60,7 @@ let med = [
     }
 ]
 let all = food.concat(toy).concat(med)
-console.log(all)
+// console.log(all)
 // Event Handlers
 
 let qntIncrement = () => {
@@ -223,7 +223,7 @@ let clearCart = () => {
 let changeItems = () => {
     document.querySelector('.showcase').innerHTML = ''
     const getCategory = document.querySelector('#category').querySelector('option:checked').value
-    console.log(getCategory)
+    
     switch(getCategory) {
         case 'food':
             food.forEach(itm => {
@@ -346,34 +346,38 @@ let changeItems = () => {
     qntIncrease.forEach(counter => counter.addEventListener('click', qntIncrement))
     qntDecrease.forEach(counter => counter.addEventListener('click', qntDecrement))
     addItem.forEach(btn => btn.addEventListener('click', addToCart));
-    // <div class="item">
-        // <img class="itm_img"src="img/shop/food/food101.jpg">
-        // <div class="item_des">
-        //     <hr class="item_title_sep">
-        //     <p class="item_title_p">WHISKAS® Dry Cat Food Beef Flavour</p>
-        //     <hr class="item_title_sep">
-        // </div>
-        // <p class="item_price_p">PRICE: <span class="currency">RS <span class="itm_price">2000</span></span></p>
-        // <div class="quantity">
-        //     <p style="font-size: 1.2rem; font-weight: 600; color: #555555;">Quantity:</p>
-        //     <div class="increaser">
-        //         <button class="counter increment">+</button>
-        //         <input type="text" value="1" class="qnt_input" readonly>
-        //         <button class="counter decrement">-</button>
-        //     </div>
-        // </div>
-        // <div class="add_item">
-        //     <button class="add" id="add2">Add Item</button>
-        // </div>
-    // </div>
-
-
+    setSameHeightElement()
 }
+let setSameHeightElement = () => {
+    // console.log('done')
+    const itmNames = document.querySelectorAll('.item_title_p')
+    // const p1 = document.querySelectorAll('.item_title_p')[0]
+    // p1.style.height = style.height
+    // console.log(style.height)
+    // Testing
+    let index = 1
+    for(let i = 0; i < itmNames.length; i++) {
+        if (i < itmNames.length-1) {
+            if (itmNames[i].innerHTML.length > itmNames[index].innerHTML.length) {
+                    index = i
+            }
+        }
+    }
+    const style = getComputedStyle(itmNames[index])
+    itmNames.forEach(name => {
+        if (name.innerHTML != itmNames[index].innerHTML) {
+            name.style.height = style.height
+        }
+        })
+    }
+// setSameHeightElement()
 // Imediate Exucution
 changeItems()
+
 // Adding Event Listeners
 category.addEventListener('change', changeItems)
 clear.addEventListener('click', clearCart)
+window.addEventListener('resize', setSameHeightElement)
      /* let test = () => {
          let x = document.querySelector('#som')
          console.log(x)
