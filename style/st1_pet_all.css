@@ -230,3 +230,8 @@ hr {
 select {
 	background: #b3d6ff70;
 }
+@media only screen and (max-width: 988px) {
+    html {
+      font-size: 8.5px;
+    }
+}
