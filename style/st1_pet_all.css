@@ -94,7 +94,7 @@ h5 {
 	text-transform: uppercase;
 	font-weight: 600;
 	color: rgb(54, 54, 54);
-	display: flex; /* added */
+	display: flex; /* added to fix */
 	align-items: center; /* added */
 	justify-content: center; /* added */
 	/* line-height:1.5em; added experiment */
