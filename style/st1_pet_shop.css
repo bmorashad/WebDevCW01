@@ -55,6 +55,9 @@
 
 .counter {
     float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     box-sizing: border-box;
     height: 18px;
     width: 18px;
