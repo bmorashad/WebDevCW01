@@ -207,7 +207,7 @@ let setTotalPrice = () => {
         const spanPrice = document.createElement('span');
         spanPrice.className = 'cart_total'
         priceCol.appendChild(spanPrice)
-        spanPrice.innerHTML = `<span class="cart_total"><span class="cart_price_total pink mono">${totalPrice}</span></span>`
+        spanPrice.innerHTML = `<span class="cart_price_total pink mono">${totalPrice}</span>`
     }
 }
 let clearCart = () => {
@@ -356,8 +356,15 @@ let removeItm = () => {
     cols.forEach(col => {
         col.querySelectorAll('.td')[rowToRemove].remove()
     })
-    if (!cols.querySelector('.td')) {
-        
+    if (!cols[0].querySelector('.td')) {
+        const total = document.querySelectorAll('.cart_total')
+        total.forEach(el => {
+            if (el.className == '.cart_total') {
+                console.log(el)
+            }
+            el.remove()
+            console.log(el)
+        })
     }
     // cart.forEach(el => {
     //     let span = el.querySelectorAll('span')
