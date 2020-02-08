@@ -94,14 +94,14 @@ h5 {
 	text-transform: uppercase;
 	font-weight: 600;
 	color: rgb(54, 54, 54);
-	line-height:1.5em;
-	height: 4.5em;
-	/* display: flex; */
-	/* align-items: center; */
-	/* justify-content: center; */
+	line-height:1.5em; /* added experiment */
+	height: 3.5em; /* added */
+	display: flex; /* added */
+	align-items: center; /* added */
+	justify-content: center; /* added */
+	overflow-y: auto; /* added */
 	/* text-overflow: ellipsis; */
-	overflow: hidden;
-	vertical-align: middle;
+	/* vertical-align: middle; */
 }
 .item_price_p {
 	font-size: 1.5rem;
