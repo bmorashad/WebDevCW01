@@ -90,15 +90,14 @@ let addToCart = () => {
             itmNo: document.querySelector('.cart_id_col').querySelectorAll('.td').length + 1,
             itmImg: `<img src='${itm.querySelector('img').src}' class="cart_img">`,
             itmDes: `<span class="start">${itm.querySelector('.item_title_p').innerHTML}</span>`,
-            itmQnt: parseInt(itm.querySelector('input').value),
-            itmCur: 'rs',
+            // itmCur: 'rs',
             itmPrice: `<span class="cart_price pink mono">${parseInt(itm.querySelector('.itm_price').innerHTML)}</span>`,
+            itmQnt: `x${parseInt(itm.querySelector('input').value)}`,
             itmRm: `<div class="cart_remove">X<span class="store_row_no">${document.querySelector('.cart_id_col').querySelectorAll('.td').length}</span></div>`
         }
     const itmDetArr = Object.values(itmDet)
     const cartCols = document.querySelectorAll('.cart_table_col')
-
-    let inCart = checkCart(itmDet.itmDes, itmDet.itmQnt)
+    let inCart = checkCart(itmDet.itmDes, parseInt(itmDet.itmQnt.slice(1)))
     if (!inCart) {
         for(let i = 0; i < cartCols.length; i++) {
             const span = document.createElement('span');
@@ -175,7 +174,7 @@ let checkCart = (itmDes, itmQnt) => {
         if (itmLst[i].innerHTML == itmDes) {
             let qnt = qntLst[i]
             if (parseInt(qnt.innerHTML) !== itmQnt) {
-                qnt.innerHTML = itmQnt
+                qnt.innerHTML = 'x' + itmQnt
                 setTotalPrice()
             } 
             inCart = true
@@ -192,7 +191,7 @@ let setTotalPrice = () => {
     const priceLst = document.querySelector('.cart_price_col').getElementsByClassName('cart_price')
     const qntLst = document.querySelector('.cart_qnt_col').querySelectorAll('.td')
     for(let i = 0; i < priceLst.length; i++) {
-        totalPrice += parseInt(priceLst[i].innerHTML) * parseInt(qntLst[i].innerHTML)
+        totalPrice += parseInt(priceLst[i].innerHTML) * parseInt(qntLst[i].innerHTML.slice(1))
     }
     if(totalPriceClass) {
         totalPriceClass.innerHTML = totalPrice
