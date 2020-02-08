@@ -55,9 +55,11 @@
 
 .counter {
     float: left;
-    display: flex;
+    /* Firefox alignment fix */
+    display: flex; 
     align-items: center;
     justify-content: center;
+    /* Fix End */
     box-sizing: border-box;
     height: 18px;
     width: 18px;
