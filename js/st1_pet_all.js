@@ -1,7 +1,8 @@
 let html = document.querySelector('html')
 let btnIncrease = document.querySelector('.font_size_increase')
 let btnDecrease = document.querySelector('.font_size_decrease')
-
+let btnReset = document.querySelector('.reset')
+let defaultFontSize = 10
 let getExtStyleInt = (element, attr) => {
     let style = getComputedStyle(element) 
     let attributeInt = parseInt(style[attr].slice(0, style[attr].length-2))
@@ -15,6 +16,7 @@ let fontSizeIncrease = () => {
         fontSize = fontSize + 1
         const newFontSize = fontSize + 'px'
         html.style.fontSize = newFontSize  
+        fontSizeResetButton()
         if(document.querySelectorAll('.item_title_p').length) {
             setSameHeightElement()   
         }
@@ -34,6 +36,7 @@ let fontSizeDecrease = () => {
         fontSize = fontSize - 1
         const newFontSize = fontSize + 'px'
         html.style.fontSize = newFontSize  
+        fontSizeResetButton()
         if(document.querySelectorAll('.item_title_p').length) {
             setSameHeightElement()   
         }    
@@ -70,5 +73,19 @@ let fontSizeDecrease = () => {
     //     itmCard.style.width = newItmCardWidth   
     // }
 }
+let fontSizeResetButton = () => {
+    let fontSize = getExtStyleInt(html, 'fontSize')
+    if (fontSize != defaultFontSize) {
+        btnReset.style.display = 'block'
+    } else {
+        btnReset.style.display = 'none'
+    }
+}
+let fontSizeReset = () => {
+    let fontSize = getExtStyleInt(html, 'fontSize')
+    html.style.fontSize = defaultFontSize + 'px'
+    fontSizeResetButton()
+}
 btnIncrease.addEventListener('click', fontSizeIncrease)
 btnDecrease.addEventListener('click', fontSizeDecrease)
+btnReset.addEventListener('click', fontSizeReset)

@@ -243,6 +243,7 @@ select {
 	height: 30px;
 	font-size: 18px;
 	position: absolute;
+	top: 100px;
 }
 .font_size_change:hover {
 	background: rgba(159, 208, 247, 0.945);
@@ -251,12 +252,20 @@ select {
 	background: rgba(99, 178, 243, 0.815);
 }
 .font_size_increase {
-	top: 100px;
 	right: 100px;
 }
 .font_size_decrease {
-	top: 100px;
 	right: 68px;
+}
+.reset {
+	display: none;
+	right: 140px;
+}
+.reset_icon {
+	height: 22px;
+	width: 22px;
+	margin-top: 2px;
+	margin-right: 2px;
 }
 .zoom_icon {
 	height: 24px;
