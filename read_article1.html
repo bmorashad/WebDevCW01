@@ -6,18 +6,21 @@
 		<link rel="stylesheet" type="text/css" href="style/st1_pet_all.css">
 		<link rel="stylesheet" type="text/css" href="style/st1_pet_read.css">
 	
-		<script src="js/st1_pet_home.js"></script>
-		<script src="js/st1_pet_all.js"></script>
+		
 
         <title>PetCat-Read Articles</title>
         <style>
             .container {
+                display: flex;
+                justify-content: center;
                 margin-bottom: 130px;
+                margin-top: 70px;
                 height: 100%;
             }
             article {
                 border: 1px solid rgb(173, 173, 173);
                 padding: 50px;
+                width: 900px;
             }
             img {
                 width: 100%;
@@ -26,8 +29,10 @@
    
     </head>
     <body>
+        <button class="font_size_increase font_size_change"><img src="img/icon/zoom_in.png" class="zoom_icon"></button>
+        <button class="font_size_decrease font_size_change"><img src="img/icon/zoom_out.png" class="zoom_icon"></button>
         <div class="temp_bar"></div>
-        <div class="container mL">
+        <div class="container">
             <article>
                 <h3>3 Most Intelligent Cats To Adopt If You Want A Clever Companion</h3>
                 <p class="authour">
@@ -97,5 +102,7 @@
                 <span class="footer_sep">|</span> Westminster-ID: <span class="footer_des">w1761930</span>
             </p>
         </footer>
+        <script src="js/st1_pet_home.js"></script>
+		<script src="js/st1_pet_all.js"></script>
     </body>
 </html>

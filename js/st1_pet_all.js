@@ -1,34 +1,45 @@
 let html = document.querySelector('html')
-let itmCard = document.querySelectorAll('.item')
-let qntInput = document.querySelectorAll('.qnt_input')
-let qntBtn = document.querySelectorAll('.counter')
 let btnIncrease = document.querySelector('.font_size_increase')
 let btnDecrease = document.querySelector('.font_size_decrease')
 
+let getExtStyleInt = (element, attr) => {
+    let style = getComputedStyle(element) 
+    let attributeInt = parseInt(style[attr].slice(0, style[attr].length-2))
+    return attributeInt
+}
 let fontSizeIncrease = () => {
-    let htmlStyle = getComputedStyle(html)
-    
-    let fontSize = htmlStyle.fontSize
-    let fontSizeInt = parseInt(fontSize.slice(0, fontSize.length-2))
-    if (fontSizeInt < 20) {
-        fontSizeInt = fontSizeInt + 1
-        const newFontSize = fontSizeInt + 'px'
+    // let htmlStyle = getComputedStyle(html)
+    // let fontSize = htmlStyle.fontSize
+    let fontSize = getExtStyleInt(html, 'fontSize')
+    if (fontSize < 20) {
+        fontSize = fontSize + 1
+        const newFontSize = fontSize + 'px'
         html.style.fontSize = newFontSize  
+        if(document.querySelectorAll('.item_title_p').length) {
+            setSameHeightElement()   
+        }
     }
-    setSameHeightElement()   
+    // banner size responsiveness
+    // if (fontSize > 11 && fontSize < 20) {
+    //     const banner = document.querySelector('.banner_container')
+    //     const bannerHeight = getExtStyleInt(banner, 'height')
+    //     const newBannerHeight = (bannerHeight + 50) + 'px'
+    //     banner.style.height = newBannerHeight
+    // }
+
 }
 let fontSizeDecrease = () => {
-    let htmlStyle = getComputedStyle(html)
-    
-    let fontSize = htmlStyle.fontSize
-    let fontSizeInt = parseInt(fontSize.slice(0, fontSize.length-2))
-
-    if (fontSizeInt > 5) {
-        fontSizeInt = fontSizeInt - 1
-        const newFontSize = fontSizeInt + 'px'
+    let fontSize = getExtStyleInt(html, 'fontSize')
+    if (fontSize > 5) {
+        fontSize = fontSize - 1
+        const newFontSize = fontSize + 'px'
         html.style.fontSize = newFontSize  
-        setSameHeightElement()   
+        if(document.querySelectorAll('.item_title_p').length) {
+            setSameHeightElement()   
+        }    
     }
+    // let fontSize = htmlStyle.fontSize
+    // let htmlStyle = getComputedStyle(html)
     // console.log(itmCardStyle.width)
     // let cardStylesArr = []
     // itmCard.forEach(card => {

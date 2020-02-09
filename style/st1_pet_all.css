@@ -184,9 +184,9 @@ a:hover {
 	margin-left: 130px;
 	margin-right: 130px;
 }
-.mL {
+/* .mL {
 	margin: 70px 250px;
-}
+} */
 hr {
 	border: 0.5px solid silver;
 	margin-top: 40px;
@@ -232,12 +232,23 @@ select {
 }
 
 /* Font Size Change */
-.font_size_increase, .font_size_decrease {
+.font_size_change {
+	background: rgba(159, 207, 247, 0.612);
+	border: 1px solid rgb(184, 184, 184);
 	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	width: 30px;
 	height: 30px;
 	font-size: 18px;
 	position: absolute;
+}
+.font_size_change:hover {
+	background: rgba(159, 208, 247, 0.945);
+}
+.font_size_change:active {
+	background: rgba(99, 178, 243, 0.815);
 }
 .font_size_increase {
 	top: 100px;
@@ -245,8 +256,14 @@ select {
 }
 .font_size_decrease {
 	top: 100px;
-	right: 70px;
+	right: 68px;
 }
+.zoom_icon {
+	height: 24px;
+	width: 24px;
+}
+
+
 /* Responsive */
 @media only screen and (max-width: 988px) {
     html {
