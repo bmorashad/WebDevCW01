@@ -396,11 +396,20 @@ let setSameHeightElement = () => {
         }
         })
 }
-
-//Experiment
-let cartIconDisappear = () => {
-    let cart = document.querySelector('#cart')
-    let cartBtn = document.querySelector('.cart_btn')
+let showCart = () => {
+    document.querySelector('.modal').style.visibility = 'visible'
+    clear.style.display='block'   
+}
+let hideCart = () => {
+    if (event.target == document.querySelector('.modal') || event.target == document.querySelector('.close_cart')){
+        document.querySelector('.modal').style.visibility = 'hidden'
+        clear.style.display='none' //Fixes the delay to disappear
+    }
+}
+//Experiment (Failed & doesn't need anymore anyway)
+// let cartIconDisappear = () => {
+    // let cart = document.querySelector('#cart')
+    // let cartBtn = document.querySelector('.cart_btn')
     // let cartElementPosition = html.offsetHeight - cart.offsetHeight
     // console.log(cartElementPosition)
     // console.log(html.scrollTop)
@@ -410,8 +419,8 @@ let cartIconDisappear = () => {
     // if (window.scrollY > (cart.offsetTop - cart.offsetHeight)) {
     //     alert("You've scrolled past the second div");
     // }
-}
-window.addEventListener('scroll', cartIconDisappear)
+// }
+// window.addEventListener('scroll', cartIconDisappear)
 // setSameHeightElement()
 // Imediate Exucution
 changeItems()
@@ -421,16 +430,8 @@ clear.addEventListener('click', clearCart)
 window.addEventListener('resize', setSameHeightElement)
 
 //Tst Success
-cartBtn.addEventListener('click', function(){
-    document.querySelector('.modal').style.visibility = 'visible'
-    clear.style.display='block'
-})
-document.addEventListener('click', function(){
-    if (event.target == document.querySelector('.modal') || event.target == document.querySelector('.close_cart')){
-        document.querySelector('.modal').style.visibility = 'hidden'
-        clear.style.display='none' //Fixes the delay to disappear
-    }
-})
+cartBtn.addEventListener('click', showCart)
+document.addEventListener('click', hideCart)
     /* let test = () => {
         let x = document.querySelector('#som')
         console.log(x)

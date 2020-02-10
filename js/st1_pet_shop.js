@@ -1,6 +1,7 @@
 // Global Variables & Adding Event Listeners
 let category = document.querySelector('#category')
 let clear = document.querySelector('.clear_cart')
+let cartBtn = document.querySelector('.cart_btn')
 
 // Item Database
 let food = [
@@ -403,22 +404,16 @@ let setSameHeightElement = () => {
         }
         })
 }
-
-//Experiment
-let cartIconDisappear = () => {
-    let cart = document.querySelector('#cart')
-    let cartBtn = document.querySelector('.cart_btn')
-    // let cartElementPosition = html.offsetHeight - cart.offsetHeight
-    // console.log(cartElementPosition)
-    // console.log(html.scrollTop)
-    // console.log(cart.offsetTop)
-    // console.log(window.pageYOffset)
-
-    // if (window.scrollY > (cart.offsetTop - cart.offsetHeight)) {
-    //     alert("You've scrolled past the second div");
-    // }
+let showCart = () => {
+    document.querySelector('.modal').style.visibility = 'visible'
+    clear.style.display='block'   
 }
-window.addEventListener('scroll', cartIconDisappear)
+let hideCart = () => {
+    if (event.target == document.querySelector('.modal') || event.target == document.querySelector('.close_cart')){
+        document.querySelector('.modal').style.visibility = 'hidden'
+        clear.style.display='none' //Fixes the delay to disappear
+    }
+}
 // setSameHeightElement()
 // Imediate Exucution
 changeItems()
@@ -426,7 +421,8 @@ changeItems()
 category.addEventListener('change', changeItems)
 clear.addEventListener('click', clearCart)
 window.addEventListener('resize', setSameHeightElement)
-
+cartBtn.addEventListener('click', showCart)
+document.addEventListener('click', hideCart)
     /* let test = () => {
         let x = document.querySelector('#som')
         console.log(x)
