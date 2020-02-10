@@ -1,6 +1,8 @@
 // Global Variables & Adding Event Listeners
 let category = document.querySelector('#category')
 let clear = document.querySelector('.clear_cart')
+//Tst
+let cartBtn = document.querySelector('.cart_btn')
 
 // Item Database
 let food = [
@@ -117,7 +119,7 @@ let addToCart = () => {
         removeItmInCart.forEach(btn => btn.addEventListener('click', removeItm)) // added
         setTotalPrice()
     }
-  
+
     // Object.values(itmDet).forEach(val => {
     //     let span = document.createElement('span');
     //     span.className = 'td'
@@ -150,13 +152,13 @@ let addToCart = () => {
     // let itmRmHtml = '<span class="td"><div class="cart_remove">X</div></span>'
 
         /* <span class="td">1</span>
-     <span class="td"><img src="img/shop/food/food101.jpg" class="cart_img"></span>
-     <span class="td">Cat Whisks</span>
-     <span class="td">2</span>
-     <span class="td"><span class="mono">rs</span></span>
-     <span class="td"><span class="cart_price pink mono">2000</span></span>
-     <span class="td cart_total"><span class="cart_price pink mono">101500</span></span>
-     <span class=    itmDet.forEach(el => console.log(el))
+    <span class="td"><img src="img/shop/food/food101.jpg" class="cart_img"></span>
+    <span class="td">Cat Whisks</span>
+    <span class="td">2</span>
+    <span class="td"><span class="mono">rs</span></span>
+    <span class="td"><span class="cart_price pink mono">2000</span></span>
+    <span class="td cart_total"><span class="cart_price pink mono">101500</span></span>
+    <span class=    itmDet.forEach(el => console.log(el))
 "td cart_total"><span class="pink">TOTAL</span></span> */
 
 
@@ -393,7 +395,23 @@ let setSameHeightElement = () => {
             name.style.height = style.height
         }
         })
-    }
+}
+
+//Experiment
+let cartIconDisappear = () => {
+    let cart = document.querySelector('#cart')
+    let cartBtn = document.querySelector('.cart_btn')
+    // let cartElementPosition = html.offsetHeight - cart.offsetHeight
+    // console.log(cartElementPosition)
+    // console.log(html.scrollTop)
+    // console.log(cart.offsetTop)
+    // console.log(window.pageYOffset)
+
+    // if (window.scrollY > (cart.offsetTop - cart.offsetHeight)) {
+    //     alert("You've scrolled past the second div");
+    // }
+}
+window.addEventListener('scroll', cartIconDisappear)
 // setSameHeightElement()
 // Imediate Exucution
 changeItems()
@@ -401,8 +419,20 @@ changeItems()
 category.addEventListener('change', changeItems)
 clear.addEventListener('click', clearCart)
 window.addEventListener('resize', setSameHeightElement)
-     /* let test = () => {
-         let x = document.querySelector('#som')
-         console.log(x)
-         x.value = 2
-     } */
+
+//Tst
+cartBtn.addEventListener('click', function(){
+    document.querySelector('.modal').style.visibility = 'visible'
+    clear.style.display='block'
+})
+document.addEventListener('click', function(){
+    if (event.target == document.querySelector('.modal')){
+        document.querySelector('.modal').style.visibility = 'hidden'
+        clear.style.display='none'
+    }
+})
+    /* let test = () => {
+        let x = document.querySelector('#som')
+        console.log(x)
+        x.value = 2
+    } */  

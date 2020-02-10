@@ -65,7 +65,7 @@ let fontSizeDecrease = () => {
     //         // qntBtn[i].style.fontSize = '1.6rem'    
     //     }
     // }
- 
+
     // console.log(newStyleWidthArr)
     // if (fontSizeInt < 8) {
     //     itmCardWidthInt = itmCardWidthInt - 30
@@ -85,6 +85,9 @@ let fontSizeReset = () => {
     let fontSize = getExtStyleInt(html, 'fontSize')
     html.style.fontSize = defaultFontSize + 'px'
     fontSizeResetButton()
+    if(document.querySelectorAll('.item_title_p').length) {
+        setSameHeightElement()   
+    }
 }
 btnIncrease.addEventListener('click', fontSizeIncrease)
 btnDecrease.addEventListener('click', fontSizeDecrease)
