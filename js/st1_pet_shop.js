@@ -86,19 +86,22 @@ let addToCart = () => {
 
     let btn = event.target
     let itm = btn.parentElement.parentElement
-
+    let setQnt = `<button class="cart_counter increment">+</button>
+    <input type="text" value="${parseInt(itm.querySelector('input').value)}" class="cart_qnt_input" readonly>
+    <button class="cart_counter decrement">-</button>`
+    let qnt = parseInt(itm.querySelector('input').value)
     const itmDet = {
             itmNo: document.querySelector('.cart_id_col').querySelectorAll('.td').length + 1,
             itmImg: `<img src='${itm.querySelector('img').src}' class="cart_img">`,
             itmDes: `<span class="start">${itm.querySelector('.item_title_p').innerHTML}</span>`,
             // itmCur: 'rs',
             itmPrice: `<span class="cart_price pink mono">${parseInt(itm.querySelector('.itm_price').innerHTML)}</span>`,
-            itmQnt: `x${parseInt(itm.querySelector('input').value)}`,
+            itmQnt: setQnt,//`${parseInt(itm.querySelector('input').value)}`,
             itmRm: `<div class="cart_remove">X<span class="store_row_no">${document.querySelector('.cart_id_col').querySelectorAll('.td').length}</span></div>`
         }
     const itmDetArr = Object.values(itmDet)
     const cartCols = document.querySelectorAll('.cart_table_col')
-    let inCart = checkCart(itmDet.itmDes, parseInt(itmDet.itmQnt.slice(1)))
+    let inCart = checkCart(itmDet.itmDes, qnt)
     if (!inCart) {
         for(let i = 0; i < cartCols.length; i++) {
             const span = document.createElement('span');
@@ -117,7 +120,19 @@ let addToCart = () => {
         const removeItmInCart = document.querySelectorAll('.cart_remove')
         removeItmInCart.forEach(btn => btn.addEventListener('click', removeItm)) // added
         setTotalPrice()
+        let qntIncrease = document.querySelectorAll('.cart_counter.increment')[document.querySelector('.cart_id_col').querySelectorAll('.td').length-1]
+        let qntDecrease = document.querySelectorAll('.cart_counter.decrement')[document.querySelector('.cart_id_col').querySelectorAll('.td').length-1]
+        // console.log(document.querySelectorAll('.cart_counter.increment'))
+        qntIncrease.addEventListener('click', function(){
+            qntIncrement()
+            setTotalPrice()
+        })
+        qntDecrease.addEventListener('click', function(){
+            qntDecrement()
+            setTotalPrice()
+        })
     }
+    
 
     // Object.values(itmDet).forEach(val => {
     //     let span = document.createElement('span');
@@ -169,13 +184,13 @@ let addToCart = () => {
 
 let checkCart = (itmDes, itmQnt) => {
     const itmLst = document.querySelector('.itm_des_col').querySelectorAll('.td')
-    const qntLst = document.querySelector('.cart_qnt_col').querySelectorAll('.td')
+    const qntLst = document.querySelector('.cart_qnt_col').querySelectorAll('.cart_qnt_input')
     let inCart
     for(let i = 0; i < itmLst.length; i++) {
         if (itmLst[i].innerHTML == itmDes) {
             let qnt = qntLst[i]
-            if (parseInt(qnt.innerHTML) !== itmQnt) {
-                qnt.innerHTML = 'x' + itmQnt
+            if (parseInt(qnt.value) !== itmQnt) {
+                qnt.value = itmQnt
                 setTotalPrice()
             } 
             inCart = true
@@ -190,9 +205,9 @@ let setTotalPrice = () => {
     let totalPrice = 0
     const totalPriceClass = document.querySelector('.cart_price_total')
     const priceLst = document.querySelector('.cart_price_col').getElementsByClassName('cart_price')
-    const qntLst = document.querySelector('.cart_qnt_col').querySelectorAll('.td')
+    const qntLst = document.querySelector('.cart_qnt_col').querySelectorAll('.cart_qnt_input')
     for(let i = 0; i < priceLst.length; i++) {
-        totalPrice += parseInt(priceLst[i].innerHTML) * parseInt(qntLst[i].innerHTML.slice(1))
+        totalPrice += parseInt(priceLst[i].innerHTML) * parseInt(qntLst[i].value)
     }
     if(totalPriceClass) {
         totalPriceClass.innerHTML = totalPrice
