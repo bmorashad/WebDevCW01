@@ -1,6 +1,8 @@
 // Global Variables & Adding Event Listeners
 let category = document.querySelector('#category')
 let clear = document.querySelector('.clear_cart')
+//Tst
+let cartBtn = document.querySelector('.cart_btn')
 
 // Item Database
 let food = [
@@ -370,15 +372,6 @@ let removeItm = () => {
     if (document.querySelectorAll('.td').length != 0){
         setTotalPrice()
     }
-    itmNoReset()
-}
-// Working on cartNo when an item is removed
-let itmNoReset = () => {
-    const itmRows = document.querySelector('.cart_id_col').querySelectorAll('.td')
-    for(let i = 0; i<itmRows.length; i++) {
-        itmRows[i].innerHTML = i + 1
-        document.querySelectorAll('.store_row_no')[i].innerHTML = i
-    }
 }
 
 let setSameHeightElement = () => {
@@ -427,6 +420,17 @@ category.addEventListener('change', changeItems)
 clear.addEventListener('click', clearCart)
 window.addEventListener('resize', setSameHeightElement)
 
+//Tst
+cartBtn.addEventListener('click', function(){
+    document.querySelector('.modal').style.visibility = 'visible'
+    clear.style.display='block'
+})
+document.addEventListener('click', function(){
+    if (event.target == document.querySelector('.modal')){
+        document.querySelector('.modal').style.visibility = 'hidden'
+        clear.style.display='none'
+    }
+})
     /* let test = () => {
         let x = document.querySelector('#som')
         console.log(x)
