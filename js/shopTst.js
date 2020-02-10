@@ -1,7 +1,7 @@
 // Global Variables & Adding Event Listeners
 let category = document.querySelector('#category')
 let clear = document.querySelector('.clear_cart')
-//Tst
+//Tst Success
 let cartBtn = document.querySelector('.cart_btn')
 
 // Item Database
@@ -420,15 +420,15 @@ category.addEventListener('change', changeItems)
 clear.addEventListener('click', clearCart)
 window.addEventListener('resize', setSameHeightElement)
 
-//Tst
+//Tst Success
 cartBtn.addEventListener('click', function(){
     document.querySelector('.modal').style.visibility = 'visible'
     clear.style.display='block'
 })
 document.addEventListener('click', function(){
-    if (event.target == document.querySelector('.modal')){
+    if (event.target == document.querySelector('.modal') || event.target == document.querySelector('.close_cart')){
         document.querySelector('.modal').style.visibility = 'hidden'
-        clear.style.display='none'
+        clear.style.display='none' //Fixes the delay to disappear
     }
 })
     /* let test = () => {
