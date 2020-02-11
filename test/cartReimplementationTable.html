@@ -70,7 +70,7 @@
         }
         .numbers {
             text-align: right;
-            padding-right: 15px;
+            /* padding-right: 15px; */
             font-family: 'IBM Plex Mono';
         }
         th,td {
@@ -140,6 +140,7 @@
             color: rgb(255, 80, 60);
         }
         td:last-child {
+            width: 15%;
             font-weight: 700;
             font-size: 2.4rem;
         }
@@ -152,6 +153,16 @@
         }
         td {
             font-weight: 500;
+        }
+        th:nth-child(3) {
+            width: 25%;
+        }
+        th:nth-child(2) {
+            width: 10%;
+        }
+        th:nth-child(4) {
+            width: 25%;
+            padding-right: 25px;
         }
         </style>
     </head>
@@ -169,7 +180,7 @@
                         <th>QNT</th>
                         <th></th>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <td class="id">1</td>
                         <td><img src="img/shop/food/food101.jpg" class="cart_img"></td>
                         <td style="max-width: 50px; white-space: nowrap; overflow: hidden; text-align: left;">Bergan Turaboscratcher Cat Toy (ASSORTED)</td>
@@ -203,7 +214,7 @@
                         <th class="numbers" colspan="3">1400.00</th>
                         <th class="numbers" colspan="2"></th>
 
-                    </tr>
+                    </tr> -->
                 </table>
                 <button class="clear_cart">CLEAR CART</button>
             </div>
