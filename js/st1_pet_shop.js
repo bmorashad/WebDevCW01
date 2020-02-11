@@ -3,6 +3,12 @@ let category = document.querySelector('#category')
 let clear = document.querySelector('.clear_cart')
 let cartBtn = document.querySelector('.cart_btn')
 
+//Tst
+const firstName = document.querySelector('#firstname')
+const email = document.querySelector('#email')
+const phone = document.querySelector('#phone')
+const address = document.querySelector('#address')
+
 // Item Database
 let food = [
     {
@@ -429,6 +435,121 @@ let hideCart = () => {
         clear.style.display='none' //Fixes the delay to disappear
     }
 }
+
+//Tst
+function formFeedback(field) {
+    const fieldName = field.name
+    emptyFieldFeedback(field)
+    switch(fieldName) {
+        case 'phone':
+            if (!isNumbers(field)) {
+                document.querySelector('.not_allowed_number').style.display = 'block'
+                field.style.borderColor = 'red'
+            } else {
+                field.value = field.value.trim()
+                document.querySelector('.not_allowed_number').style.display = 'none'
+                field.borderColor = 'silver'         
+            }
+            break
+        case 'email':
+            if (!isEmail(field)) {
+                document.querySelector('.wrong_format_email').style.display = 'block'
+                field.style.borderColor = 'red'   
+            } else {
+                field.value = field.value.trim()
+                document.querySelector('.wrong_format_email').style.display = 'none'
+                field.borderColor = 'silver'
+            }
+            break
+    }
+}
+function emptyFieldFeedback(field) {
+    const fieldValue = field.value.trim()
+    if (!fieldValue.length) {
+        field.nextElementSibling.style.display = "block"
+        field.style.borderColor = 'red'
+    } else {
+        field.nextElementSibling.style.display = "none"
+        field.style.borderColor = 'silver'
+
+    }
+}
+function isNumbers(field) {
+    const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    const fieldValue = field.value.trim()
+    let valid = true
+    for(i=0; i<fieldValue.length; i++) {
+        if (!valid) {
+            break
+        }
+        for(j=0; j<numbers.length; j++) {
+            if (fieldValue[i] == numbers[j]) {
+                valid = true
+                break
+            }
+            valid = false
+        }
+    }
+    return valid
+}
+
+function isEmail(field) {
+    const emailCharacter = '@'
+    const fieldValue = field.value.trim()
+    let valid = true
+    for(i=0; i<fieldValue.length; i++) {
+        if (fieldValue[i] == ' ') {
+            valid = false
+            break
+        } else {
+            valid = true
+        }
+    }
+    if (valid) {
+        for(i=0; i<fieldValue.length; i++) { 
+            if (fieldValue[i] == emailCharacter) {
+                if (i == 0) {
+                    valid = false
+                }
+                else if (fieldValue.slice(i).length == 1) {
+                    valid = false
+                } else {
+                    valid = true
+                }
+                break
+            } else {
+                valid = false
+            }
+        }
+    }
+    return valid
+}
+
+firstName.addEventListener('focusout', function() {
+    formFeedback(firstName)
+})
+email.addEventListener('focusout', function() {
+    formFeedback(email)
+})
+email.addEventListener('focus', function(){emptyFieldFeedback(firstName)})
+
+phone.addEventListener('focusout', function() {
+    formFeedback(phone)
+})
+phone.addEventListener('focus', function(){
+    emptyFieldFeedback(firstName)
+    emptyFieldFeedback(email)
+})
+
+address.addEventListener('focusout', function() {
+    formFeedback(address)
+})
+address.addEventListener('focus', function(){
+    emptyFieldFeedback(firstName)
+    emptyFieldFeedback(email)
+    emptyFieldFeedback(phone)
+})
+
 // setSameHeightElement()
 // Imediate Exucution
 changeItems()
