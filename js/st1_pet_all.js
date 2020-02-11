@@ -33,7 +33,7 @@ let fontSizeIncrease = () => {
 let fontSizeDecrease = () => {
     let fontSize = getExtStyleInt(html, 'fontSize')
     if (fontSize > 5) {
-        fontSize = fontSize - 1
+        fontSize = fontSize - 0.5
         const newFontSize = fontSize + 'px'
         html.style.fontSize = newFontSize  
         fontSizeResetButton()

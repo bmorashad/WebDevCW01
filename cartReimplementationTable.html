@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<link rel="icon" href="img/icon/favicon.png">
+		<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:300,400,500,600,700|IBM+Plex+Sans:200,300,400,500,600,700|Roboto+Mono:400,500,700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="style/st1_pet_all.css">
+		<link rel="stylesheet" type="text/css" href="style/st1_pet_shop.css">
+        <title>PetCat-Shop</title>
+        <style>
+            .modal {
+                visibility: visible ;
+                position: fixed;
+                top: 0;
+                z-index: 1;
+                left: 0;
+                display: flex;
+                flex-direction: column;
+                /* justify-content: center;
+                align-items: center; */
+                width: 100%;
+                height: 100%;
+                background: rgba(94, 94, 94, 0.582);
+                
+        }
+            .cart_container {
+                background: #fff;
+                padding: 35px 40PX;
+                /* padding-bottom: 0; */
+                width: 55%;
+                margin:auto;
+                overflow: auto;
+        }
+            .close_cart {
+                float: right;
+                margin-right: -30px;
+                margin-top: -26px;
+                background: transparent;
+                border: 0;
+                box-shadow: 0;
+                /* font-family: "clear sans"; */
+                font-size: 2.2rem;
+                color: rgba(20, 65, 163, 0.664);
+                /* font-weight: 700; */
+                /* margin:auto; */
+                display: flex;
+                justify-content: center;
+                align-items: center; 
+                width: 30px;
+                height: 30px;
+                /* position: absolute; */
+                /* top: 25%; */
+                /* right: 20.5%; */
+        }
+        h4 {
+            color: #2a48f3;
+        }
+        
+        table {
+            font-size: 1.6rem;
+            /* margin-bottom: 0; */
+            /* margin-top: 5px; */
+            border-collapse: collapse;
+        }
+        td {
+            text-align: center;
+            text-transform: capitalize;
+        }
+        td:first-child {
+            text-align: center;
+        }
+        .numbers {
+            text-align: right;
+            padding-right: 15px;
+            font-family: 'IBM Plex Mono';
+        }
+        th,td {
+            
+            border-bottom: 1px solid rgb(73, 73, 73);
+        }
+        .total th {
+            border-bottom: 0;
+            /* border-top: 1px solid rgb(121, 121, 121); */
+        }
+        th, td {
+            padding: 0px 5px;
+            height: 60px;
+
+        }
+       
+        /*Testing*/
+        .counter, .cart_counter {
+            float: left;
+            /* Firefox alignment fix */
+            display: flex; 
+            align-items: center;
+            justify-content: center;
+            /* Fix End */
+            box-sizing: border-box;
+            height: 18px;
+            width: 18px;
+            border: 0.1px solid #6e6e6e;
+            background: #e3e3e3;
+            color: #000000;
+            font-size: 16px;
+            margin: 0;
+        }
+        .counter:hover, .cart_counter:hover {
+            background: #c9c9c9;
+        }
+        .counter:active, .cart_counter:active {
+            background: #b0b0b0;
+        }
+        .cart_counter {
+            height: 22px;
+            width: 22px;
+            font-size: 1.8rem;
+        }
+        .qnt_input, .cart_qnt_input {
+            font-size: 12px; 
+            float: left;
+            border: 0.1px solid #333;
+            border-left: 0px; 
+            border-right: 0px; 
+            padding: 0; 
+            margin: 0; 
+            text-align: center; 
+            width: 18px !important; 
+            height: 18px !important; 
+            box-sizing: border-box;
+        }
+        .cart_qnt_input {
+            font-size: 1.4rem;
+            height: 22px !important;
+            width: 22px !important;
+        }
+        tr:first-child {
+            color: #3467b3;
+        }
+        tr:last-child {
+            color: rgb(255, 80, 60);
+        }
+        td:last-child {
+            font-weight: 700;
+            font-size: 2.4rem;
+        }
+        .increaser {
+            display: flex;
+            justify-content: center;
+        }
+        .id {
+            text-align: center;
+        }
+        td {
+            font-weight: 500;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="modal">
+            <div class="cart_container">
+                <button class="close_cart">&#10006;</button>  
+                <p class="p1 p1_black medium cart_title">YOUR CART</p>
+                <table width="100%">
+                    <tr>
+                        <th class="id">#</th>
+                        <th>ITEM</th>
+                        <th>DESCRIPTION</th>
+                        <th class="numbers">PRICE(RS)</th>
+                        <th>QNT</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td class="id">1</td>
+                        <td><img src="img/shop/food/food101.jpg" class="cart_img"></td>
+                        <td style="max-width: 50px; white-space: nowrap; overflow: hidden; text-align: left;">Bergan Turaboscratcher Cat Toy (ASSORTED)</td>
+                        <td class="numbers">4500.00</td>
+                        <td class="">
+                            <div class="increaser">
+                                <button class="cart_counter increment">+</button>
+                                <input type="text" value="1" class="cart_qnt_input" readonly>
+                                <button class="cart_counter decrement">-</button>
+                            </div>
+                        </td>
+                        <td class="">X</td>
+                    </tr>
+                    <tr>
+                        <td class="id">2</td>
+                        <td><img src="img/shop/food/food201.jpg" class="cart_img"></td>
+                        <td style="max-width: 50px; white-space: nowrap; overflow: hidden; text-align: left;">Hartz Just For Cats Cat Toy</td>
+                        <td class="numbers">600.00</td>
+                        <td class="">
+                            <div class="increaser">
+                                <button class="cart_counter increment">+</button>
+                                <input type="text" value="1" class="cart_qnt_input" readonly>
+                                <button class="cart_counter decrement">-</button>
+                            </div>
+                        </td>
+                        <td class="">X</td>
+
+                    </tr>
+                    <tr class="total">
+                        <th>TOTAL</th>
+                        <th class="numbers" colspan="3">1400.00</th>
+                        <th class="numbers" colspan="2"></th>
+
+                    </tr>
+                </table>
+                <button class="clear_cart">CLEAR CART</button>
+            </div>
+        </div>
+    </body>
+</html>
