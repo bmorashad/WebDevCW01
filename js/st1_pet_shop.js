@@ -440,27 +440,36 @@ let hideCart = () => {
 function formFeedback(field) {
     const fieldName = field.name
     emptyFieldFeedback(field)
-    switch(fieldName) {
-        case 'phone':
-            if (!isNumbers(field)) {
-                document.querySelector('.not_allowed_number').style.display = 'block'
-                field.style.borderColor = 'red'
-            } else {
-                field.value = field.value.trim()
-                document.querySelector('.not_allowed_number').style.display = 'none'
-                field.borderColor = 'silver'         
-            }
-            break
-        case 'email':
-            if (!isEmail(field)) {
-                document.querySelector('.wrong_format_email').style.display = 'block'
-                field.style.borderColor = 'red'   
-            } else {
-                field.value = field.value.trim()
-                document.querySelector('.wrong_format_email').style.display = 'none'
-                field.borderColor = 'silver'
-            }
-            break
+    if (!emptyFieldFeedback(field)) {
+        switch(fieldName) {
+            case 'phone':
+                if (!isNumbers(field)) {
+                    document.querySelector('.wrong_format_tel').style.display = 'none'
+                    document.querySelector('.not_allowed_number').style.display = 'block'
+                    field.style.borderColor = 'red'
+                } else if (!isTel(field)) {
+                    document.querySelector('.not_allowed_number').style.display = 'none'
+                    document.querySelector('.wrong_format_tel').style.display = 'block'
+                    field.style.borderColor = 'red'
+                } 
+                else {
+                    field.value = field.value.trim()
+                    document.querySelector('.wrong_format_tel').style.display = 'none'
+                    document.querySelector('.not_allowed_number').style.display = 'none'
+                    field.borderColor = 'silver'         
+                }
+                break
+            case 'email':
+                if (!isEmail(field)) {
+                    document.querySelector('.wrong_format_email').style.display = 'block'
+                    field.style.borderColor = 'red'   
+                } else {
+                    field.value = field.value.trim()
+                    document.querySelector('.wrong_format_email').style.display = 'none'
+                    field.borderColor = 'silver'
+                }
+                break
+        }
     }
 }
 function emptyFieldFeedback(field) {
@@ -468,43 +477,62 @@ function emptyFieldFeedback(field) {
     if (!fieldValue.length) {
         field.nextElementSibling.style.display = "block"
         field.style.borderColor = 'red'
+        return true
     } else {
         field.nextElementSibling.style.display = "none"
         field.style.borderColor = 'silver'
-
+        return false
     }
 }
 function isNumbers(field) {
     const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     const fieldValue = field.value.trim()
-    let valid = true
-    for(i=0; i<fieldValue.length; i++) {
-        if (!valid) {
-            break
-        }
-        for(j=0; j<numbers.length; j++) {
-            if (fieldValue[i] == numbers[j]) {
-                valid = true
+    let valid = isNoSpace(fieldValue)
+    if(valid) {
+        for(i=0; i<fieldValue.length; i++) {
+            if (!valid) {
                 break
             }
-            valid = false
+            for(j=0; j<numbers.length; j++) {
+                if (fieldValue[i] == numbers[j]) {
+                    valid = true
+                    break
+                }
+                valid = false
+            }
         }
     }
     return valid
+    
 }
-
-function isEmail(field) {
-    const emailCharacter = '@'
-    const fieldValue = field.value.trim()
-    let valid = true
-    for(i=0; i<fieldValue.length; i++) {
-        if (fieldValue[i] == ' ') {
+function isTel(field) {
+    let fieldValue = field.value.trim()
+    if(fieldValue.length == 9) {
+        fieldValue = 0 + fieldValue
+        valid = true
+    } else if (fieldValue.length == 10 && parseInt(fieldValue[0]) == 0) {
+        valid = true
+    } else {
+        valid = false
+    }
+    return valid
+}
+function isNoSpace(value) {
+    for(i=0; i<value.length; i++) {
+        if (value[i] == ' ') {
             valid = false
             break
         } else {
             valid = true
         }
     }
+    return valid
+}
+function isEmail(field) {
+    const emailCharacter = '@'
+    const fieldValue = field.value.trim()
+    let valid = isNoSpace(fieldValue)
+    
     if (valid) {
         for(i=0; i<fieldValue.length; i++) { 
             if (fieldValue[i] == emailCharacter) {
