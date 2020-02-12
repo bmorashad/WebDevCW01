@@ -553,31 +553,58 @@ function isEmail(field) {
     return valid
 }
 
+// let sibilings = []
+// function getPreviousClasses(ele, className, arr) {
+//     // const parent = ele.parentElement.firstElementChild.previousSibling
+//     // const parent = ele.parentElement 
+//     if (!arr2) {
+//         let arr2 = []
+//     }    
+//     if (ele.previousElementSibling) {
+//         // console.log(ele.previousElementSibling.className)
+//         if (ele.previousElementSibling.classList.contains(className)) {
+//             console.log(ele.previousElementSibling)
+//             // arr.push(ele.previousElementSibling)
+//         }
+//         getPreviousClasses(ele.previousElementSibling, className, arr)
+//     }
+// }
+// getPreviousClasses(address, 'required', sibilings)
+// Add Event Listeners Tst
 firstName.addEventListener('focusout', function() {
     formFeedback(firstName)
 })
 email.addEventListener('focusout', function() {
     formFeedback(email)
 })
-email.addEventListener('focus', function(){emptyFieldFeedback(firstName)})
+// email.addEventListener('focus', function(){emptyFieldFeedback(firstName)})
 
 phone.addEventListener('focusout', function() {
     formFeedback(phone)
 })
-phone.addEventListener('focus', function(){
-    emptyFieldFeedback(firstName)
-    emptyFieldFeedback(email)
-})
+// phone.addEventListener('focus', function(){
+//     emptyFieldFeedback(firstName)
+//     emptyFieldFeedback(email)
+// })
 
 address.addEventListener('focusout', function() {
     formFeedback(address)
 })
-address.addEventListener('focus', function(){
-    emptyFieldFeedback(firstName)
-    emptyFieldFeedback(email)
-    emptyFieldFeedback(phone)
-})
+// address.addEventListener('focus', function(){
+//     emptyFieldFeedback(firstName)
+//     emptyFieldFeedback(email)
+//     emptyFieldFeedback(phone)
+// })
 
+function requiredFieldOnSkip() {
+    const requiredFields = document.querySelectorAll('.required')
+    for(let i = requiredFields.length-1; i>0; i--) {
+        for(let j = i-1; j>=0; j--) {
+            requiredFields[i].addEventListener('focus', function(){emptyFieldFeedback(requiredFields[j])})
+        }
+    } 
+}
+requiredFieldOnSkip()
 // setSameHeightElement()
 // Imediate Exucution
 changeItems()
