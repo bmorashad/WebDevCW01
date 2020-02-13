@@ -216,6 +216,7 @@ hr {
 	color: #222;
 	font-weight: 600;
 	display: block;
+	/* width: 23rem; */
 	padding-bottom: 8px;
 	padding-top: 15px;
 }

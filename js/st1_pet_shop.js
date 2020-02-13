@@ -412,7 +412,7 @@ let setSameHeightElement = () => {
     // Testing
     let index = 1
     for(let i = 0; i < itmNames.length; i++) {
-        if (i < itmNames.length-1) {
+        if (i < itmNames.length) { //Changed this at IIT
             if (itmNames[i].innerHTML.length > itmNames[index].innerHTML.length) {
                     index = i
             }
@@ -436,7 +436,7 @@ let hideCart = () => {
     }
 }
 
-//Tst
+//Tst Success
 function formFeedback(field) {
     const fieldName = field.name
     emptyFieldFeedback(field)
@@ -553,49 +553,6 @@ function isEmail(field) {
     return valid
 }
 
-// let sibilings = []
-// function getPreviousClasses(ele, className, arr) {
-//     // const parent = ele.parentElement.firstElementChild.previousSibling
-//     // const parent = ele.parentElement 
-//     if (!arr2) {
-//         let arr2 = []
-//     }    
-//     if (ele.previousElementSibling) {
-//         // console.log(ele.previousElementSibling.className)
-//         if (ele.previousElementSibling.classList.contains(className)) {
-//             console.log(ele.previousElementSibling)
-//             // arr.push(ele.previousElementSibling)
-//         }
-//         getPreviousClasses(ele.previousElementSibling, className, arr)
-//     }
-// }
-// getPreviousClasses(address, 'required', sibilings)
-// Add Event Listeners Tst
-firstName.addEventListener('focusout', function() {
-    formFeedback(firstName)
-})
-email.addEventListener('focusout', function() {
-    formFeedback(email)
-})
-// email.addEventListener('focus', function(){emptyFieldFeedback(firstName)})
-
-phone.addEventListener('focusout', function() {
-    formFeedback(phone)
-})
-// phone.addEventListener('focus', function(){
-//     emptyFieldFeedback(firstName)
-//     emptyFieldFeedback(email)
-// })
-
-address.addEventListener('focusout', function() {
-    formFeedback(address)
-})
-// address.addEventListener('focus', function(){
-//     emptyFieldFeedback(firstName)
-//     emptyFieldFeedback(email)
-//     emptyFieldFeedback(phone)
-// })
-
 function requiredFieldOnSkip() {
     const requiredFields = document.querySelectorAll('.required')
     for(let i = requiredFields.length-1; i>0; i--) {
@@ -604,8 +561,21 @@ function requiredFieldOnSkip() {
         }
     } 
 }
+// Add Event Listeners Tst Success
+firstName.addEventListener('focusout', function() {
+    formFeedback(firstName)
+})
+email.addEventListener('focusout', function() {
+    formFeedback(email)
+})
+phone.addEventListener('focusout', function() {
+    formFeedback(phone)
+})
+address.addEventListener('focusout', function() {
+    formFeedback(address)
+})
 requiredFieldOnSkip()
-// setSameHeightElement()
+
 // Imediate Exucution
 changeItems()
 // Adding Event Listeners

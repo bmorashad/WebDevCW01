@@ -36,19 +36,23 @@
                         <label for="firstname" class="order_lbl">Full Name:</label>
                         <input class="shop_form_txt required" id="firstname" name="firstname" type="text" placeholder="name">
                         <span class="validation required_name">This field is required*</span>
+                        
                         <label for="email" class="order_lbl">Email:</label>
                         <!-- here I changed the type to text since we were told not to use html validation -->
                         <input class="shop_form_txt required" id="email" name="email" type="text" placeholder="example@domain.com">
                         <span class="validation required_email">This field is required*</span>
                         <span class="validation wrong_format_email">This is not a valid email address</span>
+                        
                         <label for="phone" class="order_lbl">Phone Number:</label>
                         <input class="shop_form_txt required" id="phone" name="phone" type="tel" placeholder="0123456789">
                         <span class="validation required_phone">This field is required*</span>
                         <span class="validation not_allowed_number">Only numbers allowed</span>
                         <span class="validation wrong_format_tel">This is not a valid phone number</span>
+                        
                         <label for="address" class="order_lbl">Address:</label>
                         <textarea class="required" id="address" name="address"></textarea>
                         <span class="validation required">This field is required*</span>
+                        
                         <input type="submit" class="form_btn"  value="Place Order">
                         <input type="reset" class="form_btn rest">
                     </form>
