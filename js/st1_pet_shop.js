@@ -677,6 +677,7 @@ function requiredFieldOnSkip() {
         }
     } 
 }
+// Tst ONSUBMIT
 function onSubmitFeedBack(){
     const requiredField = document.querySelectorAll('.required')
     let formDone = true
@@ -694,10 +695,71 @@ function onSubmitFeedBack(){
         if(!document.querySelectorAll('.td').length){
             console.log('cart is empty')
         } else {
-
+            makeBill()
         }
     }
 }
+function makeBill() {
+    let totalBill = 0
+    const cartItems = document.querySelector('.itm_des_col').querySelectorAll('.td')
+    const modal = document.createElement('div')
+    modal.className = 'bill_modal'
+    const billContainerHtml =`<div class="bill_container">
+                        <button class="close_cart">&#10006;</button>  
+                        <h4>Dear Jhon,</h4>
+                        <hr class="bill_title_sep">
+                        <table id="bill_table" width="100%">
+                            <tr>
+                                <th>Order</th>
+                                <th>Qnt</th>
+                                <th class="numbers">Price</th>
+                                <th class="numbers">Total</th>
+                            </tr>
+                        </table>
+                        <button class="ok_btn">OK</button>
+                    </div>`
+    modal.innerHTML = billContainerHtml
+    document.body.appendChild(modal)
+    const billTable = document.querySelector('#bill_table')
+    for (let i = 0; i < cartItems.length; i++){
+        let total = parseInt(document.querySelector('.cart_price_col').querySelectorAll('.cart_price')[i].innerHTML) * parseInt(document.querySelector('.cart_qnt_col').querySelectorAll('.cart_qnt_input')[i].value)
+        console.log(total)
+        totalBill = totalBill + total
+        let bill = `<tr>
+                    <td style="max-width: 50px;">${document.querySelector('.itm_des_col').querySelectorAll('.td')[i].innerHTML}</td>
+                    <td>${document.querySelector('.cart_qnt_col').querySelectorAll('.cart_qnt_input')[i].value}</td>
+                    <td class="numbers">${document.querySelector('.cart_price_col').querySelectorAll('.td')[i].innerHTML}</td>
+                    <td class="numbers total_price">${total}</td>
+                </tr>`
+        billTable.innerHTML += bill
+    }
+    const totalBillHtml = `<tr class="total">
+                        <th colspan="2">Total Price</th>
+                        <th class="numbers" colspan="2">${totalBill}</th>
+                    </tr>`
+    billTable.innerHTML += totalBillHtml
+    document.querySelector('.bill_modal').style.visibility = 'visible'
+    // <tr>
+    //     <td style="max-width: 50px;">T-shirt sdwddsfsfsfwf sfsfsfsf ddddddd</td>
+    //     <td class="qnt"> <button class="counter increment">+</button>
+    //         <input type="text" value="1" class="qnt_input" readonly>
+    //         <button class="counter decrement">-</button></td>
+    //     <td class="numbers">400.00</td>
+    //     <td class="numbers">800.00</td>
+    // </tr>
+    // <tr>
+    //     <td>Pen Drive</td>
+    //     <td>3</td>
+    //     <td class="numbers">200.00</td>
+    //     <td class="numbers">600.00</td>
+    // </tr>
+    // <tr class="total">
+    //     <th colspan="2">Total Price</th>
+    //     <th class="numbers" colspan="2">1400.00</th>
+    // </tr>
+}
+
+
 order.addEventListener('submit', onSubmitFeedBack)
 
 // Add Event Listeners Tst Success

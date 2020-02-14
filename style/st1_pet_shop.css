@@ -222,7 +222,7 @@ form {
     margin:auto;
     overflow: auto;
 }
-.modal {
+.modal, .bill_modal {
     visibility: hidden ;
     position: fixed;
     top: 0;
@@ -377,5 +377,83 @@ form {
     background: #e03232;
 }
 .clear_cart:active {
+    background: #a31b1b;
+}
+/* Bill Container */
+.bill_container {
+    background: #fff;
+    background:rgb(235, 235, 235);
+    border-top: 5px solid salmon;
+    padding: 35px 40PX;
+    /* padding-bottom: 0; */
+    width: 40%;
+    margin:auto;
+    overflow: auto;
+}
+.close_cart {
+    float: right;
+    margin-right: -30px;
+    margin-top: -26px;
+    background: transparent;
+    border: 0;
+    box-shadow: 0;
+    /* font-family: "clear sans"; */
+    font-size: 2.2rem;
+    color: rgba(20, 65, 163, 0.664);
+    /* font-weight: 700; */
+    /* margin:auto; */
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width: 30px;
+    height: 30px;
+    /* position: absolute; */
+    /* top: 25%; */
+    /* right: 20.5%; */
+}
+h4 {
+    color: #2a48f3;
+}
+
+table {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+}
+td {
+    text-align: center;
+}
+th:first-child, td:first-child {
+    text-align: left;
+}
+.numbers {
+    text-align: right;
+}
+th {
+    border-bottom: 1px dashed #333;
+}
+.total th {
+    border-bottom: 0;
+    border-top: 1px dashed #333;
+}
+th, td {
+    padding: 5px;
+}
+.ok_btn{
+    float: right;
+    box-sizing: border-box;
+    padding: 8px 50px;
+    border: 0px solid #c7c7c7;
+    background: #ff4646;
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-top: 20px;
+    /* margin-bottom: 80px; */
+    transition: 0.2s;
+}
+.ok_btn:hover {
+    background: #e03232;
+}
+.ok_btn:active {
     background: #a31b1b;
 }
