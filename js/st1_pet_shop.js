@@ -678,3 +678,8 @@ clear.addEventListener('click', clearCart)
 window.addEventListener('resize', setSameHeightElement)
 cartBtn.addEventListener('click', showCart)
 document.addEventListener('click', hideCart)
+    // let test = () => {
+    //     let x = document.querySelector('#som')
+    //     console.log(x)
+    //     x.value = 2
+    // } 
