@@ -8,7 +8,7 @@ const firstName = document.querySelector('#firstname')
 const email = document.querySelector('#email')
 const phone = document.querySelector('#phone')
 const address = document.querySelector('#address')
-
+const form = document.querySelector('#order')
 // Item Database OLD
 // let food = [
 //     {
@@ -541,6 +541,7 @@ let hideCart = () => {
 
 //Tst Success
 function formFeedback(field) {
+    let formSuccess = false
     const fieldName = field.name
     emptyFieldFeedback(field)
     if (!emptyFieldFeedback(field)) {
@@ -554,35 +555,47 @@ function formFeedback(field) {
                     document.querySelector('.not_allowed_number').style.display = 'none'
                     document.querySelector('.wrong_format_tel').style.display = 'block'
                     field.style.borderColor = 'red'
+
                 } 
                 else {
                     field.value = field.value.trim()
                     document.querySelector('.wrong_format_tel').style.display = 'none'
                     document.querySelector('.not_allowed_number').style.display = 'none'
-                    field.borderColor = 'silver'         
+                    field.borderColor = 'silver'   
+                    formSuccess = false
+
                 }
                 break
             case 'email':
                 if (!isEmail(field)) {
                     document.querySelector('.wrong_format_email').style.display = 'block'
                     field.style.borderColor = 'red'   
+
                 } else {
                     field.value = field.value.trim()
                     document.querySelector('.wrong_format_email').style.display = 'none'
                     field.borderColor = 'silver'
+                    formSuccess = false
+
                 }
                 break
         }
     }
+    return formSuccess
 }
 function emptyFieldFeedback(field) {
     const fieldValue = field.value.trim()
+    const feedback = field.nextElementSibling.firstElementChild
+    const allFeedbacks = field.nextElementSibling.querySelectorAll('.validation')
+    for(let i = 0; i < allFeedbacks.length; i++) {
+        allFeedbacks[i].style.display = "none"
+    }
     if (!fieldValue.length) {
-        field.nextElementSibling.style.display = "block"
+        feedback.style.display = "block"
         field.style.borderColor = 'red'
         return true
     } else {
-        field.nextElementSibling.style.display = "none"
+        feedback.style.display = "none"
         field.style.borderColor = 'silver'
         return false
     }
@@ -664,11 +677,29 @@ function requiredFieldOnSkip() {
         }
     } 
 }
-// function alertOnSubmit(){
-//     for(let i = 0; i<document.querySelectorAll('.required').length; i++) {
-        
-//     }
-// }
+function onSubmitFeedBack(){
+    const requiredField = document.querySelectorAll('.required')
+    let formDone = true
+    for(let i = requiredField.length-1; i >= 0; i--) {
+        let isFormValid = formFeedback(requiredField[i])
+        if(isFormValid) {
+            for(let j = i-1; j>=0; j--) {
+                emptyFieldFeedback(requiredField[j])
+            }
+            formDone = false
+            break
+        } 
+    }
+    if (formDone) {
+        if(!document.querySelectorAll('.td').length){
+            console.log('cart is empty')
+        } else {
+
+        }
+    }
+}
+order.addEventListener('submit', onSubmitFeedBack)
+
 // Add Event Listeners Tst Success
 firstName.addEventListener('focusout', function() {
     formFeedback(firstName)
