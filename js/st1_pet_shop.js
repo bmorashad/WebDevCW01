@@ -405,19 +405,24 @@ let itmNoReset = () => {
 
 let setSameHeightElement = () => {
     // console.log('done')
-    const itmNames = document.querySelectorAll('.item_title_p')
+    const itmNames = document.querySelectorAll('.item_title_p') 
+    let itmNamesText = []
     // const p1 = document.querySelectorAll('.item_title_p')[0]
     // p1.style.height = style.height
     // console.log(style.height)
     // Testing
-    let index = 1
-    for(let i = 0; i < itmNames.length; i++) {
-        if (i < itmNames.length) { //Changed this at IIT
-            if (itmNames[i].innerHTML.length > itmNames[index].innerHTML.length) {
-                    index = i
-            }
-        }
+    for(let i = 0; i<itmNames.length; i++) {
+        itmNamesText.push(itmNames[i].innerHTML.length)
     }
+    index = itmNamesText.indexOf(Math.max(...itmNamesText))
+    // let index = 1
+    // for(let i = 0; i < itmNames.length; i++) {
+    //     // if (i < itmNames.length) { //Changed this at IIT idk why did i even add this
+    //         if (itmNames[i].innerHTML.length > itmNames[index].innerHTML.length) {
+    //                 index = i
+    //         }
+    //     // }
+    // }
     const style = getComputedStyle(itmNames[index])
     itmNames.forEach(name => {
         if (name.innerHTML != itmNames[index].innerHTML) {
