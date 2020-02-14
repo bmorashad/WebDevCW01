@@ -94,18 +94,18 @@ h5 {
 	font-size: 1.8rem;
 	text-transform: uppercase;
 	font-weight: 600;
+	display: flex; /* added to fix */
+	align-items: center; /* added */
+	justify-content: center;
+	color: rgb(54, 54, 54);
 	/* width: 90%; */
 	/* height: fit-content; */
 	/* word-wrap: break-word; */
 	/* overflow-wrap: break-word; */
 	/* margin: auto; */
-	align-items: center; /* added */
-	display: flex; /* added to fix */
-	color: rgb(54, 54, 54);
 	/* vertical-align: middle; */
 	/* overflow: auto; */
 	/* white-space: pre-wrap; */
-	justify-content: center;
 	/* line-height:1.5em; added experiment */
 	/* height: 92px; */
 	/* overflow-y: auto; added */
@@ -113,7 +113,7 @@ h5 {
 }
 .item_title_p span {
 	display: block;
-	width: 80%;
+	width: 90%;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 

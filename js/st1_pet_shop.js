@@ -9,70 +9,70 @@ const email = document.querySelector('#email')
 const phone = document.querySelector('#phone')
 const address = document.querySelector('#address')
 
-// Item Database
-let food = [
-    {
-        name: 'WHISKAS® Dry Cat Food Beefsssssssssssssssssssssssssssssssss Flavour',
-        img: 'img/shop/food101.jpg',
-        price: 1200
-    }, 
-    {
-        name: 'Meow Mix® Original Choice',
-        img: 'img/shop/food201.jpg',
-        price: 800
-    },
-    {
-        name: 'Chicken Flavor Dry Cat Food',
-        img: 'img/shop/food301.jpg',
-        price: 4500
-    }
-]
-let toy = [
-    {
-        name: 'Hartz Just For Cats Cat Toy',
-        img: 'img/shop/toy101.jpg',
-        price: 650
-    }, 
-    {
-        name: 'Petstages Cat Tracks Cat Toy',
-        img: 'img/shop/toy201.jpg',
-        price: 800
-    },
-    {
-        name: 'Bergan Turboscratcher Cat Toy (Assorted)',
-        img: 'img/shop/toy301.jpg',
-        price: 1500
-    }
-]
-let med = [
-    {
-        name: 'Bayer Advantage II Flea Prevention',
-        img: 'img/shop/med101.jpg',
-        price: 5000
-    }, 
-    {
-        name: 'NODENS CAT Hip & Joint Glucosamine',
-        img: 'img/shop/med201.jpg',
-        price: 2000
-    },
-    {
-        name: 'HomeoPet Nose Relief, 15 ml',
-        img: 'img/shop/med301.jpg',
-        price: 2000
-    },
-    {
-        name: 'Nutramax Cosequin Sprinkle Capsules',
-        img: 'img/shop/med401.jpg',
-        price: 2000
-    }
-]
-let all = food.concat(toy).concat(med)
+// Item Database OLD
+// let food = [
+//     {
+//         name: 'WHISKAS® Dry Cat Food Beefsssssssssssssssssssssssssssssssss Flavour',
+//         img: 'img/shop/food101.jpg',
+//         price: 1200
+//     }, 
+//     {
+//         name: 'Meow Mix® Original Choice',
+//         img: 'img/shop/food201.jpg',
+//         price: 800
+//     },
+//     {
+//         name: 'Chicken Flavor Dry Cat Food',
+//         img: 'img/shop/food301.jpg',
+//         price: 4500
+//     }
+// ]
+// let toy = [
+//     {
+//         name: 'Hartz Just For Cats Cat Toy',
+//         img: 'img/shop/toy101.jpg',
+//         price: 650
+//     }, 
+//     {
+//         name: 'Petstages Cat Tracks Cat Toy',
+//         img: 'img/shop/toy201.jpg',
+//         price: 800
+//     },
+//     {
+//         name: 'Bergan Turboscratcher Cat Toy (Assorted)',
+//         img: 'img/shop/toy301.jpg',
+//         price: 1500
+//     }
+// ]
+// let med = [
+//     {
+//         name: 'Bayer Advantage II Flea Prevention',
+//         img: 'img/shop/med101.jpg',
+//         price: 5000
+//     }, 
+//     {
+//         name: 'NODENS CAT Hip & Joint Glucosamine',
+//         img: 'img/shop/med201.jpg',
+//         price: 2000
+//     },
+//     {
+//         name: 'HomeoPet Nose Relief, 15 ml',
+//         img: 'img/shop/med301.jpg',
+//         price: 2000
+//     },
+//     {
+//         name: 'Nutramax Cosequin Sprinkle Capsules',
+//         img: 'img/shop/med401.jpg',
+//         price: 2000
+//     }
+// ]
+// let all = food.concat(toy).concat(med)
 
-//Tst itemData
+//Tst itemData NEW
 
 let items = {
     food: [{
-                name: 'WHISKAS® Dry Cat Food Beefsssssssssssssssssssssssssssssssss Flavour',
+                name: 'WHISKAS® Dry Cat Food Beef Flavour',
                 img: 'img/shop/food101.jpg',
                 price: 1200
             }, 
@@ -122,7 +122,7 @@ let items = {
             price: 2000
         }]
 }
-items['all'] = items['food'].concat(items['med']).concat(items['toy'])
+items['all'] = items['food'].concat(items['med'], items['toy'])
 
 // console.log(all)
 // Event Handlers
@@ -306,7 +306,7 @@ let clearCart = () => {
     // })
 }
 
-let changeItems = () => {
+let changeItemsOld = () => {
     document.querySelector('.showcase').innerHTML = ''
     const getCategory = document.querySelector('#category').querySelector('option:checked').value
     
@@ -424,8 +424,18 @@ let changeItems = () => {
                 })
                 
 }
+    // Adding EventListener
+    let addItem = document.querySelectorAll('.add')
+    let qntIncrease = document.querySelectorAll('.increment')
+    let qntDecrease = document.querySelectorAll('.decrement')
+
+    qntIncrease.forEach(counter => counter.addEventListener('click', qntIncrement))
+    qntDecrease.forEach(counter => counter.addEventListener('click', qntDecrement))
+    addItem.forEach(btn => btn.addEventListener('click', addToCart));
+    setSameHeightElement()
+}
 // Tst new changeItems 
-let changeItem2 = () => {
+let changeItems = () => {
     document.querySelector('.showcase').innerHTML = ''
     const getCategory = document.querySelector('#category').querySelector('option:checked').value
     items[getCategory].forEach(itm => {
@@ -454,8 +464,6 @@ let changeItem2 = () => {
         itmDiv.innerHTML = itmDivInner
         
     })
-}
-
     // Adding EventListener
     let addItem = document.querySelectorAll('.add')
     let qntIncrease = document.querySelectorAll('.increment')
@@ -463,8 +471,9 @@ let changeItem2 = () => {
 
     qntIncrease.forEach(counter => counter.addEventListener('click', qntIncrement))
     qntDecrease.forEach(counter => counter.addEventListener('click', qntDecrement))
-    addItem.forEach(btn => btn.addEventListener('click', addToCart))
+    addItem.forEach(btn => btn.addEventListener('click', addToCart));
     setSameHeightElement()
+}
 
 let removeItm = () => {
     const rowToRemove = parseInt(event.target.querySelector('.store_row_no').innerHTML)
@@ -655,6 +664,11 @@ function requiredFieldOnSkip() {
         }
     } 
 }
+// function alertOnSubmit(){
+//     for(let i = 0; i<document.querySelectorAll('.required').length; i++) {
+        
+//     }
+// }
 // Add Event Listeners Tst Success
 firstName.addEventListener('focusout', function() {
     formFeedback(firstName)
@@ -671,15 +685,15 @@ address.addEventListener('focusout', function() {
 requiredFieldOnSkip()
 
 // Imediate Exucution
-changeItem2()
+changeItems()
 // Adding Event Listeners
 category.addEventListener('change', changeItems)
 clear.addEventListener('click', clearCart)
 window.addEventListener('resize', setSameHeightElement)
 cartBtn.addEventListener('click', showCart)
 document.addEventListener('click', hideCart)
-    // let test = () => {
-    //     let x = document.querySelector('#som')
-    //     console.log(x)
-    //     x.value = 2
-    // } 
+    /* let test = () => {
+        let x = document.querySelector('#som')
+        console.log(x)
+        x.value = 2
+    } */  
