@@ -94,19 +94,29 @@ h5 {
 	font-size: 1.8rem;
 	text-transform: uppercase;
 	font-weight: 600;
-	/* width: 15rem; */
-	margin: auto;
+	/* width: 90%; */
+	/* height: fit-content; */
+	/* word-wrap: break-word; */
+	/* overflow-wrap: break-word; */
+	/* margin: auto; */
+	align-items: center; /* added */
+	display: flex; /* added to fix */
+	color: rgb(54, 54, 54);
+	/* vertical-align: middle; */
 	/* overflow: auto; */
 	/* white-space: pre-wrap; */
-	color: rgb(54, 54, 54);
-	display: flex; /* added to fix */
-	align-items: center; /* added */
-	justify-content: center; /* added */
+	justify-content: center;
 	/* line-height:1.5em; added experiment */
 	/* height: 92px; */
 	/* overflow-y: auto; added */
 	/* text-overflow: ellipsis; */
-	/* vertical-align: middle; */
+}
+.item_title_p span {
+	display: block;
+	width: 80%;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+
 }
 .item_price_p {
 	font-size: 1.5rem;

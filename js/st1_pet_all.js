@@ -8,6 +8,28 @@ let getExtStyleInt = (element, attr) => {
     let attributeInt = parseInt(style[attr].slice(0, style[attr].length-2))
     return attributeInt
 }
+
+// Test
+function setFontSizeToRem() {
+    let txtEle = ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'h7', 'span']
+    let htmlFontSize = getExtStyleInt(html, 'fontSize')
+    console.log(htmlFontSize)
+    html.style.fontSize = htmlFontSize + 'px'
+    for (let i = 0; i<txtEle.length; i++) {
+        let elements = document.getElementsByTagName(txtEle[i])
+        if(elements.length) {
+            for (let j = 0; j<elements.length; j++) {
+                let ele = elements[j]
+                let fontSizeInt = getExtStyleInt(ele, 'fontSize')
+                let sizeInRem = fontSizeInt/10
+                ele.style.fontSize = sizeInRem + 'rem'
+
+            }
+        }
+    }
+}
+setFontSizeToRem()
+
 let fontSizeIncrease = () => {
     // let htmlStyle = getComputedStyle(html)
     // let fontSize = htmlStyle.fontSize
@@ -92,3 +114,4 @@ let fontSizeReset = () => {
 btnIncrease.addEventListener('click', fontSizeIncrease)
 btnDecrease.addEventListener('click', fontSizeDecrease)
 btnReset.addEventListener('click', fontSizeReset)
+

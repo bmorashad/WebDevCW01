@@ -12,7 +12,7 @@ const address = document.querySelector('#address')
 // Item Database
 let food = [
     {
-        name: 'WHISKAS® Dry Cat Food Beef Flavour',
+        name: 'WHISKAS® Dry Cat Food Beefsssssssssssssssssssssssssssssssss Flavour',
         img: 'img/shop/food101.jpg',
         price: 1200
     }, 
@@ -67,6 +67,63 @@ let med = [
     }
 ]
 let all = food.concat(toy).concat(med)
+
+//Tst itemData
+
+let items = {
+    food: [{
+                name: 'WHISKAS® Dry Cat Food Beefsssssssssssssssssssssssssssssssss Flavour',
+                img: 'img/shop/food101.jpg',
+                price: 1200
+            }, 
+            {
+                name: 'Meow Mix® Original Choice',
+                img: 'img/shop/food201.jpg',
+                price: 800
+            },
+            {
+                name: 'Chicken Flavor Dry Cat Food',
+                img: 'img/shop/food301.jpg',
+                price: 4500
+            }],
+    toy: [{
+            name: 'Hartz Just For Cats Cat Toy',
+            img: 'img/shop/toy101.jpg',
+            price: 650
+        }, 
+        {
+            name: 'Petstages Cat Tracks Cat Toy',
+            img: 'img/shop/toy201.jpg',
+            price: 800
+        },
+        {
+            name: 'Bergan Turboscratcher Cat Toy (Assorted)',
+            img: 'img/shop/toy301.jpg',
+            price: 1500
+        }],
+    med: [{
+            name: 'Bayer Advantage II Flea Prevention',
+            img: 'img/shop/med101.jpg',
+            price: 5000
+        }, 
+        {
+            name: 'NODENS CAT Hip & Joint Glucosamine',
+            img: 'img/shop/med201.jpg',
+            price: 2000
+        },
+        {
+            name: 'HomeoPet Nose Relief, 15 ml',
+            img: 'img/shop/med301.jpg',
+            price: 2000
+        },
+        {
+            name: 'Nutramax Cosequin Sprinkle Capsules',
+            img: 'img/shop/med401.jpg',
+            price: 2000
+        }]
+}
+items['all'] = items['food'].concat(items['med']).concat(items['toy'])
+
 // console.log(all)
 // Event Handlers
 
@@ -262,7 +319,7 @@ let changeItems = () => {
                 const itmDivInner = `<img class="itm_img"src="${itm.img}">
                                     <div class="item_des">
                                         <hr class="item_title_sep">
-                                        <p class="item_title_p">${itm.name}</p>
+                                        <p class="item_title_p"><span>${itm.name}</span></p>
                                         <hr class="item_title_sep">
                                     </div>
                                     <p class="item_price_p">PRICE: <span class="currency">RS <span class="itm_price">${itm.price}</span></span></p>
@@ -290,7 +347,7 @@ let changeItems = () => {
                 const itmDivInner = `<img class="itm_img"src="${itm.img}">
                                     <div class="item_des">
                                         <hr class="item_title_sep">
-                                        <p class="item_title_p">${itm.name}</p>
+                                        <p class="item_title_p"><span>${itm.name}</span></p>
                                         <hr class="item_title_sep">
                                     </div>
                                     <p class="item_price_p">PRICE: <span class="currency">RS <span class="itm_price">${itm.price}</span></span></p>
@@ -318,7 +375,7 @@ let changeItems = () => {
                 const itmDivInner = `<img class="itm_img"src="${itm.img}">
                                     <div class="item_des">
                                         <hr class="item_title_sep">
-                                        <p class="item_title_p">${itm.name}</p>
+                                        <p class="item_title_p"><span>${itm.name}</span></p>
                                         <hr class="item_title_sep">
                                     </div>
                                     <p class="item_price_p">PRICE: <span class="currency">RS <span class="itm_price">${itm.price}</span></span></p>
@@ -346,7 +403,7 @@ let changeItems = () => {
                     const itmDivInner = `<img class="itm_img"src="${itm.img}">
                                         <div class="item_des">
                                             <hr class="item_title_sep">
-                                            <p class="item_title_p">${itm.name}</p>
+                                            <p class="item_title_p"><span>${itm.name}</span></p>
                                             <hr class="item_title_sep">
                                         </div>
                                         <p class="item_price_p">PRICE: <span class="currency">RS <span class="itm_price">${itm.price}</span></span></p>
@@ -367,6 +424,38 @@ let changeItems = () => {
                 })
                 
 }
+// Tst new changeItems 
+let changeItem2 = () => {
+    document.querySelector('.showcase').innerHTML = ''
+    const getCategory = document.querySelector('#category').querySelector('option:checked').value
+    items[getCategory].forEach(itm => {
+        const showcase = document.querySelector('.showcase')
+        const itmDiv = document.createElement('div')
+        itmDiv.className = 'item'
+        const itmDivInner = `<img class="itm_img"src="${itm.img}">
+                            <div class="item_des">
+                                <hr class="item_title_sep">
+                                <p class="item_title_p"><span>${itm.name}</span></p>
+                                <hr class="item_title_sep">
+                            </div>
+                            <p class="item_price_p">PRICE: <span class="currency">RS <span class="itm_price">${itm.price}</span></span></p>
+                            <div class="quantity">
+                                <p style="font-size: 1.2rem; font-weight: 600; color: #555555;">Quantity:</p>
+                                <div class="increaser">
+                                    <button class="counter increment">+</button>
+                                    <input type="text" value="1" class="qnt_input" readonly>
+                                    <button class="counter decrement">-</button>
+                                </div>
+                            </div>
+                            <div class="add_item">
+                                <button class="add" id="add2">Add Item</button>
+                            </div>`
+        showcase.appendChild(itmDiv)
+        itmDiv.innerHTML = itmDivInner
+        
+    })
+}
+
     // Adding EventListener
     let addItem = document.querySelectorAll('.add')
     let qntIncrease = document.querySelectorAll('.increment')
@@ -374,9 +463,9 @@ let changeItems = () => {
 
     qntIncrease.forEach(counter => counter.addEventListener('click', qntIncrement))
     qntDecrease.forEach(counter => counter.addEventListener('click', qntDecrement))
-    addItem.forEach(btn => btn.addEventListener('click', addToCart));
+    addItem.forEach(btn => btn.addEventListener('click', addToCart))
     setSameHeightElement()
-}
+
 let removeItm = () => {
     const rowToRemove = parseInt(event.target.querySelector('.store_row_no').innerHTML)
     const cols = document.querySelectorAll('.cart_table_col')
@@ -582,15 +671,10 @@ address.addEventListener('focusout', function() {
 requiredFieldOnSkip()
 
 // Imediate Exucution
-changeItems()
+changeItem2()
 // Adding Event Listeners
 category.addEventListener('change', changeItems)
 clear.addEventListener('click', clearCart)
 window.addEventListener('resize', setSameHeightElement)
 cartBtn.addEventListener('click', showCart)
 document.addEventListener('click', hideCart)
-    /* let test = () => {
-        let x = document.querySelector('#som')
-        console.log(x)
-        x.value = 2
-    } */  
