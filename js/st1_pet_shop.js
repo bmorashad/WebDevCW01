@@ -9,6 +9,7 @@ const email = document.querySelector('#email')
 const phone = document.querySelector('#phone')
 const address = document.querySelector('#address')
 const form = document.querySelector('#order')
+const notification = document.querySelector('.added_notify')
 // Item Database OLD
 // let food = [
 //     {
@@ -245,6 +246,12 @@ let addToCart = () => {
     //  console.log(itmTotalPrice)
 }
 
+function show(ele, display) {
+    ele.style.display = display
+}
+function hide(ele) {
+    ele.style.display = 'none'
+}
 let checkCart = (itmDes, itmQnt) => {
     const itmLst = document.querySelector('.itm_des_col').querySelectorAll('.td')
     const qntLst = document.querySelector('.cart_qnt_col').querySelectorAll('.cart_qnt_input')
@@ -471,7 +478,11 @@ let changeItems = () => {
 
     qntIncrease.forEach(counter => counter.addEventListener('click', qntIncrement))
     qntDecrease.forEach(counter => counter.addEventListener('click', qntDecrement))
-    addItem.forEach(btn => btn.addEventListener('click', addToCart));
+    addItem.forEach(btn => btn.addEventListener('click', function(){
+        addToCart()
+        show(notification, 'flex')
+        setTimeout('hide(notification)', 2000)
+    }));
     setSameHeightElement()
 }
 

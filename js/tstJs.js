@@ -12,3 +12,14 @@ console.log(h4)
 const s = document.createTextNode('<button>Im created</button>')
 document.querySelector('.modal').append(s)
 
+function show(ele, display) {
+    document.querySelector('.added_notify').style.display = 'flex'
+}
+function hide(ele) {
+    document.querySelector('.added_notify').style.display = 'none'
+}
+
+document.addEventListener('click', function(){
+    show()
+    setTimeout('hide()', 3000)
+})
