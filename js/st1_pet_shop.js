@@ -166,7 +166,7 @@ let addToCart = () => {
     const itmDetArr = Object.values(itmDet)
     const cartCols = document.querySelectorAll('.cart_table_col')
     let inCart = checkCart(itmDet.itmDes, qnt)
-    if (!inCart) {
+    if (!inCart[0]) {
         for(let i = 0; i < cartCols.length; i++) {
             const span = document.createElement('span');
             span.className = 'td'
@@ -258,18 +258,20 @@ function setWidthToParent(ele) {
 let checkCart = (itmDes, itmQnt) => {
     const itmLst = document.querySelector('.itm_des_col').querySelectorAll('.td')
     const qntLst = document.querySelector('.cart_qnt_col').querySelectorAll('.cart_qnt_input')
-    let inCart
+    let inCart = [false, false]
     for(let i = 0; i < itmLst.length; i++) {
         if (itmLst[i].innerHTML == itmDes) {
             let qnt = qntLst[i]
             if (parseInt(qnt.value) !== itmQnt) {
                 qnt.value = itmQnt
                 setTotalPrice()
-            } 
-            inCart = true
+                inCart = [true, false]
+            } else {
+                inCart = [true, true]
+            }
             break
         } else {
-            inCart = false
+            inCart = [false, false]
         }
     }
     return inCart
@@ -484,10 +486,12 @@ let changeItems = () => {
     addItem.forEach(btn => btn.addEventListener('click', function(){
         const inCart = addToCart()
         setWidthToParent(notification)
-        if (!inCart) {
+        if (!inCart[1]) {
             notification.firstElementChild.innerHTML = "Item Added"
+            notification.style.backgroundColor = 'rgba(0, 172, 77, 0.877)'
         } else {
             notification.firstElementChild.innerHTML = "This is already in the cart"
+            notification.style.backgroundColor = 'rgba(219, 29, 29, 0.877)'    
         }
         show(notification, 'block')
         setTimeout('hide(notification)', 2000)
