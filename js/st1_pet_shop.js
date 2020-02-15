@@ -700,7 +700,7 @@ function requiredFieldOnSkip() {
     const requiredFields = document.querySelectorAll('.required')
     for(let i = requiredFields.length-1; i>0; i--) {
         for(let j = i-1; j>=0; j--) {
-            requiredFields[i].addEventListener('focus', function(){emptyFieldFeedback(requiredFields[j])})
+            requiredFields[i].addEventListener('focus', function(){formFeedback(requiredFields[j])})
         }
     } 
 }
