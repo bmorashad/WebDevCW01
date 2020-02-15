@@ -733,23 +733,28 @@ function makeBill() {
         const modal = document.createElement('div')
         modal.className = 'bill_modal'
         const billContainerHtml =`<div class="bill_container">
-                            <button class="close_cart">&#10006;</button>  
                             <h4>This is your order</h4>
                             <hr class="bill_title_sep">
                             <table id="bill_table" width="100%">
+                            <thead>
                                 <tr>
                                     <th>Order</th>
                                     <th>Qnt</th>
                                     <th class="numbers">Price</th>
                                     <th class="numbers">Total</th>
                                 </tr>
+                            </thead>
+                                <tbody>
+                                </tbody>
                             </table>
                             <button class="ok_btn">OK</button>
                         </div>`
         modal.innerHTML = billContainerHtml
         document.body.appendChild(modal)
+    } else{
+        document.querySelector('tbody').innerHTML = ""
     }
-    const billTable = document.querySelector('#bill_table')
+    const billTable = document.querySelector('tbody')
     for (let i = 0; i < cartItems.length; i++){
         let total = parseInt(document.querySelector('.cart_price_col').querySelectorAll('.cart_price')[i].innerHTML) * parseInt(document.querySelector('.cart_qnt_col').querySelectorAll('.cart_qnt_input')[i].value)
         // console.log(total)
