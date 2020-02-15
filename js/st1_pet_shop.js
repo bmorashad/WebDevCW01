@@ -197,7 +197,7 @@ let addToCart = () => {
         })
     }
     
-
+    return inCart
     // Object.values(itmDet).forEach(val => {
     //     let span = document.createElement('span');
     //     span.className = 'td'
@@ -251,6 +251,9 @@ function show(ele, display) {
 }
 function hide(ele) {
     ele.style.display = 'none'
+}
+function setWidthToParent(ele) {
+    ele.style.width = getComputedStyle(ele.parentElement).width
 }
 let checkCart = (itmDes, itmQnt) => {
     const itmLst = document.querySelector('.itm_des_col').querySelectorAll('.td')
@@ -479,8 +482,14 @@ let changeItems = () => {
     qntIncrease.forEach(counter => counter.addEventListener('click', qntIncrement))
     qntDecrease.forEach(counter => counter.addEventListener('click', qntDecrement))
     addItem.forEach(btn => btn.addEventListener('click', function(){
-        addToCart()
-        show(notification, 'flex')
+        const inCart = addToCart()
+        setWidthToParent(notification)
+        if (!inCart) {
+            notification.firstElementChild.innerHTML = "Item Added"
+        } else {
+            notification.firstElementChild.innerHTML = "This is already in the cart"
+        }
+        show(notification, 'block')
         setTimeout('hide(notification)', 2000)
     }));
     setSameHeightElement()
@@ -771,8 +780,11 @@ function makeBill() {
 }
 
 
+// Event Listeners Tst
+//1
+window.addEventListener('resize', function(){setWidthToParent(notification)})
+//2
 order.addEventListener('submit', onSubmitFeedBack)
-
 // Add Event Listeners Tst Success
 firstName.addEventListener('focusout', function() {
     formFeedback(firstName)
