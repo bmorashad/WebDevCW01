@@ -251,6 +251,7 @@ let addToCart = () => {
 }
 
 function show(ele, display) {
+    ele.style.visibility = 'visible'
     ele.style.display = display
 }
 function hide(ele) {
@@ -569,28 +570,27 @@ let hideModal = (ele) => {
 
 //Tst Success
 function formFeedback(field) {
-    let formSuccess = false
     const fieldName = field.name
-    emptyFieldFeedback(field)
-    if (!emptyFieldFeedback(field)) {
+    let isFormInvalid = emptyFieldFeedback(field)
+    if (!isFormInvalid) {
         switch(fieldName) {
             case 'phone':
                 if (!isNumbers(field)) {
                     document.querySelector('.wrong_format_tel').style.display = 'none'
                     document.querySelector('.not_allowed_number').style.display = 'block'
                     field.style.borderColor = 'red'
+                    isFormInvalid = true
                 } else if (!isTel(field)) {
                     document.querySelector('.not_allowed_number').style.display = 'none'
                     document.querySelector('.wrong_format_tel').style.display = 'block'
                     field.style.borderColor = 'red'
-
+                    isFormInvalid = true
                 } 
                 else {
                     field.value = field.value.trim()
                     document.querySelector('.wrong_format_tel').style.display = 'none'
                     document.querySelector('.not_allowed_number').style.display = 'none'
                     field.borderColor = 'silver'   
-                    formSuccess = false
 
                 }
                 break
@@ -598,18 +598,17 @@ function formFeedback(field) {
                 if (!isEmail(field)) {
                     document.querySelector('.wrong_format_email').style.display = 'block'
                     field.style.borderColor = 'red'   
-
+                    isFormInvalid = true
                 } else {
                     field.value = field.value.trim()
                     document.querySelector('.wrong_format_email').style.display = 'none'
                     field.borderColor = 'silver'
-                    formSuccess = false
 
                 }
                 break
         }
     }
-    return formSuccess
+    return isFormInvalid
 }
 function emptyFieldFeedback(field) {
     const fieldValue = field.value.trim()
@@ -708,19 +707,18 @@ function requiredFieldOnSkip() {
 // Tst ONSUBMIT
 function onSubmitFeedBack(){
     const requiredField = document.querySelectorAll('.required')
-    let formDone = true
+    let isFormInvalid
     for(let i = requiredField.length-1; i >= 0; i--) {
-        let isFormValid = formFeedback(requiredField[i])
-        if(isFormValid) {
+        isFormInvalid = formFeedback(requiredField[i])
+        if(isFormInvalid) {
             for(let j = i-1; j>=0; j--) {
                 emptyFieldFeedback(requiredField[j])
             }
             show(formInvalidModal, 'flex')
-            formDone = false
             break
         } 
     }
-    if (formDone) {
+    if (!isFormInvalid) {
         if(!document.querySelectorAll('.td').length){
             show(emptyCartModal, 'flex')
         } else {
@@ -735,7 +733,7 @@ function makeBill() {
     modal.className = 'bill_modal'
     const billContainerHtml =`<div class="bill_container">
                         <button class="close_cart">&#10006;</button>  
-                        <h4>Dear Jhon,</h4>
+                        <h4>This is your order</h4>
                         <hr class="bill_title_sep">
                         <table id="bill_table" width="100%">
                             <tr>
@@ -767,6 +765,8 @@ function makeBill() {
                         <th class="numbers" colspan="2">${totalBill}</th>
                     </tr>`
     billTable.innerHTML += totalBillHtml
+    document.querySelector('.bill_modal').querySelector('.ok_btn').addEventListener('click', function(){hide(document.querySelector('.bill_modal'))})
+    document.querySelector('.bill_modal').addEventListener('click', function(){hideModal(document.querySelector('.bill_modal'))})
     document.querySelector('.bill_modal').style.visibility = 'visible'
     // <tr>
     //     <td style="max-width: 50px;">T-shirt sdwddsfsfsfwf sfsfsfsf ddddddd</td>
