@@ -10,6 +10,10 @@ const phone = document.querySelector('#phone')
 const address = document.querySelector('#address')
 const form = document.querySelector('#order')
 const notification = document.querySelector('.added_notify')
+const emptyCartModal = document.querySelector('.empty_cart_modal')
+const cartModal = document.querySelector('.cart_modal')
+const formInvalidModal = document.querySelector('.form_invalid_modal')
+const okBtn = document.querySelectorAll('.ok_btn')
 // Item Database OLD
 // let food = [
 //     {
@@ -487,10 +491,10 @@ let changeItems = () => {
         const inCart = addToCart()
         setWidthToParent(notification)
         if (!inCart[1]) {
-            notification.firstElementChild.innerHTML = "Item Added"
+            notification.firstElementChild.innerHTML = "Item Added ✅"
             notification.style.backgroundColor = 'rgba(0, 172, 77, 0.877)'
         } else {
-            notification.firstElementChild.innerHTML = "This is already in the cart"
+            notification.firstElementChild.innerHTML = "This is already in the cart ✕"
             notification.style.backgroundColor = 'rgba(219, 29, 29, 0.877)'    
         }
         show(notification, 'block')
@@ -553,12 +557,12 @@ let setSameHeightElement = () => {
         })
 }
 let showCart = () => {
-    document.querySelector('.modal').style.visibility = 'visible'
+    cartModal.style.visibility = 'visible'
     clear.style.display='block'   
 }
-let hideCart = () => {
-    if (event.target == document.querySelector('.modal') || event.target == document.querySelector('.close_cart')){
-        document.querySelector('.modal').style.visibility = 'hidden'
+let hideModal = (ele) => {
+    if (event.target == ele || event.target == document.querySelector('.close_cart')){
+        ele.style.visibility = 'hidden'
         clear.style.display='none' //Fixes the delay to disappear
     }
 }
@@ -711,13 +715,14 @@ function onSubmitFeedBack(){
             for(let j = i-1; j>=0; j--) {
                 emptyFieldFeedback(requiredField[j])
             }
+            show(formInvalidModal, 'flex')
             formDone = false
             break
         } 
     }
     if (formDone) {
         if(!document.querySelectorAll('.td').length){
-            console.log('cart is empty')
+            show(emptyCartModal, 'flex')
         } else {
             makeBill()
         }
@@ -811,7 +816,11 @@ category.addEventListener('change', changeItems)
 clear.addEventListener('click', clearCart)
 window.addEventListener('resize', setSameHeightElement)
 cartBtn.addEventListener('click', showCart)
-document.addEventListener('click', hideCart)
+cartModal.addEventListener('click', function(){hideModal(cartModal)})
+emptyCartModal.addEventListener('click', function(){hideModal(emptyCartModal)})
+formInvalidModal.addEventListener('click', function(){hideModal(formInvalidModal)})
+okBtn[0].addEventListener('click', function(){hide(emptyCartModal)})
+okBtn[1].addEventListener('click', function(){hide(formInvalidModal)})
     /* let test = () => {
         let x = document.querySelector('#som')
         console.log(x)
