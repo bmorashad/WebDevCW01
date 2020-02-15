@@ -729,28 +729,30 @@ function onSubmitFeedBack(){
 function makeBill() {
     let totalBill = 0
     const cartItems = document.querySelector('.itm_des_col').querySelectorAll('.td')
-    const modal = document.createElement('div')
-    modal.className = 'bill_modal'
-    const billContainerHtml =`<div class="bill_container">
-                        <button class="close_cart">&#10006;</button>  
-                        <h4>This is your order</h4>
-                        <hr class="bill_title_sep">
-                        <table id="bill_table" width="100%">
-                            <tr>
-                                <th>Order</th>
-                                <th>Qnt</th>
-                                <th class="numbers">Price</th>
-                                <th class="numbers">Total</th>
-                            </tr>
-                        </table>
-                        <button class="ok_btn">OK</button>
-                    </div>`
-    modal.innerHTML = billContainerHtml
-    document.body.appendChild(modal)
+    if(!document.querySelector('.bill_modal')) {
+        const modal = document.createElement('div')
+        modal.className = 'bill_modal'
+        const billContainerHtml =`<div class="bill_container">
+                            <button class="close_cart">&#10006;</button>  
+                            <h4>This is your order</h4>
+                            <hr class="bill_title_sep">
+                            <table id="bill_table" width="100%">
+                                <tr>
+                                    <th>Order</th>
+                                    <th>Qnt</th>
+                                    <th class="numbers">Price</th>
+                                    <th class="numbers">Total</th>
+                                </tr>
+                            </table>
+                            <button class="ok_btn">OK</button>
+                        </div>`
+        modal.innerHTML = billContainerHtml
+        document.body.appendChild(modal)
+    }
     const billTable = document.querySelector('#bill_table')
     for (let i = 0; i < cartItems.length; i++){
         let total = parseInt(document.querySelector('.cart_price_col').querySelectorAll('.cart_price')[i].innerHTML) * parseInt(document.querySelector('.cart_qnt_col').querySelectorAll('.cart_qnt_input')[i].value)
-        console.log(total)
+        // console.log(total)
         totalBill = totalBill + total
         let bill = `<tr>
                     <td style="max-width: 50px;">${document.querySelector('.itm_des_col').querySelectorAll('.td')[i].innerHTML}</td>
@@ -768,6 +770,8 @@ function makeBill() {
     document.querySelector('.bill_modal').querySelector('.ok_btn').addEventListener('click', function(){hide(document.querySelector('.bill_modal'))})
     document.querySelector('.bill_modal').addEventListener('click', function(){hideModal(document.querySelector('.bill_modal'))})
     document.querySelector('.bill_modal').style.visibility = 'visible'
+    document.querySelector('.bill_modal').style.display = 'flex'
+
     // <tr>
     //     <td style="max-width: 50px;">T-shirt sdwddsfsfsfwf sfsfsfsf ddddddd</td>
     //     <td class="qnt"> <button class="counter increment">+</button>
