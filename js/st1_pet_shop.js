@@ -569,12 +569,11 @@ let setSameHeightElement = () => {
 }
 let showCart = () => {
     cartModal.style.visibility = 'visible'
-    clear.style.display='block'   
+
 }
 let hideModal = (ele) => {
     if (event.target == ele || event.target.classList.contains('modal_btn') || event.target == document.querySelector('.close_cart')){
         ele.style.visibility = 'hidden'
-        clear.style.display='none' //Fixes the delay to disappear
     }
 }
 
