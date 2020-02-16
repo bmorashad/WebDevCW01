@@ -215,6 +215,22 @@ form {
     height: 28px;
     width: 28px;
 }
+/* MODAL BOXES */
+.cart_modal, .bill_modal, .empty_cart_modal, .form_invalid_modal {
+    visibility: hidden ;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    /* justify-content: center;
+    align-items: center; */
+    width: 100%;
+    height: 100%;
+    background: rgba(94, 94, 94, 0.582);
+    
+}
 /* CART */
 .cart_container {
     background: #fff;
@@ -223,21 +239,6 @@ form {
     width: 55%;
     margin:auto;
     overflow: auto;
-}
-.cart_modal, .bill_modal {
-    visibility: hidden ;
-    position: fixed;
-    top: 0;
-    z-index: 1;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center;
-    align-items: center; */
-    width: 100%;
-    height: 100%;
-    background: rgba(94, 94, 94, 0.582);
-    
 }
 .close_cart {
      float: right;
@@ -415,7 +416,10 @@ form {
 .bill_title {
     color: #2992de;
 }
-
+.bill_title_sep {
+	margin-top: 8px;
+	margin-bottom: 20px;
+}
 table {
     font-size: 1.6rem;
     margin-bottom: 20px;
@@ -504,21 +508,6 @@ th, td {
     text-decoration: underline;
 }
 /* Empty Cart Container */
-.empty_cart_modal {
-    visibility: visible ;
-    position: fixed;
-    top: 0;
-    z-index: 1;
-    left: 0;
-    display: none;
-    flex-direction: column;
-    /* justify-content: center;
-    align-items: center; */
-    width: 100%;
-    height: 100%;
-    background: rgba(88, 88, 88, 0.582);
-    
-}
 .empty_cart_container {
     background: rgb(244, 244, 244);
     /* background:rgb(235, 235, 235); */
@@ -550,21 +539,6 @@ th, td {
     padding-right: 3rem;
 }
 /* Form Invalid Container */
-.form_invalid_modal {
-    visibility: visible ;
-    position: fixed;
-    top: 0;
-    z-index: 1;
-    left: 0;
-    display: none;
-    flex-direction: column;
-    /* justify-content: center;
-    align-items: center; */
-    width: 100%;
-    height: 100%;
-    background: rgba(88, 88, 88, 0.582);
-    
-}
 .form_invalid_container {
     background: rgb(226, 223, 223);
     /* background:rgb(235, 235, 235); */
