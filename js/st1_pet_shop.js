@@ -747,7 +747,7 @@ function makeBill() {
         const modal = document.createElement('div')
         modal.className = 'bill_modal'
         const billContainerHtml =`<div class="bill_container">
-                            <h4>This is your order</h4>
+                            <h4 class="bill_title">This is your order</h4>
                             <hr class="bill_title_sep">
                             <table id="bill_table" width="100%">
                             <thead>
@@ -774,16 +774,16 @@ function makeBill() {
         // console.log(total)
         totalBill = totalBill + total
         let bill = `<tr>
-                    <td style="max-width: 50px;">${document.querySelector('.itm_des_col').querySelectorAll('.td')[i].innerHTML}</td>
+                    <td class="bill_item_des">${document.querySelector('.itm_des_col').querySelectorAll('.td')[i].querySelectorAll('span')[1].innerHTML}</td>
                     <td>${document.querySelector('.cart_qnt_col').querySelectorAll('.cart_qnt_input')[i].value}</td>
-                    <td class="numbers">${document.querySelector('.cart_price_col').querySelectorAll('.td')[i].innerHTML}</td>
-                    <td class="numbers total_price">${total}</td>
+                    <td class="numbers"><span class="mono">${document.querySelector('.cart_price_col').querySelectorAll('.td')[i].querySelector('span').innerHTML}</span></td>
+                    <td class="numbers total_price"><span class="pink mono">${total}</span></td>
                 </tr>`
         billTable.innerHTML += bill
     }
     const totalBillHtml = `<tr class="total">
                         <th colspan="2">Total Price</th>
-                        <th class="numbers" colspan="2">${totalBill}</th>
+                        <th class="numbers" colspan="2"><span class="pink mono">${totalBill}</span></th>
                     </tr>`
     billTable.innerHTML += totalBillHtml
     document.querySelector('.bill_modal').querySelector('.ok_btn').addEventListener('click', function(){hide(document.querySelector('.bill_modal'))})

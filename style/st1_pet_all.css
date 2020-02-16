@@ -220,15 +220,6 @@ hr {
 	margin-top: 8px;
 	margin-bottom: 20px;
 }
-.empty_title_sep {
-	margin-top: 20px;
-	margin-bottom: 50px;
-	border-color: rgb(216, 216, 216);
-}
-.form_invalid_sep {
-	margin-top: 15px;
-	margin-bottom: 20px;
-}
 /* FORUM label */
 .category {
 	font-weight: 600;

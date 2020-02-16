@@ -383,8 +383,7 @@ form {
 }
 /* Bill Container */
 .bill_container {
-    background: #fff;
-    background:rgb(235, 235, 235);
+    background:rgb(245, 245, 245);
     border-top: 5px solid salmon;
     padding: 35px 40PX;
     /* padding-bottom: 0; */
@@ -413,16 +412,22 @@ form {
     /* top: 25%; */
     /* right: 20.5%; */
 }
-h4 {
-    color: #2a48f3;
+.bill_title {
+    color: #2992de;
 }
 
 table {
     font-size: 1.6rem;
     margin-bottom: 20px;
 }
+th {
+    font-size: 1.8rem;
+}
 td {
     text-align: center;
+}
+.bill_item_des {
+    max-width: 100px;
 }
 th:first-child, td:first-child {
     text-align: left;
@@ -430,12 +435,11 @@ th:first-child, td:first-child {
 .numbers {
     text-align: right;
 }
-th {
+th, td {
     border-bottom: 1px dashed #333;
 }
 .total th {
     border-bottom: 0;
-    border-top: 1px dashed #333;
 }
 th, td {
     padding: 5px;
@@ -516,7 +520,7 @@ th, td {
     
 }
 .empty_cart_container {
-    background: rgb(226, 223, 223);
+    background: rgb(244, 244, 244);
     /* background:rgb(235, 235, 235); */
     border-top: 5px solid rgb(41, 143, 202);
     padding: 35px 60PX;
@@ -526,8 +530,13 @@ th, td {
     margin:auto;
     overflow: auto;
 }
-.black {
+.empty_cart_title {
     color: #464646;
+}
+.empty_title_sep {
+	margin-top: 20px;
+	margin-bottom: 50px;
+	border-color: rgb(216, 216, 216);
 }
 .empty_cart {
     display: flex;
@@ -569,6 +578,10 @@ th, td {
 }
 .form_invaild_title {
     color: rgb(165, 138, 138)
+}
+.form_invalid_sep {
+	margin-top: 15px;
+	margin-bottom: 20px;
 }
 .form_invalid_message {
     font-size: 1.6rem;
