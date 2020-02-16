@@ -570,7 +570,8 @@ th, td {
 .form_invaild_title {
     color: rgb(165, 138, 138)
 }
-.feedback_message {
+.form_invalid_message {
     font-size: 1.6rem;
+    margin-bottom: 20px;
 }
 /* Experimenting */
