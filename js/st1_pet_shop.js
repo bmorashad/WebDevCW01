@@ -722,7 +722,7 @@ function onSubmitFeedBack(){
         isFormInvalid = formFeedback(requiredField[i])
         if(isFormInvalid) {
             for(let j = i-1; j>=0; j--) {
-                emptyFieldFeedback(requiredField[j])
+                formFeedback(requiredField[j]) //changed to formFeedback from emptyFieldFeedbacks
             }
             show(formInvalidModal, 'flex')
             break
