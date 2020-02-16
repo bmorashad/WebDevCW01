@@ -186,7 +186,8 @@ let addToCart = () => {
             span.innerHTML = itmDetArr[i]
         }
         const removeItmInCart = document.querySelectorAll('.cart_remove')
-        removeItmInCart.forEach(btn => btn.onclick = function(){removeItm(parseInt(event.target.querySelector('.store_row_no').innerHTML))}) // added
+        // removeItmInCart.forEach(btn => btn.onclick = function(){removeItm(parseInt(event.target.querySelector('.store_row_no').innerHTML))}) // added
+        removeItmInCart[removeItmInCart.length-1].addEventListener('click', function(){removeItm(parseInt(event.target.querySelector('.store_row_no').innerHTML))})
         setTotalPrice()
         let qntIncrease = document.querySelectorAll('.cart_counter.increment')[document.querySelector('.cart_id_col').querySelectorAll('.td').length-1]
         let qntDecrease = document.querySelectorAll('.cart_counter.decrement')[document.querySelector('.cart_id_col').querySelectorAll('.td').length-1]
