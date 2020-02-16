@@ -186,7 +186,7 @@ let addToCart = () => {
             span.innerHTML = itmDetArr[i]
         }
         const removeItmInCart = document.querySelectorAll('.cart_remove')
-        removeItmInCart.forEach(btn => btn.addEventListener('click', removeItm)) // added
+        removeItmInCart.forEach(btn => btn.addEventListener('click', function(){removeItm(parseInt(event.target.querySelector('.store_row_no').innerHTML))})) // added
         setTotalPrice()
         let qntIncrease = document.querySelectorAll('.cart_counter.increment')[document.querySelector('.cart_id_col').querySelectorAll('.td').length-1]
         let qntDecrease = document.querySelectorAll('.cart_counter.decrement')[document.querySelector('.cart_id_col').querySelectorAll('.td').length-1]
@@ -263,20 +263,20 @@ function setWidthToParent(ele) {
 let checkCart = (itmDes, itmQnt) => {
     const itmLst = document.querySelector('.itm_des_col').querySelectorAll('.td')
     const qntLst = document.querySelector('.cart_qnt_col').querySelectorAll('.cart_qnt_input')
-    let inCart = [false, false]
+    let inCart = [false, false, 0, null]
     for(let i = 0; i < itmLst.length; i++) {
         if (itmLst[i].innerHTML == itmDes) {
             let qnt = qntLst[i]
             if (parseInt(qnt.value) !== itmQnt) {
+                inCart = [true, false, i, qnt.value]
                 qnt.value = itmQnt
                 setTotalPrice()
-                inCart = [true, false]
             } else {
-                inCart = [true, true]
+                inCart = [true, true, i, null]
             }
             break
         } else {
-            inCart = [false, false]
+            inCart = [false, false, i+1, null]
         }
     }
     return inCart
@@ -491,22 +491,32 @@ let changeItems = () => {
     addItem.forEach(btn => btn.addEventListener('click', function(){
         const inCart = addToCart()
         setWidthToParent(notification)
-        if (!inCart[1]) {
-            notification.firstElementChild.innerHTML = "Item Added ✅"
-            notification.style.backgroundColor = 'rgba(0, 172, 77, 0.877)'
-        } else {
-            notification.firstElementChild.innerHTML = "This is already in the cart ✕"
+        if (!inCart[0] && !inCart[1]) {
+            notification.innerHTML = "<span>Item Added ✅</span><span class='undo' href='#'>undo</span>"
+            notification.style.backgroundColor = 'rgba(8, 145, 65, 0.767)'
+            document.querySelector('.undo').addEventListener('click', function(){removeItm(inCart[2]); hide(notification)})
+        } else if(inCart[0] && !inCart[1]) {
+            notification.innerHTML = "<span>Quantity Changed ✅</span><span class='undo' href='#'>undo</span>"
+            notification.style.backgroundColor = 'rgba(8, 145, 65, 0.767)'
+            document.querySelector('.undo').addEventListener('click', function(){
+                document.querySelectorAll('.cart_qnt_input')[inCart[2]].value = inCart[3]
+                setTotalPrice()
+                hide(notification)
+            })
+        } 
+        else {
+            notification.innerHTML = "<span>This is already in the cart ✕</span>"
             notification.style.backgroundColor = 'rgba(219, 29, 29, 0.877)'    
         }
-        show(notification, 'block')
-        setTimeout('hide(notification)', 2000)
+        show(notification, 'flex')
+        setTimeout('hide(notification)', 3000)
     }));
     setSameHeightElement()
 }
 
-let removeItm = () => {
-    const rowToRemove = parseInt(event.target.querySelector('.store_row_no').innerHTML)
+function removeItm(itmNo) {
     const cols = document.querySelectorAll('.cart_table_col')
+    const rowToRemove = itmNo
     cols.forEach(col => {
         col.querySelectorAll('.td')[rowToRemove].remove()
     })
