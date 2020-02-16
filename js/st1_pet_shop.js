@@ -258,9 +258,9 @@ function show(ele, display) {
 function hide(ele) {
     ele.style.display = 'none'
 }
-function setWidthToParent(ele) {
-    ele.style.width = document.querySelector('html').offsetWidth - document.querySelector('.col1').offsetWidth
-}
+// function setWidthToParent(ele) {
+//     ele.style.width = document.querySelector('html').offsetWidth - document.querySelector('.col1').offsetWidth
+// }
 let checkCart = (itmDes, itmQnt) => {
     const itmLst = document.querySelector('.itm_des_col').querySelectorAll('.td')
     const qntLst = document.querySelector('.cart_qnt_col').querySelectorAll('.cart_qnt_input')
@@ -491,7 +491,7 @@ let changeItems = () => {
     qntDecrease.forEach(counter => counter.addEventListener('click', qntDecrement))
     addItem.forEach(btn => btn.addEventListener('click', function(){
         const inCart = addToCart()
-        setWidthToParent(notification)
+        // setWidthToParent(notification)
         if (!inCart[0] && !inCart[1]) {
             notification.innerHTML = "<span>Item Added ✅</span><span class='undo' href='#'>undo</span>"
             notification.style.backgroundColor = 'rgba(8, 145, 65, 0.767)'
@@ -809,8 +809,8 @@ function makeBill() {
 
 
 // Event Listeners Tst
-//1
-window.addEventListener('resize', function(){setWidthToParent(notification)})
+// Don't need this anymore since notification postion changed to *sticky* from *fixed*
+// window.addEventListener('resize', function(){setWidthToParent(notification)})
 //2
 order.addEventListener('submit', onSubmitFeedBack)
 // Add Event Listeners Tst Success
