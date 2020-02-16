@@ -259,7 +259,7 @@ function hide(ele) {
     ele.style.display = 'none'
 }
 function setWidthToParent(ele) {
-    ele.style.width = getComputedStyle(ele.parentElement).width
+    ele.style.width = document.querySelector('html').offsetWidth - document.querySelector('.col1').offsetWidth
 }
 let checkCart = (itmDes, itmQnt) => {
     const itmLst = document.querySelector('.itm_des_col').querySelectorAll('.td')
