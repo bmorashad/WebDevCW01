@@ -819,10 +819,11 @@ function makeBill() {
 let formInvalidModalListener = false
 order.addEventListener('submit', function(){
     const firstInvalidField = onSubmitFeedBack()
-    if(!formInvalidModalListener) {
-        formInvalidModal.addEventListener('click', function(){document.querySelectorAll('.required')[firstInvalidField].focus(); hideModal(formInvalidModal)})
-        formInvalidModalListener = true
+    if(formInvalidModalListener) {
+        formInvalidModal.removeEventListener('click')
     }
+    formInvalidModal.addEventListener('click', function(){document.querySelectorAll('.required')[firstInvalidField].focus(); hideModal(formInvalidModal)})
+    formInvalidModalListener = true
 })
 // Add Event Listeners Tst Success
 firstName.addEventListener('focusout', function() {
