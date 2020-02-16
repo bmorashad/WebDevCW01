@@ -572,7 +572,7 @@ let showCart = () => {
     clear.style.display='block'   
 }
 let hideModal = (ele) => {
-    if (event.target == ele || event.target == document.querySelector('.close_cart')){
+    if (event.target == ele || event.target.classList.contains('modal_btn') || event.target == document.querySelector('.close_cart')){
         ele.style.visibility = 'hidden'
         clear.style.display='none' //Fixes the delay to disappear
     }
@@ -717,15 +717,19 @@ function requiredFieldOnSkip() {
 // Tst ONSUBMIT
 function onSubmitFeedBack(){
     const requiredField = document.querySelectorAll('.required')
+    let firstInvalidField = 0
     let isFormInvalid
     for(let i = requiredField.length-1; i >= 0; i--) {
         isFormInvalid = formFeedback(requiredField[i])
         if(isFormInvalid) {
             for(let j = i-1; j>=0; j--) {
                 formFeedback(requiredField[j]) //changed to formFeedback from emptyFieldFeedbacks
+                if(formFeedback(requiredField[j])) {
+                    firstInvalidField = j
+                }
             }
             show(formInvalidModal, 'flex')
-            break
+            return firstInvalidField
         } 
     }
     if (!isFormInvalid) {
@@ -757,7 +761,7 @@ function makeBill() {
                                 <tbody>
                                 </tbody>
                             </table>
-                            <button class="ok_btn">OK</button>
+                            <button class="ok_btn modal_btn">OK</button>
                         </div>`
         modal.innerHTML = billContainerHtml
         document.body.appendChild(modal)
@@ -812,7 +816,14 @@ function makeBill() {
 // Don't need this anymore since notification postion changed to *sticky* from *fixed*
 // window.addEventListener('resize', function(){setWidthToParent(notification)})
 //2
-order.addEventListener('submit', onSubmitFeedBack)
+let formInvalidModalListener = false
+order.addEventListener('submit', function(){
+    const firstInvalidField = onSubmitFeedBack()
+    if(!formInvalidModalListener) {
+        formInvalidModal.addEventListener('click', function(){document.querySelectorAll('.required')[firstInvalidField].focus(); hideModal(formInvalidModal)})
+        formInvalidModalListener = true
+    }
+})
 // Add Event Listeners Tst Success
 firstName.addEventListener('focusout', function() {
     formFeedback(firstName)
@@ -837,9 +848,8 @@ window.addEventListener('resize', setSameHeightElement)
 cartBtn.addEventListener('click', showCart)
 cartModal.addEventListener('click', function(){hideModal(cartModal)})
 emptyCartModal.addEventListener('click', function(){hideModal(emptyCartModal)})
-formInvalidModal.addEventListener('click', function(){hideModal(formInvalidModal)})
-okBtn[0].addEventListener('click', function(){hide(emptyCartModal)})
-okBtn[1].addEventListener('click', function(){hide(formInvalidModal)})
+// okBtn[0].addEventListener('click', function(){hide(emptyCartModal)})
+// okBtn[1].addEventListener('click', function(){hide(formInvalidModal)})
     /* let test = () => {
         let x = document.querySelector('#som')
         console.log(x)
