@@ -503,7 +503,7 @@ let changeItems = () => {
                 document.querySelectorAll('.cart_qnt_input')[inCart[2]].value = inCart[3]
                 setTotalPrice();
                 (function(ele) {ele.style.visibility = "hidden"})(notification)})
-        } 
+        }  
         else {
             notification.innerHTML = "<span>This is already in the cart ✕</span>"
             notification.style.backgroundColor = 'rgba(219, 29, 29, 0.877)'    
