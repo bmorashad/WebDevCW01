@@ -14,6 +14,7 @@ const emptyCartModal = document.querySelector('.empty_cart_modal')
 const cartModal = document.querySelector('.cart_modal')
 const formInvalidModal = document.querySelector('.form_invalid_modal')
 const okBtn = document.querySelectorAll('.ok_btn')
+const undone = document.querySelector('.undone_notify')
 // Item Database OLD
 // let food = [
 //     {
@@ -494,15 +495,22 @@ let changeItems = () => {
         // setWidthToParent(notification)
         if (!inCart[0] && !inCart[1]) {
             notification.innerHTML = "<span>Item Added ✅</span><span class='undo' href='#'>undo</span>"
-            notification.style.backgroundColor = 'rgba(8, 145, 65, 0.767)'
-            document.querySelector('.undo').addEventListener('click', function(){removeItm(inCart[2]); (function(ele) {ele.style.visibility = "hidden"})(notification)})
+            notification.style.backgroundColor = 'rgba(18, 138, 44, 0.86)'
+            document.querySelector('.undo').addEventListener('click', function(){
+                removeItm(inCart[2]); (function(ele) {ele.style.visibility = "hidden"})(notification)
+                undone.style.visibility = 'visible'
+                setTimeout('(function(ele) {ele.style.visibility = "hidden"})(undone)', 800)
+            })
         } else if(inCart[0] && !inCart[1]) {
             notification.innerHTML = "<span>Quantity Changed ✅</span><span class='undo' href='#'>undo</span>"
-            notification.style.backgroundColor = 'rgba(8, 145, 65, 0.767)'
+            notification.style.backgroundColor = 'rgba(18, 138, 44, 0.86)'
             document.querySelector('.undo').addEventListener('click', function(){
                 document.querySelectorAll('.cart_qnt_input')[inCart[2]].value = inCart[3]
                 setTotalPrice();
-                (function(ele) {ele.style.visibility = "hidden"})(notification)})
+                (function(ele) {ele.style.visibility = "hidden"})(notification)
+                undone.style.visibility = 'visible'
+                setTimeout('(function(ele) {ele.style.visibility = "hidden"})(undone)', 800)
+            })
         } 
         else {
             notification.innerHTML = "<span>This is already in the cart ✕</span>"
