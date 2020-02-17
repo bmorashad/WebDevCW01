@@ -498,8 +498,9 @@ let changeItems = () => {
             notification.style.backgroundColor = 'rgba(18, 138, 44, 0.86)'
             document.querySelector('.undo').addEventListener('click', function(){
                 removeItm(inCart[2]); (function(ele) {ele.style.visibility = "hidden"})(notification)
-                undone.style.visibility = 'visible'
-                setTimeout('(function(ele) {ele.style.visibility = "hidden"})(undone)', 800)
+                undone.style.transform = 'translate(0%, 5px)'
+                undone.style.zIndex = '1'
+                setTimeout('(function(ele) {ele.style.transform = "translate(0%, -50px)"; ele.style.zIndex = "-1"})(undone)', 800)
             })
         } else if(inCart[0] && !inCart[1]) {
             notification.innerHTML = "<span>Quantity Changed ✅</span><span class='undo' href='#'>undo</span>"
@@ -508,8 +509,9 @@ let changeItems = () => {
                 document.querySelectorAll('.cart_qnt_input')[inCart[2]].value = inCart[3]
                 setTotalPrice();
                 (function(ele) {ele.style.visibility = "hidden"})(notification)
-                undone.style.visibility = 'visible'
-                setTimeout('(function(ele) {ele.style.visibility = "hidden"})(undone)', 800)
+                undone.style.transform = 'translate(0%, 5px)'
+                undone.style.zIndex = '1'
+                setTimeout('(function(ele) {ele.style.transform = "translate(0%, -50px)"; ele.style.zIndex = "-1"})(undone)', 800)
             })
         } 
         else {

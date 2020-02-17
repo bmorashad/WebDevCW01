@@ -509,12 +509,15 @@ th, td {
 }
 .undone_notify {
     display: flex;
-    visibility: hidden;
+    visibility: visible;
     width: 100%;
     position: sticky;
     top: 5px;
     align-items: center;
     justify-content: center;
+    z-index: -1;
+    transform: translate(0%, -50px);
+    transition: transform 200ms ease-out;
 }
 .undone {
     padding: 5px 50px;
