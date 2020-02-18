@@ -791,7 +791,7 @@ function makeBill() {
         billTable.innerHTML += bill
     }
     const totalBillHtml = `<tr class="total">
-                        <th colspan="2">Total Price</th>
+                        <th colspan="2" class="pink">Total Price</th>
                         <th class="numbers" colspan="2"><span class="pink mono">${totalBill}</span></th>
                     </tr>`
     billTable.innerHTML += totalBillHtml
