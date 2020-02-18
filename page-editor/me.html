@@ -19,14 +19,6 @@
             grid-gap: 20px;
             grid-template-columns: auto;
         }
-        .grid_item:first-child, .grid_item:last-child {
-            /* background: red; */
-        }
-        .grid_item {
-            /* height: 500px; */
-            /* background: grey; */
-            /* opacity: 0.2; */
-        }
         .header, .content {
             display: flex;
             align-items: center;
@@ -113,6 +105,11 @@
                 margin: 0;
                 margin-bottom: 10px;
 
+            }
+        }
+        @media only screen and (max-width: 700px) {
+            html {
+                font-size: 7px;
             }
         }
     </style>
