@@ -5,7 +5,7 @@
     padding-left: 30px;
     padding-right: 80px;
     padding-top: 100px;
-    background: rgba(216, 225, 233, 0.1);
+    background: #f4f7ff;
     border-right: 1px solid rgba(192, 192, 192, 0.534);
     display: flex;
     padding-bottom: 100px;
@@ -15,6 +15,36 @@
 .col2 {
     flex-grow: 1;
 }
+/* Shop Banner */
+.shop_banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(255, 208, 208);
+    box-sizing: border-box;
+    padding: 40px 50px;
+}
+.banner_gif img {
+    height: 22.4rem;
+    padding-bottom: 20px;
+    margin-left: 20px;
+}
+.banner_message {
+    /* width: 43rem; */
+    
+}
+.banner_message h3{
+    font-size: 3.6rem;
+    line-height: 1.3em;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+.banner_message p {
+    padding: 10px 0;
+    margin-top: 8px;
+    line-height: 1.5em;
+}
+/* Shop */
 .shop_container {
     padding: 0 70px;
 }
