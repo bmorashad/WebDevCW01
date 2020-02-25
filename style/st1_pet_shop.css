@@ -615,3 +615,22 @@ th, td {
     margin-bottom: 20px;
 }
 /* Experimenting */
+@media only screen and (max-width: 1160px) {
+    .shop_banner {
+        padding: 30px 0;
+    }
+    .shop_banner img{
+        /* padding-left: 100px; */
+        height: 18rem; 
+        margin-bottom: 30px;
+    }
+}
+@media only screen and (max-width: 1111px) {
+    .banner_gif {
+        display: none;
+    }
+    .shop_banner {
+        justify-content: start;
+        padding: 40px 80px;
+    }
+}
