@@ -23,7 +23,7 @@
     background: linear-gradient(90deg, #FFF4F4 0%, #FFF5F5 68.84%, #FFF8F8 102.47%);
     box-shadow: 1px 8px 10px rgba(206, 206, 206, 0.25);
     box-sizing: border-box;
-    padding: 60px 50px;
+    padding: 60px 100px;
 }
 .banner_gif img {
     height: 22.4rem;
@@ -31,7 +31,7 @@
     margin-left: 20px;
 }
 .banner_message {
-    /* width: 43rem; */
+    max-width: 481px;
 }
 .banner_message h3{
     color: rgb(255, 89, 89);
@@ -642,13 +642,13 @@ th, td {
     margin-bottom: 20px;
 }
 /* Experimenting */
-@media only screen and (max-width: 1160px) {
+@media only screen and (max-width: 1169px) {
     .shop_banner {
-        padding: 30px 0;
+        padding: 50px 50px 50px 100px;
     }
     .shop_banner img{
         /* padding-left: 100px; */
-        height: 18rem; 
+        height: 21rem; 
         margin-bottom: 30px;
     }
 }
