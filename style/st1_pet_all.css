@@ -14,8 +14,7 @@ body {
 footer {
 	display: flex;
 	justify-content: center;
-	background-color: rgb(45, 74, 97);
-	line-height: 2.5rem;
+	background: linear-gradient(180deg, #195E91 0%, #004678 100%);	line-height: 2.5rem;
 	padding: 15px;
 }
 .footer_p {
@@ -37,12 +36,13 @@ footer {
 	margin: 0 5;
 }
 .footer_sep--large {
-	color: rgb(48, 70, 88);
+    color: rgb(0, 68, 123);
 	font-size: 38px;
 }
 .temp_bar {
 	height: 52px;
-	background: rgb(46, 64, 97);
+	background: linear-gradient(180deg, #004678 0%, #195E91 100%);
+	background: linear-gradient(180deg, #092E65 0%, #093F8E 100%);
 }
 
 /* FONT STYLES*/

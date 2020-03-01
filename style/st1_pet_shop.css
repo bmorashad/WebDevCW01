@@ -168,10 +168,10 @@
     transition: 0.2s;
 }
 .add:hover {
-    background: #e03232;
+    background: #e20202;
 }
 .add:active {
-    background: #a31b1b;
+    background: #af0000;
 }
 .shop_heading {
     margin: 40px 0;
@@ -213,12 +213,12 @@ form {
     background: transparent;
 }
 .form_btn:hover {
-    background: rgb(8, 98, 163);
-    border-color: rgb(5, 98, 163);
+    background: #0324c9;
+    border-color: #0324c9;
     color: white;
 }
 .form_btn:active {
-    background:rgb(11, 57, 90);
+    background: #051d94;
     color: rgb(255, 255, 255);
 }
 .validation {
