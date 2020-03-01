@@ -83,6 +83,7 @@
     flex-direction: column;
     width: 28%;
     min-width: 18px;
+    max-width: 28rem;
     padding: 15px 0;
     text-align: center;
     border: 1px solid rgb(216, 216, 216);
