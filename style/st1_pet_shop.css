@@ -657,11 +657,24 @@ th, td {
     .banner_gif {
         display: none;
     }
-    .item {
-        margin-right: 10%;
-    }
     .shop_banner {
         justify-content: start;
         padding: 50px 80px;
     }
+}
+@media only screen and (max-width: 1120px) {
+    .showcase {
+        justify-content: center;
+    }
+
+    .item {
+        width: 40%;
+        min-width: 25rem;
+        margin-right: 5% !important;
+    }
+}
+@media only screen and (max-width: 1100px) {
+	.item_title_p {
+		font-size: 1.6rem !important;
+	}
 }
