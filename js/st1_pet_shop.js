@@ -818,7 +818,7 @@ function makeBill() {
     // </tr>
 }
 function formContainerPositionOnWindowHeight() {
-    if(window.innerHeight < document.querySelector('.form_container')) {
+    if(window.innerHeight < document.querySelector('.form_container').offsetHeight) {
         document.querySelector('.form_container').style.position = 'static'
     } else {
         document.querySelector('.form_container').style.position = 'sticky'
@@ -855,11 +855,12 @@ address.addEventListener('focusout', function() {
 requiredFieldOnSkip()
 
 // Imediate Exucution
+formContainerPositionOnWindowHeight()
 changeItems()
 // Adding Event Listeners
 category.addEventListener('change', changeItems)
 clear.addEventListener('click', clearCart)
-window.addEventListener('resize', () => {setSameHeightElement; formContainerPositionOnWindowHeight})
+window.addEventListener('resize', () => {setSameHeightElement; formContainerPositionOnWindowHeight();})
 cartBtn.addEventListener('click', () => {show(cartModal, 'flex')})
 cartModal.addEventListener('click', function(){hideModal(cartModal)})
 emptyCartModal.addEventListener('click', function(){hideModal(emptyCartModal)})
