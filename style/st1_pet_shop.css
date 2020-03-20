@@ -1,29 +1,37 @@
 .container {
     display: flex;
+    background: rgb(254, 254, 254);
 }
 .col1 {
-    padding-left: 38px;
-    padding-right: 60px;
+    /* padding-left: 38px; */
+    /* padding-right: 60px; */
+    /* border-right: 1px solid rgba(192, 192, 192, 0.534); */
     padding-top: 100px;
-    background: #f4f7ff;
-    border-right: 1px solid rgba(192, 192, 192, 0.534);
+    /* background: #fdfdfd; */
     display: flex;
     padding-bottom: 100px;
+    /* z-index: -999; */
     /* align-items: center; */
 }
 
 .col2 {
     flex-grow: 1;
+    /* background: rgb(253, 253, 253); */
 }
 /* Shop Banner */
 .shop_banner {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(90deg, #ffecec 0%, #ffeeee 68.84%, #ffe0e0 102.47%);
     box-shadow: 4px 2px 8px rgba(68, 68, 68, 0.25);
     box-sizing: border-box;
-    padding: 60px 100px;
+    padding: 80px 100px;
+    background: url('/img/banner/shop-banner.png');
+    background-size: cover;
+    background-clip: border-box;
+    background-position: center;
+    /* background: linear-gradient(90deg, #ffecec 0%, #ffeeee 68.84%, #ffe0e0 102.47%); */
 }
 .banner_gif img {
     height: 22.4rem;
@@ -41,11 +49,12 @@
     border-radius: 50%;
 }
 .banner_message {
-    max-width: 481px;
+    /* max-width: 478.6px; */
+    text-align: center;
 }
 .banner_message h3{
-    color: rgb(255, 77, 77);
-    font-size: 3.8rem;
+    color: rgb(255, 255, 255);
+    font-size: 4.4rem;
     line-height: 1.2em;
     font-weight: 700;
     margin-bottom: 0;
@@ -54,6 +63,8 @@
     padding: 10px 0;
     margin-top: 3px;
     line-height: 1.5em;
+    font-weight: 300;
+    font-size: 16px;
 }
 .banner_btn {
     padding: 8px 20px;
@@ -62,19 +73,21 @@
     margin-top: 30px;
     color: rgb(243, 243, 243);
     font-weight: 600;
-    background: #4350FF;
-    box-shadow: 0px 0px 3px rgba(37, 37, 37, 0.514);
+    background: #FF218C;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.11);
+    /* box-shadow: 0px 0px 3px rgba(37, 37, 37, 0.514); */
     transition: 0.1s;
 }
 .banner_btn:hover {  
     color: rgb(255, 255, 255);
-    box-shadow: -2px 3px 2px rgba(0, 0, 0, 0.267);
+    box-sizing: border-box;
     transform: translateY(-2px);
+    /* box-shadow: -2px 3px 2px rgba(0, 0, 0, 0.267); */
     /* box-shadow: -5px 0px 10px #4350FF; */
 }
 .banner_btn:active {  
     color: rgb(255, 255, 255);
-    box-shadow: -1px 2px 5px rgba(43, 43, 43, 0);
+    /* box-shadow: -1px 2px 5px rgba(43, 43, 43, 0); */
         /* box-shadow: -5px 0px 10px #4350FF; */
 }
 /* Shop */
@@ -97,6 +110,7 @@
     max-width: 28rem;
     padding: 15px 0;
     text-align: center;
+    background: white;
     border: 1px solid rgb(216, 216, 216);
     box-sizing: border-box;
     box-shadow: 0px 4px 7px rgba(190, 190, 190, 0.25);
@@ -108,9 +122,12 @@
     /* flex-grow: 1; */
 }
 .item_des {
-    padding: 0 5px;
-   
-
+    margin-top: 20px;
+    padding: 15px 5px;
+    border-bottom: 1px solid;
+    border-top: 1px solid;
+    border-color: rgb(223, 223, 223);
+    /* padding: 0 5px; */
 }
 .itm_img {
     /* width: 18rem; */
@@ -125,10 +142,12 @@
     background: #c3e1e280;
     padding: 5px 8%;
     margin-top: 12px;
-    justify-content: space-between;
+    justify-content: center;
     /* align-items: center; */
 }
-
+.qnt_change {
+    margin-left: 10px;
+}
 .counter, .cart_counter {
     float: left;
     /* Firefox alignment fix */
@@ -213,7 +232,32 @@ textarea {
 }
 form {
     width: 23rem;
-    margin: 30px 0;
+    padding: 10px 39px;
+    padding-bottom: 50px;
+    padding-left: 29px;
+    background: #f5f9ff;
+    /* margin: 30px 0; */
+}
+.req_star {
+    color:red;
+}
+.form_container {
+    border: 1px solid rgb(230, 230, 230);
+    box-shadow: 0px 2px 4px rgba(68, 68, 68, 0.103);
+    margin-left: 20px;
+    height: fit-content;
+    position: sticky;
+    left: 0;
+    bottom: -80px;
+    top: 20px;
+    z-index: 999;
+}
+.form_heading {
+    background: white;
+    color: #0472D9;
+    padding: 19px 29px;
+    border-bottom: 1px solid rgb(216, 216, 216);
+
 }
 .form_btn {
     background: #002bff;
@@ -541,12 +585,15 @@ th, td {
     display: flex;
     visibility: hidden;
     position: sticky;
-    bottom: 0;
+    bottom: 10px;
     z-index: 999;
     text-align: center;
     justify-content: center;
+    margin:auto;
+    /* margin-bottom: 15px; */
+    border-radius: 10px 10px 10px 10px;
     align-items: center;
-    width: 100%;
+    width: 80%;
     background: rgba(8, 145, 65, 0.877);
     height: 2.8rem;
     /* background: rgba(219, 29, 29, 0.877); */

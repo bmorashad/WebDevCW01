@@ -13,24 +13,34 @@
         
         <a href="#cart" class="cart_link"><button class="cart_btn"><img src="img/icon/cart.png" 
         class="cart_icon"></button></a>
-        <button class="reset font_size_change"><img src="img/icon/reset.png" 
-        class="reset_icon"></button>
-        <button class="font_size_increase font_size_change"><img src="img/icon/zoom_in.png" 
-        class="zoom_icon"></button>
-        <button class="font_size_decrease font_size_change"><img src="img/icon/zoom_out.png" 
-        class="zoom_icon"></button>
         <div class="temp_bar"></div>
+        <div class="shop_banner">
+            <button class="reset font_size_change"><img src="img/icon/reset.png" 
+                class="reset_icon"></button>
+                <button class="font_size_increase font_size_change"><img src="img/icon/zoom_in.png" 
+                class="zoom_icon"></button>
+                <button class="font_size_decrease font_size_change"><img src="img/icon/zoom_out.png" 
+                class="zoom_icon"></button>
+            <div class="banner_message">
+                <h3>Discover Amazing Gifts For <br>Your Furry Friend</h3>
+                <p class="p1">Buy toys, medicine & food for your little 
+                panther & show your love</p>
+            </div>
+            <a class="banner_btn" href="#shop">SHOP NOW</a>
+        </div>
         <div class="container">
             <div class="col1">
                 <div class="form_container">
-                    <p class="p1_black medium">Please fill the form, <br>before purchasing</p>
+                    <div class="form_heading">
+                        <p class="p1 medium" style = "color: #0472D9;">Fill & Order</p>
+                    </div>
                     <form id="order" onsubmit="return false">
-                        <label for="firstname" class="order_lbl">Full Name:</label>
+                        <label for="firstname" class="order_lbl">Full Name<span class="req_star">*</span></label>
                         <input class="shop_form_txt required" id="firstname" name="firstname" type="text" placeholder="name">
                         <div class="form_feedback">
                             <span class="validation required_name">This field is required*</span>
                         </div>
-                        <label for="email" class="order_lbl">Email:</label>
+                        <label for="email" class="order_lbl">Email<span class="req_star">*</span></label>
                         <!-- here I changed the type to text since we were told not to use html validation -->
                         <input class="shop_form_txt required" id="email" name="email" type="text" placeholder="example@domain.com">
                         <div class="form_feedback">
@@ -39,7 +49,7 @@
                         </div>
                         
                         
-                        <label for="phone" class="order_lbl">Phone Number:</label>
+                        <label for="phone" class="order_lbl">Phone Number<span class="req_star">*</span></label>
                         <input class="shop_form_txt required" id="phone" name="phone" type="tel" placeholder="0123456789">
                         <div class="form_feedback">
                             <span class="validation required_phone">This field is required*</span>
@@ -48,7 +58,7 @@
                         </div>
                         
                         
-                        <label for="address" class="order_lbl">Address:</label>
+                        <label for="address" class="order_lbl">Address<span class="req_star">*</span></label>
                         <textarea class="required" id="address" name="address"></textarea>
                         <div class="form_feedback">                        
                             <span class="validation required_address">This field is required*</span>
@@ -59,17 +69,6 @@
                 </div>
             </div>
             <div class="col2">
-                <div class="shop_banner">
-                    <div class="banner_message">
-                        <h3>Discover Amazing Gifts For Your Furry Friend</h3>
-                        <p class="p1 p1_black">Buy toys, medicine & food for your little 
-                        panther & show your love</p>
-                        <a class="banner_btn" href="#shop">SHOP NOW</a>
-                    </div>
-                    <div class="banner_gif">
-                        <img src="img/banner/shopping.gif">
-                    </div>
-                </div>
                 <div class="undone_notify">
                     <span class="undone">Action undone</span>
                 </div>

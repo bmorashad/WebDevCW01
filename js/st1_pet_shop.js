@@ -463,14 +463,12 @@ let changeItems = () => {
         itmDiv.className = 'item'
         const itmDivInner = `<img class="itm_img"src="${itm.img}">
                             <div class="item_des">
-                                <hr class="item_title_sep">
                                 <p class="item_title_p"><span>${itm.name}</span></p>
-                                <hr class="item_title_sep">
                             </div>
                             <p class="item_price_p">PRICE: <span class="currency">RS <span class="itm_price">${itm.price}</span></span></p>
                             <div class="quantity">
-                                <p style="font-size: 1.2rem; font-weight: 600; color: #555555;">Quantity:</p>
-                                <div class="increaser">
+                                <p style="font-size: 1.2rem; font-weight: 600; color: #555555;">Qnt:</p>
+                                <div class="qnt_change">
                                     <button class="counter increment">+</button>
                                     <input type="text" value="1" class="qnt_input" readonly>
                                     <button class="counter decrement">-</button>
