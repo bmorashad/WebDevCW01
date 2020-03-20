@@ -33,21 +33,21 @@
     background-position: center;
     /* background: linear-gradient(90deg, #ffecec 0%, #ffeeee 68.84%, #ffe0e0 102.47%); */
 }
-.banner_gif img {
+/* .banner_gif img {
     height: 22.4rem;
     margin-top: -20px;
 
-}
-.banner_gif {
+} */
+/* .banner_gif {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 30rem; /* flex items shrink */
+    min-width: 30rem; flex items shrink
 	width: 30rem;
 	height: 30rem;
     background: rgb(255, 241, 241);
     border-radius: 50%;
-}
+} */
 .banner_message {
     /* max-width: 478.6px; */
     text-align: center;
@@ -709,11 +709,6 @@ th, td {
 @media only screen and (max-width: 1169px) {
     .shop_banner {
         padding: 50px 50px 50px 100px;
-    }
-    .shop_banner img{
-        /* padding-left: 100px; */
-        height: 21rem; 
-        margin-bottom: 30px;
     }
 }
 @media only screen and (max-width: 1120px) {
