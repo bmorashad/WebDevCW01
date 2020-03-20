@@ -713,11 +713,12 @@ th, td {
 }
 @media only screen and (max-width: 1120px) {
     .showcase {
-        justify-content: center;
+        /* justify-content: center; */
     }
 
     .item {
-        width: 40%;
+        max-width: 40%;
+        min-width: 20rem;
         margin-right: 5% !important;
     }
 }
@@ -739,7 +740,22 @@ th, td {
     }
 }
 @media only screen and (max-width: 955px) {
+    .showcase {
+        justify-content: center;
+    }
     .item {
-        width: 28rem;
+        min-width: 25rem;
+    }
+    /* testing */
+    .container {
+        flex-direction: column;
+    }
+    .showcase {
+        margin-bottom: 0px;
+    }
+    .col1 {
+        order: 2;
+        width: 100%;
+        /* padding: 20px; */
     }
 }
