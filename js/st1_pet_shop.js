@@ -817,7 +817,13 @@ function makeBill() {
     //     <th class="numbers" colspan="2">1400.00</th>
     // </tr>
 }
-
+function formContainerPositionOnWindowHeight() {
+    if(window.innerHeight < document.querySelector('.form_container')) {
+        document.querySelector('.form_container').style.position = 'static'
+    } else {
+        document.querySelector('.form_container').style.position = 'sticky'
+    }
+}
 
 // Event Listeners Tst
 // Don't need this anymore since notification postion changed to *sticky* from *fixed*
@@ -853,7 +859,7 @@ changeItems()
 // Adding Event Listeners
 category.addEventListener('change', changeItems)
 clear.addEventListener('click', clearCart)
-window.addEventListener('resize', setSameHeightElement)
+window.addEventListener('resize', () => {setSameHeightElement; formContainerPositionOnWindowHeight})
 cartBtn.addEventListener('click', () => {show(cartModal, 'flex')})
 cartModal.addEventListener('click', function(){hideModal(cartModal)})
 emptyCartModal.addEventListener('click', function(){hideModal(emptyCartModal)})
