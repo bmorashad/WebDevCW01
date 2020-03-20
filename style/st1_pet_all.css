@@ -35,11 +35,31 @@ footer {
 .footer_sep {
 	font-weight: 300;
 	color: #dfdfdf;
-	margin: 0 5;
+	margin: 0 5px;
 }
 .footer_sep--large {
     color: rgb(0, 68, 123);
 	font-size: 38px;
+}
+.email::before {
+	background-image: url('../img/icon/email.png');
+    background-size: contain;
+    display: inline-block; 
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
+    vertical-align: -20%;
+    content:"";
+}
+.dev::before {
+	background-image: url('../img/icon/dev.png');
+    background-size: contain;
+    display: inline-block; 
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
+    vertical-align: -20%;
+    content:"";
 }
 .temp_bar {
 	height: 52px;
