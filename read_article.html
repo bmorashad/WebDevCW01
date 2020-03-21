@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="icon" href="img/icon/favicon.png">
+		<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:300,400,600,700|IBM+Plex+Sans:200,300,400,600,700|Roboto+Mono:400,500,700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="style/st1_pet_all.css">
+		<link rel="stylesheet" type="text/css" href="style/st1_pet_read.css">
+	
+		
+
+        <title>PetCat-Read Articles</title>
+        <style>
+            html {
+                height: 100%;
+            }
+            .container {
+                display: grid;
+                grid-template-columns: repeat(12, 1fr);
+                grid-template-rows: 150px;
+            }
+            .article_container {
+                grid-row: 2/3;
+                grid-column: 3/11;
+                background: #fff;
+                border-radius: 5px;
+                box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.233);
+                padding: 80px;
+                /* padding-bottom: 10px; */
+                margin-bottom: 100px;
+                /* height: 100%; */
+                /* align-self: center; */
+                /* background: #333; */
+            }
+            .article_banner{
+                grid-column: 1/span12;
+                grid-row: 1/span2;
+                height: 450px;
+            }
+            .article_banner img {
+                z-index: -9999;
+                /* filter: grayscale(100%); */
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .article_heading {
+                display: flex;
+                align-items: center;
+                /* justify-content: center; */
+                flex-direction: column;
+            }
+            .article_heading h3 {
+                margin:auto;    
+                color: rgb(0, 56, 109);
+                /* text-align: center; */
+            }
+            .authour {
+                color: #333;
+                margin-top: 12px;
+            }
+            article h4 {
+                color:rgb(41, 41, 41);
+            }
+            .content {
+                margin-top: 40px;
+                display: flex;
+                flex-direction: column;
+            }
+            .content img {
+                margin-top: 30px;
+                margin-bottom: 30px;
+                width: 110%;
+                align-self: center;
+            }
+            .content p {
+                font-family: 'IBM Plex serif';
+                font-size: 1.8rem;        
+                line-height: 1.6em;
+                color: #000;
+            }
+            .description_box {
+                border-left: 4px solid rgb(255, 22, 80);
+                background: rgb(255, 236, 236);
+                padding: 20px 10px;
+                margin: 20px 0;
+                margin-bottom: 50px;
+            }
+            .description_box h6 {
+                color:rgb(255, 22, 80);
+                font-weight: 700;
+                text-decoration: underline;
+                font-size: 2.2rem;
+                margin-bottom: 20px;
+                padding-left: 18px;
+            }
+            .description_box h6::before {
+                background-image: url('img/icon/black_cat.png');
+                background-size: contain;
+                display: inline-block; 
+                height: 22px;
+                width: 22px;
+                margin-right: 6px;
+                vertical-align:-10%;
+                content:"";
+            }
+            .description_box p {
+                font-family: 'IBM Plex sans';
+                font-size: 1.6rem;
+                color: #333;
+                padding-left: 20px;
+            }
+            .u_margin_b {
+                margin-bottom: 20px;
+            }
+            @media only screen and (max-width: 1200px) {
+                .article_container {
+                    grid-column: 2/12;
+                }
+            }
+        </style>
+   
+    </head>
+    <body>
+        
+        <div class="temp_bar">
+            <button class="reset font_size_change"><img src="img/icon/reset.png" 
+                class="reset_icon"></button>
+                <button class="font_size_increase font_size_change"><img src="img/icon/zoom_in.png" 
+                class="zoom_icon"></button>
+                <button class="font_size_decrease font_size_change"><img src="img/icon/zoom_out.png"
+                class="zoom_icon"></button>
+        </div>
+        <div class="container">
+            <div class="article_banner">
+                <img src="img/banner/article_banner.jpg">
+            </div>
+            <div class="article_container">
+                <article>
+                    <div class="article_heading">
+                        <div class="article_det">
+                            <h3>3 Most Intelligent Cats To Adopt If You Want A Clever Companion</h3>                
+                            <p class="authour">
+                                <strong>By: </strong>Mo Rashad
+                            </p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="content">
+                        <h4><span class="pink">01 </span>Abyssinian</h4>
+                        <img src="img/article/cat2.jpg">
+                        <p>
+                            This sleek-looking cat is athletic, agile, 
+                            and affectionate toward humans. Abyssinians are 
+                            very intelligent and highly in tune with the activities of 
+                            their families. They're generally not lap cats, but they thrive on human attention, especially in the 
+                            form of petting or grooming. 
+                            They also tend to enjoy the company of other animals.
+                        </p>
+                        <div class="description_box">
+                            <h6>Breed Overveiw</h6>
+                            <p>
+                                <strong>Height: </strong>8 to 10 inches<br>
+                                <strong>Weight: </strong>8 to 12 pounds<br>
+                                <strong>Physical Characteristics: </strong>Tall, pointy ears; wedge-shaped head; slender<br>
+                            </p>
+                        </div>
+                        <h4><span class="pink">02 </span>Bengal</h4>
+                        <img src="img/article/cat4.jpg">
+                        <p>
+                            The Bengal is perhaps best known for its exotic coat that resembles a jaguar or leopard. This breed originated from crossing a domestic cat with an Asian leopard cat. Bengals are highly intelligent, athletic, and still a bit wild. They love to run, jump, climb, and play. They require ample space for exercise (especially vertical space), as well as mental challenges, such as puzzle games.
+                        </p>
+                        <div class="description_box">
+                            <h6>Breed Overveiw</h6>
+                            <p>
+                                <strong>Height: </strong>8 to 10 inches<br>
+                                <strong>Weight: </strong>15 pounds<br>
+                                <strong>Physical Characteristics: </strong>Sleek, muscular body; striped and spotted coat<br>
+                            </p>
+                        </div>
+                        <h4><span class="pink">03 </span>Cornish Rex</h4>
+                        <img src="img/article/cat3.jpg">
+                        <p>
+                            The most unique feature of the Cornish Rex is its wavy coat. These cats are active and friendly, and some say they're rather dog-like in their play, even into their senior years. Many even enjoy games of fetch. If you're looking for a highly interactive cat, a Cornish Rex could be a good choice.
+                        </p>
+                        <div class="description_box">
+                            <h6>Breed Overveiw</h6>
+                            <p>
+                                <strong>Height: </strong>12 to 14 inches<br>
+                                <strong>Weight: </strong>6 to 10 pounds<br>
+                                <strong>Physical Characteristics: </strong>Curved body; high cheekbones; large ears<br>
+                            </p>
+                        </div>
+                        <h4 class="u_margin_b">Breeds to avoid</h4>
+                        <p>Certain cat breeds can make great pets, but they aren’t necessarily known for their smarts. Birmans, Persians, Himalayans, exotic shorthairs, and ragdolls aren’t typically highly intelligent cats. Still, many of these felines are affectionate, playful, and easygoing companions.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer_p">
+                E-mail: <a class="footer_des" href="mailto:rashad.2018470@iit.ac.lk">rashad.2018470@iit.ac.lk</a>
+                <span class="footer_sep">|</span> Page Dev: <a class="footer_des" href="mytask.html">Mo Rashad</a>
+            </p>
+            <span class="footer_sep footer_sep--large">|</span>
+            <p class="footer_p">
+                IIT-ID: <span class="footer_des">2018470</span>
+                <span class="footer_sep">|</span> Westminster-ID: <span class="footer_des">w1761930</span>
+            </p>
+        </footer>
+        <script src="js/st1_pet_home.js"></script>
+		<script src="js/st1_pet_all.js"></script>
+    </body>
+</html>
