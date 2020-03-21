@@ -166,7 +166,7 @@ let addToCart = () => {
             // itmCur: 'rs',
             itmPrice: `<span class="cart_price pink mono">${parseInt(itm.querySelector('.itm_price').innerHTML)}</span>`,
             itmQnt: setQnt,//`${parseInt(itm.querySelector('input').value)}`,
-            itmRm: `<div class="cart_remove">X<span class="store_row_no">${document.querySelector('.cart_id_col').querySelectorAll('.td').length}</span></div>`
+            itmRm: `<div class="cart_remove"><img class="remove_img" alt="remove item" src="../img/icon/remove.png" id="itm${document.querySelector('.cart_id_col').querySelectorAll('.td').length}"><span class="store_row_no">${document.querySelector('.cart_id_col').querySelectorAll('.td').length}</span></div>`
         }
     const itmDetArr = Object.values(itmDet)
     const cartCols = document.querySelectorAll('.cart_table_col')
@@ -186,9 +186,9 @@ let addToCart = () => {
             }
             span.innerHTML = itmDetArr[i]
         }
-        const removeItmInCart = document.querySelectorAll('.cart_remove')
+        const removeItmInCart = document.querySelectorAll('.remove_img')
         // removeItmInCart.forEach(btn => btn.onclick = function(){removeItm(parseInt(event.target.querySelector('.store_row_no').innerHTML))}) // added
-        removeItmInCart[removeItmInCart.length-1].addEventListener('click', function(){removeItm(parseInt(event.target.querySelector('.store_row_no').innerHTML))})
+        removeItmInCart[removeItmInCart.length-1].addEventListener('click', function(){removeItm(parseInt(event.target.getAttribute('id').substring(3)))})
         setTotalPrice()
         let qntIncrease = document.querySelectorAll('.cart_counter.increment')[document.querySelector('.cart_id_col').querySelectorAll('.td').length-1]
         let qntDecrease = document.querySelectorAll('.cart_counter.decrement')[document.querySelector('.cart_id_col').querySelectorAll('.td').length-1]
@@ -544,7 +544,7 @@ let itmNoReset = () => {
     const itmRows = document.querySelector('.cart_id_col').querySelectorAll('.td')
     for(let i = 0; i<itmRows.length; i++) {
         itmRows[i].innerHTML = i + 1
-        document.querySelectorAll('.store_row_no')[i].innerHTML = i
+        document.querySelectorAll('.remove_img')[i].id = "itm" + i
     }
 }
 
@@ -824,7 +824,17 @@ function formContainerPositionOnWindowHeight() {
         document.querySelector('.form_container').style.position = 'sticky'
     }
 }
+function formReset() {
+    document.querySelectorAll('.validation').forEach(e => {
+        e.style.display = 'none'
+        document.querySelectorAll('.shop_form_txt').forEach(e => {
+            e.style.borderColor = 'rgb(224, 224, 224)'
+        })
+        document.querySelector('textarea').style.borderColor = 'rgb(224, 224, 224)'
+    })
+}
 
+document.querySelector('.form_reset').addEventListener('click', formReset)
 // Event Listeners Tst
 // Don't need this anymore since notification postion changed to *sticky* from *fixed*
 // window.addEventListener('resize', function(){setWidthToParent(notification)})

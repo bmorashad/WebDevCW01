@@ -29,6 +29,7 @@
     box-sizing: border-box;
     padding: 80px 100px;
     background: url('../img/banner/shop-banner.png');
+    background: rgb(116, 9, 116);
     background-size: cover;
     background-clip: border-box;
     background-position: center;
@@ -68,13 +69,13 @@
     font-size: 16px;
 }
 .banner_btn {
-    border-radius: 2px;
+    border-radius: 5px;
     padding: 8px 20px;
     font-size: 1.6rem;
     display: table;
     margin-top: 30px;
     color: #fff;
-    font-weight: 700;
+    font-weight: 600;
     background: rgba(182, 61, 0, 0.993);
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.11);
     /* box-shadow: 0px 0px 3px rgba(37, 37, 37, 0.514); */
@@ -90,6 +91,7 @@
 }
 .banner_btn:active {  
     color: rgb(255, 255, 255);
+    transform: translateY(2px);
     /* box-shadow: -1px 2px 5px rgba(43, 43, 43, 0); */
         /* box-shadow: -5px 0px 10px #4350FF; */
 }
@@ -130,6 +132,7 @@
     transform: scale(1.01);
 }
 .item_des {
+    font-family: 'Rubik';
     margin-top: 20px;
     padding: 15px 5px;
     border-bottom: 1px solid;
@@ -168,7 +171,7 @@
     box-sizing: border-box;
     height: 23px;
     width: 23px;
-    border: 0.1px solid #6e6e6e;
+    border: 0px solid #6e6e6e;
     background: #9bccff94;
     color: #0c002e;
     font-size: 16px;
@@ -205,6 +208,7 @@
     width: 22px !important;
 } */
 .add {
+    font-family: 'Rubik';
     box-sizing: border-box;
     padding: 6px 35px;
     border: 0px solid #c7c7c7;
@@ -212,7 +216,7 @@
     background: #ff3131;
     color: #ffffff;
     font-size: 1.6rem;
-    font-weight: 700;
+    font-weight: 500;
     margin-top: 10px;
     transition: 0.2s;
 }
@@ -242,7 +246,7 @@
 }
 textarea {
     border: 1px solid rgb(224, 224, 224);
-
+    border-radius: 2px;
     resize: vertical;
     width: 100%;
     min-height: 100px;
@@ -266,7 +270,9 @@ form {
     border-radius: 5px;
     box-shadow: 0px 2px 4px rgba(3, 3, 3, 0.103);
     margin-left: 20px;
-    height: max-content;
+    height: 555px;
+    overflow-y: auto;
+    overflow-x: hidden;
     position: sticky;
     left: 0;
     bottom: -80px;
@@ -276,7 +282,7 @@ form {
 .form_heading {
     background: white;
     border-radius: 5px 5px 0 0;
-    color: #0472D9;
+    color: rgb(4, 132, 217);
     padding: 19px 29px;
     border-bottom: 1px solid rgb(216, 216, 216);
 
@@ -284,16 +290,17 @@ form {
 .form_btn {
     background: rgb(0, 106, 204);
     /* border-radius: 1px; */
-    margin-right: 2px;
+    margin-right: 5px;
     margin-top: 30px;
-    border: 2px solid rgb(0, 104, 202);
+    border: 2px solid rgb(0, 106, 204);
     color: white;
-    padding: 5px 10px;
+    padding: 6px 10px;
+    border-radius: 5px;
     font-weight: 600;
     font-size: 1.4rem;
     transition: 0.2s;
 }
-.rest {
+.form_reset {
     color: rgb(0, 106, 204);
     background: transparent;
 }
@@ -316,9 +323,9 @@ form {
 }
 .cart_title {
     font-weight: 600;
-    color: rgb(37, 37, 37);
+    color: rgb(58, 58, 58);
     font-size: 2.1rem;
-    margin-top: 20px;
+    /* margin-top: 5px; */
 }
 .cart_title::after {
     background-image: url('/img/icon/cart.png');
@@ -374,6 +381,7 @@ form {
 .cart_container {
     background: #fff;
     padding: 35px 40PX;
+    border-radius: 5px;
     /* padding-bottom: 0; */
     width: 55%;
     min-width: 500px;
@@ -492,7 +500,19 @@ form {
     border: 0px;
 }
 .cart_remove {
-    font-size: 25px;
+    /* font-size: 2.2rem; */
+    /* padding: 10px; */
+    /* margin-left: auto;
+    margin-right: 25px; */
+    width: 50%;
+    display: flex;
+    height: 50%;
+    /* background-color: turquoise; */
+}
+.cart_remove img {
+    width: 25px;
+    height: 25px;
+    margin: auto;
     /* padding: 10px; */
     /* margin-left: auto;
     margin-right: 25px; */
@@ -508,7 +528,8 @@ form {
     box-sizing: border-box;
     padding: 8px 15px;
     border: 0px solid #c7c7c7;
-    background: #ff0000;
+    border-radius: 5px;
+    background: #ff3131;
     color: #ffffff;
     font-size: 1.4rem;
     font-weight: 600;
@@ -591,9 +612,10 @@ th, td {
 .ok_btn{
     float: right;
     box-sizing: border-box;
-    padding: 8px 50px;
+    padding: 8px 40px;
     border: 0px solid #c7c7c7;
-    background: #ff0000;
+    background: #ff3131;
+    border-radius: 5px;
     color: #ffffff;
     font-size: 1.4rem;
     font-weight: 600;
@@ -618,7 +640,7 @@ th, td {
     justify-content: center;
     margin:auto;
     /* margin-bottom: 15px; */
-    border-radius: 10px 10px 10px 10px;
+    border-radius: 8px;
     align-items: center;
     width: 80%;
     background: rgba(8, 145, 65, 0.877);
@@ -682,6 +704,7 @@ th, td {
     padding-top: 40px;
     /* padding-bottom: 0; */
     width: 28%;
+    border-radius: 0 0 5px 5px;
     margin:auto;
     overflow: auto;
 }
@@ -706,18 +729,22 @@ th, td {
 }
 /* Form Invalid Container */
 .form_invalid_container {
-    background: rgb(226, 223, 223);
+    background: rgb(248, 248, 248);
     /* background:rgb(235, 235, 235); */
     border-top: 5px solid rgb(41, 143, 202);
-    padding: 35px 60PX;
+    padding: 30px 40PX;
     padding-top: 40px;
+    border-radius: 0 0 5px 5px;
     /* padding-bottom: 0; */
     width: 28%;
     margin:auto;
     overflow: auto;
 }
+.form_invalid_container > .ok_btn {
+    margin-top: 8px;
+}
 .form_invaild_title {
-    color: rgb(165, 138, 138)
+    color: rgb(128, 128, 128)
 }
 .form_invalid_sep {
 	margin-top: 15px;
@@ -726,6 +753,7 @@ th, td {
 .form_invalid_message {
     font-size: 1.6rem;
     margin-bottom: 20px;
+    color: #414141;
 }
 /* Experimenting */
 @media only screen and (max-width: 1169px) {
@@ -778,6 +806,7 @@ th, td {
     .form_container {
         width: 70%;
         margin-left: 0;
+        height: max-content;
     }
     form{
         width: auto;
