@@ -1,6 +1,6 @@
 .container {
     display: flex;
-    background: rgb(254, 254, 254);
+    background: rgb(253, 253, 253);
 }
 .col1 {
     padding-top: 100px;
@@ -431,7 +431,7 @@ form {
     flex-grow: 1;
 }
 .th, .td {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgb(187, 187, 187);
     overflow: hidden;
     white-space: nowrap;
     box-sizing: border-box;
@@ -450,7 +450,7 @@ form {
     padding: 0 5px;
 }
 .td {
-    color: black;
+    color: rgb(49, 49, 49);
     font-size: 1.6rem;
     font-weight: 500;
 }

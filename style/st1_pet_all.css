@@ -101,7 +101,7 @@ h4 {
 }
 h5 {
 	font-size: 2.6rem;
-	color: #000;
+	color: rgb(26, 26, 26);
 	font-weight: 700;
 	margin-bottom: 25px;
 }
@@ -271,7 +271,7 @@ hr {
 /* SELECT MENU */
 
 select {
-	background: #b3d6ff70;
+	background: #dff2ff70;
 }
 
 /* Font Size Change */
