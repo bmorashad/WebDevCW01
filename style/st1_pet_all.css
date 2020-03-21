@@ -16,7 +16,8 @@ footer {
 	display: flex;
 	margin-top: 10px;
 	justify-content: center;
-	background: linear-gradient(180deg, #195E91 0%, #004678 100%);	line-height: 2.5rem;
+	background: #195E91;	
+	line-height: 2.5rem;
 	padding: 15px;
 }
 .footer_p {
@@ -215,7 +216,7 @@ a {
 	color: #FF3E55;
 }
 a:hover {
-	color: rgb(28, 139, 212);
+	color: rgb(88, 255, 213);
 }
 /* Margins */
 .m {

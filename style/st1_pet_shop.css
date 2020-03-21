@@ -297,16 +297,17 @@ form {
     margin-top: 5px;
 }
 /* .cart_title {
+    font-size: 2.2rem;
     margin-top: 20px;
 } */
 .cart_title::after {
     background-image: url('/img/icon/cart.png');
     background-size: contain;
     display: inline-block; 
-    height: 26px;
-    width: 26px;
+    height: 30px;
+    width: 30px;
     margin-left: 10px;
-    vertical-align:-30%;
+    vertical-align:-18%;
     content:"";
 }
 .cart_btn {
