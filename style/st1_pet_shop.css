@@ -356,6 +356,7 @@ form {
     padding: 35px 40PX;
     /* padding-bottom: 0; */
     width: 55%;
+    min-width: 500px;
     margin:auto;
     overflow: auto;
 }
