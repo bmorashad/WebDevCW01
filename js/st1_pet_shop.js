@@ -465,9 +465,9 @@ let changeItems = () => {
                             <div class="item_des">
                                 <p class="item_title_p"><span>${itm.name}</span></p>
                             </div>
-                            <p class="item_price_p">PRICE: <span class="currency">RS <span class="itm_price">${itm.price}</span></span></p>
+                            <p class="item_price_p">RS <span class="currency"><span class="itm_price">${itm.price}</span></span></p>
                             <div class="quantity">
-                                <label for="qnt_input"><p style="font-size: 1.2rem; font-weight: 600; color: #555555;">QNT:</p></label>
+                                <!--<label for="qnt_input"><p style="font-size: 1.2rem; font-weight: 600; color: #555555;">QNT:</p></label>-->
                                 <div class="qnt_change">
                                     <button class="counter increment">+</button>
                                     <input type="text" value="1" class="qnt_input" id="qnt_input" readonly>

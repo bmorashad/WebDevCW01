@@ -151,7 +151,7 @@ h5 {
 	font-weight: 700;
 	font-family: 'IBM Plex Mono';
 	color: rgb(0, 118, 197);
-	margin-left: 10px;	 
+	/* margin-left: 10px;	  */
 }
 
 /* END span */
@@ -184,7 +184,7 @@ h5 {
 	text-align: justify;
 }
 .item_price_p {
-	margin-top: 5px;
+	padding: 10px 0;
 }
 /* LINKS */
 
