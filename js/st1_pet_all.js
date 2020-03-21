@@ -122,8 +122,10 @@ let fontSizeResetButton = () => {
     let fontSize = getExtStyleInt(html, 'fontSize')
     if (fontSize != defaultFontSize) {
         btnReset.style.display = 'block'
+        btnReset.tabIndex = "0"
     } else {
         btnReset.style.display = 'none'
+        btnReset.tabIndex = "-1"
     }
 }
 let fontSizeReset = () => {

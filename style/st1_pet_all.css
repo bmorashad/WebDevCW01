@@ -289,6 +289,9 @@ select {
 	position: absolute;
 	top: 25px;
 }
+.font_size_change:focus {
+	background: rgba(85, 85, 85, 0.945);
+}
 .font_size_change:hover {
 	background: rgba(85, 85, 85, 0.945);
 }

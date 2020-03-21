@@ -461,16 +461,16 @@ let changeItems = () => {
         const showcase = document.querySelector('.showcase')
         const itmDiv = document.createElement('div')
         itmDiv.className = 'item'
-        const itmDivInner = `<img class="itm_img"src="${itm.img}">
+        const itmDivInner = `<img class="itm_img"src="${itm.img}" alt="${itm.name}">
                             <div class="item_des">
                                 <p class="item_title_p"><span>${itm.name}</span></p>
                             </div>
                             <p class="item_price_p">PRICE: <span class="currency">RS <span class="itm_price">${itm.price}</span></span></p>
                             <div class="quantity">
-                                <p style="font-size: 1.2rem; font-weight: 600; color: #555555;">QNT:</p>
+                                <label for="qnt_input"><p style="font-size: 1.2rem; font-weight: 600; color: #555555;">QNT:</p></label>
                                 <div class="qnt_change">
                                     <button class="counter increment">+</button>
-                                    <input type="text" value="1" class="qnt_input" readonly>
+                                    <input type="text" value="1" class="qnt_input" id="qnt_input" readonly>
                                     <button class="counter decrement">-</button>
                                 </div>
                             </div>

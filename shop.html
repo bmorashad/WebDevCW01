@@ -11,16 +11,16 @@
     </head>
     <body>
         
-        <a href="#cart" class="cart_link"><button class="cart_btn"><img src="img/icon/cart.png" 
-        class="cart_icon"></button></a>
+        <a href="#cart" class="cart_link" tabindex="4"><button class="cart_btn" aria-label="go to cart"><img src="img/icon/cart.png" 
+        class="cart_icon" alt="go to cart"></button></a>
         <div class="temp_bar"></div>
         <div class="shop_banner">
-            <button class="reset font_size_change"><img src="img/icon/reset.png" 
-                class="reset_icon"></button>
-                <button class="font_size_increase font_size_change"><img src="img/icon/zoom_in.png" 
-                class="zoom_icon"></button>
-                <button class="font_size_decrease font_size_change"><img src="img/icon/zoom_out.png" 
-                class="zoom_icon"></button>
+            <button class="reset font_size_change" aria-label="reset font size"><img src="img/icon/reset.png" 
+                class="reset_icon" alt="reset font size"></button>
+                <button class="font_size_increase font_size_change" aria-label="increase font size" tabindex="1"><img src="img/icon/zoom_in.png" 
+                class="zoom_icon" alt="increase font size"></button>
+                <button class="font_size_decrease font_size_change" aria-label="reduce font size" tabindex="2"><img src="img/icon/zoom_out.png" 
+                class="zoom_icon" alt="decrease font size"></button>
             <div class="banner_message">
                 <h3>Discover Amazing Gifts For <br>Your Furry Friend</h3>
                 <p class="p1">Buy toys, medicine & food for your little 
@@ -76,7 +76,7 @@
                     <div class="shop_heading">
                         <h3 class="primary_black">Find Products To Buy</h3>
                         <hr>
-                        <label class="category">Category: </label> 
+                        <label class="category" for="category">Category: </label> 
                         <select id="category">
                             <option value="all">All</option>
                             <option value="food">Food</option>

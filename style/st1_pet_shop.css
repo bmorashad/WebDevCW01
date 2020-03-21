@@ -72,15 +72,16 @@
     font-size: 1.6rem;
     display: table;
     margin-top: 30px;
-    color: rgb(243, 243, 243);
-    font-weight: 600;
-    background: #FF218C;
+    color: #fff;
+    font-weight: 700;
+    background: rgba(182, 61, 0, 0.993);
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.11);
     /* box-shadow: 0px 0px 3px rgba(37, 37, 37, 0.514); */
     transition: 0.1s;
 }
-.banner_btn:hover {  
-    color: rgb(255, 255, 255);
+
+.banner_btn:hover, .banner_btn:focus {  
+    color: white;
     box-sizing: border-box;
     transform: translateY(-2px);
     /* box-shadow: -2px 3px 2px rgba(0, 0, 0, 0.267); */
@@ -170,7 +171,7 @@
     font-size: 16px;
     margin: 0;
 }
-.counter:hover, .cart_counter:hover {
+.counter:hover, .cart_counter:hover, .counter:focus, .cart_counter:focus {
     background: #c9c9c9;
 }
 .counter:active, .cart_counter:active {
@@ -206,11 +207,11 @@
     background: #ff3131;
     color: #ffffff;
     font-size: 1.6rem;
-    font-weight: 600;
+    font-weight: 700;
     margin-top: 10px;
     transition: 0.2s;
 }
-.add:hover {
+.add:hover, .add:focus {
     background: #e20202;
 }
 .add:active {
@@ -228,6 +229,10 @@
     width: 100%;
     border: 1px solid silver;
     padding: 7px;
+}
+.shop_form_txt:hover, .shop_fomr_txt:focus {
+    border-color: blue;
+    border-width: 2px;
 }
 textarea {
     resize: vertical;
@@ -280,7 +285,7 @@ form {
     color: #002bff;
     background: transparent;
 }
-.form_btn:hover {
+.form_btn:hover, .form_btn:focus {
     background: #0324c9;
     border-color: #0324c9;
     color: white;
