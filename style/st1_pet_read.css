@@ -192,11 +192,26 @@ article h4 {
     margin-top: 20px;
     background: #fff;
     border: 1px solid rgb(235, 235, 235);
+    border-radius: 5px;
 }
-.gallery_box h4 {
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.thumbnail {
+    width: 25%;
+    height: 60px;
+    object-fit: cover;
+    margin-right: 2px;
+}
+.thumbnail:nth-last-child() {
+    margin:0;
+}
+.gallery_box h6 {
     color: rgb(27, 27, 27);
     padding: 20px;
-    
+    font-size: 2.2rem;
 }
 @media only screen and (max-width: 1200px) {
     .article_container {

@@ -339,12 +339,16 @@ form {
 }
 .cart_btn {
     /* border-radius: 50%; */
-    width: 50px;
+    width: 60px;
     height: 50px;
-    background: rgba(255, 255, 255, 0.507);
-    border: 1px solid rgb(174, 198, 235);
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(233, 233, 233);
+    border-radius: 50px 0 0 50px;
+    box-shadow: 0px 4px 7px rgba(190, 190, 190, 0.25);
     border-right: 0;
+    transform: translateX(10px);
     position: fixed;
+    transition: 0.2s;
     top: 75%;
     right: 0;
 }
@@ -352,6 +356,7 @@ form {
     cursor: pointer;
 }
 .cart_btn:hover {
+    transform: translateX(0);
     background: rgb(174, 235, 192);
 }
 .cart_btn:active {
