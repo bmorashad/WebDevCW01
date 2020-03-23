@@ -1,0 +1,50 @@
+footer {
+	display: flex;
+	margin-top: 10px;
+	justify-content: center;
+	background: #195E91;	
+	line-height: 2.5rem;
+	padding: 15px;
+}
+.footer_p {
+	color: #c4c4c4;
+	font-size: 14px;
+	font-weight: 700;
+	margin: 0 35px;
+}
+.footer_des {
+	font-weight: 300;
+	color: #ffffff;
+	padding-left: 2px;
+	letter-spacing: 0.1rem;
+
+}
+.footer_sep {
+	font-weight: 300;
+	color: #dfdfdf;
+	margin: 0 5px;
+}
+.footer_sep--large {
+    color: rgb(0, 68, 123);
+	font-size: 38px;
+}
+.email::before {
+	background-image: url('../img/icon/email.png');
+    background-size: contain;
+    display: inline-block; 
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
+    vertical-align: -20%;
+    content:"";
+}
+.dev::before {
+	background-image: url('../img/icon/dev.png');
+    background-size: contain;
+    display: inline-block; 
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
+    vertical-align: -20%;
+    content:"";
+}
