@@ -5,7 +5,7 @@ window.addEventListener('scroll', () => {
             document.querySelector('.back_to_top').style.display = "none"
         }
         if(window.scrollY + window.innerHeight >= document.body.offsetHeight - 100) {
-            document.querySelector('.back_to_top').style.bottom = "150px"
+            document.querySelector('.back_to_top').style.bottom = "300px"
         } else {
             document.querySelector('.back_to_top').style.bottom = "80px"
         }

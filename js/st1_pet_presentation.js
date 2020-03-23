@@ -1,1 +1,1 @@
-// setTimeout(function(){window.location.href='home.html'}, 5000)
+setTimeout(function(){window.location.href='home.html'}, 4000)

@@ -112,6 +112,7 @@ html {
     /* margin:auto;     */
     color: rgb(0, 56, 109);
     font-size: 3.5rem;
+    margin-top: 10px;
     /* text-align: center; */
 }
 
@@ -159,12 +160,12 @@ article h4 {
     padding-left: 18px;
 }
 .description_box h6::before {
-    background-image: url('img/icon/black_cat.png');
+    background-image: url('/img/icon/cat_paw.png');
     background-size: contain;
     display: inline-block; 
     height: 22px;
     width: 22px;
-    margin-right: 6px;
+    margin-right: 10px;
     vertical-align:-10%;
     content:"";
 }
@@ -255,6 +256,9 @@ article h4 {
     color: rgb(0, 56, 109);
     padding: 20px;
     font-size: 2.2rem;
+}
+.gallery_box h6:hover, .gallery_box h6:focus {
+    color: rgb(155, 0, 39);
 }
 .back_to_top {
     position: fixed;
@@ -399,7 +403,7 @@ article h4 {
         /* height: 100%; */
     }
     .back_to_top {
-        right: 30px;
+        right: 0px;
     }
     .read_more_img {
         width: 70px;

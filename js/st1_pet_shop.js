@@ -496,7 +496,7 @@ let changeItems = () => {
             notification.style.backgroundColor = 'rgba(18, 138, 44, 0.86)'
             document.querySelector('.undo').addEventListener('click', function(){
                 removeItm(inCart[2]); (function(ele) {ele.style.visibility = "hidden"})(notification)
-                undone.style.transform = 'translate(0%, 5px)'
+                undone.style.transform = 'translate(0%, 57px)'
                 undone.style.zIndex = '1'
                 setTimeout('(function(ele) {ele.style.transform = "translate(0%, -50px)"; ele.style.zIndex = "-1"})(undone)', 800)
             })
@@ -507,7 +507,7 @@ let changeItems = () => {
                 document.querySelectorAll('.cart_qnt_input')[inCart[2]].value = inCart[3]
                 setTotalPrice();
                 (function(ele) {ele.style.visibility = "hidden"})(notification)
-                undone.style.transform = 'translate(0%, 5px)'
+                undone.style.transform = 'translate(0%, 57px)'
                 undone.style.zIndex = '1'
                 setTimeout('(function(ele) {ele.style.transform = "translate(0%, -50px)"; ele.style.zIndex = "-1"})(undone)', 800)
             })

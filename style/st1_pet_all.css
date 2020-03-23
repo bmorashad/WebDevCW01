@@ -1,3 +1,39 @@
+.topnav {
+	overflow: hidden;
+	background-color: #2a2667;
+	position: sticky;
+	top: 0;
+	z-index: 9999;
+	/* width: 100%; */
+  }
+  
+  .topnav a {
+	float: left;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+  }
+  
+  
+  .topnav a:hover {
+	background-color:  rgb(0, 9, 87);
+	color: white;
+  }
+  
+  .topnav a.active {
+	background-color: red;
+	color: white;
+  }
+  
+  
+  /* Right-aligned section inside the top navigation */
+  .topnav-right {
+	float: right;
+	background-color:#867E8E;
+  }
+  
 * {
 	margin: 0;
 	padding: 0;
@@ -14,14 +50,14 @@ body {
 }
 footer {
 	display: flex;
-	margin-top: 10px;
+	margin-top: 70px;
 	justify-content: center;
 	background: #195E91;	
 	line-height: 2.5rem;
 	padding: 15px;
 }
 .footer_p {
-	color: #c4c4c4;
+	color: #ececec;
 	font-size: 14px;
 	font-weight: 700;
 	margin: 0 35px;
@@ -275,6 +311,11 @@ select {
 }
 
 /* Font Size Change */
+.zoom_group {
+	z-index: 9999;
+	top: -50px;
+	position: relative;
+}
 .font_size_change {
 	background: rgba(36, 36, 36, 0.822);
 	border: 2px solid rgb(245, 245, 245);
