@@ -1,0 +1,272 @@
+
+/*------Basic properties--------*/
+
+.icons{
+    width: 30px;
+    height: 30px;
+}
+.d{
+    margin: -27px 0 0 34px;
+    font-family: "IBM plex",sans-serif;
+}
+
+.textfont{
+    font-size: 22px;
+    font-family: "IBM plex", sans-serif;
+
+}
+#title{
+    font-size: 30px;
+    color:wheat;
+    height: 66px;
+}
+#topTitles{
+    background-image: url("../img/Sajana/backgroundimgcats.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+/*---------------------------------*/
+
+/*--------2 Columns Layout---------*/
+.top{
+    float: left;
+    width: 40%;
+}
+
+/*---------Change the BG Colour & Text Color Properties---------*/
+
+/*BG Color*/
+#svg{
+    visibility: hidden;
+    margin: -17px 0 0 -19px;
+    position: absolute;
+    overflow: hidden;
+    z-index: 2;
+    width: 380px;
+}
+ul{
+    list-style: none;
+}
+
+li{
+    background-color: #f1f1f1;
+    width: 380px;
+    font-family: "IBM plex",sans-serif;
+    font-size: 20px;
+}
+li:hover{
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+#bgColorChange:hover #svg{
+    display: block;
+    visibility: visible;
+
+}
+#textColorChange{
+    float: right;
+}
+
+/*Text Color change */
+#textClrList{
+    visibility: hidden;
+    margin: -17px 0 0 -19px;
+    position: absolute;
+    overflow: hidden;
+    z-index: 2;
+}
+#textColorChange:hover #textClrList{
+    display: block;
+    visibility: visible;
+}
+.arrow{
+   font-size: 22px;
+    border: 2px;
+}
+
+/*--------------------------------------*/
+
+/*-------------------Photo Grid CSS(Start)-------------- */
+
+/*Basic Template on photo grid*/
+.photoGrid{
+    display: grid;
+    gap: 1rem;
+    position: relative;
+    grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+    grid-auto-rows: 240px;
+
+}
+.photoGrid  img{
+    box-shadow: 4px 4px #323232;
+}
+/* Images CSS */
+
+.card-tall{
+    grid-row: span 2 / auto;
+}
+.card-wide{
+    grid-column: span 2 / auto;
+}
+#moreInfo{
+    display: none;
+}
+
+img{
+    width:100%;
+    height:100%;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    cursor: pointer;
+}
+
+img:hover{
+    transform: scale(1.02);
+    opacity: 0.9;
+
+}
+
+/*---------------------------------------*/
+#pic1:hover .info1{
+    opacity: 0.8;
+}
+
+.info1 {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 86%;
+    left: 16%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#pic2:hover .info2{
+    opacity: 0.8;
+}
+
+.info2 {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#pic3:hover .info3{
+    opacity: 0.8;
+}
+
+.info3 {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 40%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#pic4:hover .info4{
+    opacity: 0.8;
+}
+
+.info4 {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 94%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#pic5:hover .info5{
+    opacity: 0.8;
+}
+
+.info5 {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 94%;
+    left: 91%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.box {
+    background-color:royalblue;
+    color: white;
+    font-size: 16px;
+    padding: 10px 11px;
+}
+/*-------------------------------------*/
+/*Image Viewer*/
+
+.imgViewerWDescription {
+    display: none;
+    grid-column: 3/6;
+    grid-row: 1/6;
+    background-color: darkgrey;
+    position: relative;
+    overflow-x: hidden;
+}
+
+#imageViewer{
+
+    grid-column: 5/10;
+    grid-row: 1/3;
+}
+
+#imageViewer > img {
+    width: 100%;
+    height: 50%;
+    margin: -20px 0px 0px 0px;
+    transform: none;
+}
+/*Descriptions CSS*/
+.Description {
+    font-size: 22px;
+    font-family: "IBM plex", sans-serif;
+    grid-row: 3/5;
+    padding: 2px;
+    text-align: left;
+    margin: 10px 0px 0px 22px;
+}
+
+b{
+    text-align: left;
+    font-size: 45px;
+}
+
+p {
+    display: none;
+}
+
+/*Description CSS End*/
+#closeWindow{
+    top:0px;
+    left: 0px;
+    position: absolute;
+    background-color: black;
+    font-size: 50px;
+    color:white;
+    border: none;
+    border-radius: 40%;
+}
+#closeWindow:hover{
+    background-color: aliceblue;
+    color: black;
+}
+
+/*Image Viewer End*/

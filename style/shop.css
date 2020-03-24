@@ -316,7 +316,7 @@ form {
     /* margin-top: 5px; */
 }
 .cart_title::after {
-    background-image: url('/img/icon/cart.png');
+    background-image: url('../img/icon/cart.png');
     background-size: contain;
     display: inline-block; 
     height: 30px;

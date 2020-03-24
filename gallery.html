@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="style/Image_Gallery_Test3.css">
+    <link rel="stylesheet" type="text/css" href="style/common-layout.css">
+
+    <title>Photo Gallery</title>
+</head>
+<style>
+
+.footer_p {
+	color: #c4c4c4;
+	font-size: 14px;
+	font-weight: 700;
+	margin: 0 35px;
+}
+
+</style>
+<body>
+    <div class="topnav">
+        <a class="active" href="#petcat">PetCat.</a>
+        <a href="home.html">HOME</a>
+        <a href="#article">ARTICLES</a>
+        <a href="quiz.html">QUIZ</a>
+        <a href="feedback.html">FEEDBACK</a>
+        <a href="about.html">ABOUT</a>
+        <a href="gallery.html">GALLERY</a>
+        <a href="sitemap.html">SITE MAP</a>
+        <div class="topnav-right">    
+             <a href="shop.html">SHOP</a>
+        </div>
+    </div>	 
+    <div class="zoom_group">
+        <button class="reset font_size_change" aria-label="reset font size"><img src="img/icon/reset.png" 
+            class="reset_icon" alt="reset font size"></button>
+            <button class="font_size_increase font_size_change" aria-label="increase font size" tabindex="1"><img src="img/icon/zoom_in.png" 
+            class="zoom_icon" alt="increase font size"></button>
+            <button class="font_size_decrease font_size_change" aria-label="reduce font size" tabindex="2"><img src="img/icon/zoom_out.png" 
+            class="zoom_icon" alt="decrease font size"></button>
+    </div>
+
+
+<div id ="topTitles">
+<h2 class = "textfont" id="title"> Discover Amazing Lovely Photos and Learn! </h2>
+
+</div>
+<hr>
+<!-- BG ColourChange and Text Colour Change -->
+<div>
+
+    <div id="bgColorChange" class="top">
+        <img src="img/Sajana/colorWheel.png" alt="Test color icon" id="colorWheel" class = "icons"/>
+
+        <div id="colorViewContent" class="colorViewContent textfont">
+            <div class="d">
+                <label class = "textfont">
+                    Change The Background Color!    <span class="arrow">&#8650;</span>
+                </label>
+            </div>
+
+            <div id = "svg">
+                <ul>
+
+                <li id="redButton">
+                <svg height="30" width="30" >
+                    <circle cx="15" cy="15" r="10" stroke="black" stroke-width="3" fill="#ff0022" />
+                </svg>
+                    Red Color
+                </li>
+
+                <li  id="pinkButton">
+                <svg height="30" width="30" >
+                    <circle cx="15" cy="15" r="10" stroke="black" stroke-width="3" fill="pink" />
+                </svg>
+                    Pink Color
+                </li>
+
+                <li id="purpleButton">
+                <svg height="30" width="30"  >
+                    <circle cx="15" cy="15" r="10" stroke="black" stroke-width="3" fill="#ed5fd8" />
+                </svg>
+                    Purple Color
+                </li>
+
+                <li  id="whiteButton">
+                <svg height="30" width="30" >
+                    <circle cx="15" cy="15" r="10" stroke="black" stroke-width="3" fill="white" />
+                </svg>
+                    White Color
+                </li>
+
+                </ul>
+
+            </div>
+            <hr>
+        </div>
+
+    </div>
+
+    <div id ="blank">
+
+    </div>
+
+    <div id="textColorChange" class="top">
+        <img src="img/Sajana/size.png" alt="Test color icon" id="textclr" class = "icons"/>
+        <div>
+            <div class="d">
+                <label class = "textfont">
+                    Change Text Color! <span class="arrow">&#8650;</span>
+                </label>
+            </div>
+        </div>
+
+        <div id = "textClrList">
+            <ul>
+
+                <li id="redClrText">
+                    <svg id="Capa_1" enable-background="new 0 0 458.353 458.353" height="30" viewBox="0 0 458.353 458.353" width="27" fill="red">
+                        <path d="m272.147 229.177v-.005l35.811 85.946h35.807l-136.075-315.118h-42.967l-136.076 315.118h35.807l35.811-85.946v.005zm-85.941-206.265 74.006 177.617h-148.012s74.006-177.617 74.006-177.617z"/>
+                        <path d="m409.452 284.736-133.109 133.108-61.504-61.504-20.254 20.254 81.759 81.759 153.362-153.363z"/>
+                    </svg>
+                    Red Color
+                </li>
+
+                <li  id="blueClrText">
+                    <svg id="Capa_1" enable-background="new 0 0 458.353 458.353" height="27" viewBox="0 0 458.353 458.353" width="27" fill="#0073ff">
+                        <path d="m272.147 229.177v-.005l35.811 85.946h35.807l-136.075-315.118h-42.967l-136.076 315.118h35.807l35.811-85.946v.005zm-85.941-206.265 74.006 177.617h-148.012s74.006-177.617 74.006-177.617z"/>
+                        <path d="m409.452 284.736-133.109 133.108-61.504-61.504-20.254 20.254 81.759 81.759 153.362-153.363z"/>
+                    </svg>
+                    Blue Color
+                </li>
+
+                <li id="greenClrText">
+                    <svg id="Capa_1" enable-background="new 0 0 458.353 458.353" height="27" viewBox="0 0 458.353 458.353" width="27" fill="#2fff00">
+                        <path d="m272.147 229.177v-.005l35.811 85.946h35.807l-136.075-315.118h-42.967l-136.076 315.118h35.807l35.811-85.946v.005zm-85.941-206.265 74.006 177.617h-148.012s74.006-177.617 74.006-177.617z"/>
+                        <path d="m409.452 284.736-133.109 133.108-61.504-61.504-20.254 20.254 81.759 81.759 153.362-153.363z"/>
+                    </svg>
+                    Green Color
+                </li>
+
+                <li  id="blackClrText">
+                    <svg id="Capa_1" enable-background="new 0 0 458.353 458.353" height="27" viewBox="0 0 458.353 458.353" width="27" >
+                        <path d="m272.147 229.177v-.005l35.811 85.946h35.807l-136.075-315.118h-42.967l-136.076 315.118h35.807l35.811-85.946v.005zm-85.941-206.265 74.006 177.617h-148.012s74.006-177.617 74.006-177.617z"/>
+                        <path d="m409.452 284.736-133.109 133.108-61.504-61.504-20.254 20.254 81.759 81.759 153.362-153.363z"/>
+                    </svg>
+                    Black Color
+                </li>
+
+            </ul>
+
+        </div>
+        <hr>
+    </div>
+
+</div>
+
+
+<br/> &nbsp; <br/>
+<br/> &nbsp; <br/>
+
+<!-- Photo grid -->
+<div class="photoGrid" id="imgGrid">
+
+    <div class="card card-tall card-wide" id="pic1">
+        <img src="img/Sajana/Abyssinian850_v2.jpg" alt = "AbyssianCat" id="img1"/>
+        <div class="info1">
+            <div class="box">Click to Learn!</div>
+        </div>
+    </div>
+    <div class="card" id="pic2">
+        <img src="img/Sajana/Best_cats_ragdoll850.jpg" alt = "Best_cats_ragdoll850" id="img2"/>
+        <div class="info2">
+            <div class="box">Click to Learn!</div>
+        </div>
+    </div>
+    <div class="card card-wide" id="pic3">
+        <img src="img/Sajana/Cornish-Rex850.jpg" alt = "Cornish-Rex850" id="img3"/>
+        <div class="info3">
+            <div class="box">Click to Learn!</div>
+        </div>
+    </div>
+    <div class="card card-wide" id="pic4">
+        <img src="img/Sajana/Exotic-Shorthair850.jpg" alt = "Exotic-Shorthair850" id="img4"/>
+        <div class="info4">
+            <div class="box">Click to Learn!</div>
+        </div>
+    </div>
+    <div class="card" id="pic5">
+        <img src="img/Sajana/Himalayan850.jpg" alt = "Himalayan850" id="img5"/>
+        <div class="info5">
+            <div class="box">Click to Learn!</div>
+        </div>
+    </div>
+
+    <div class = "imgViewerWDescription" id="imgViewerWDescription">
+
+        <div id="imageViewer">
+
+        </div>
+        <div class = "Description" id="description">
+
+        </div>
+        <button onclick="closeWindow()" id="closeWindow">X</button>
+    </div>
+</div>
+<hr>
+
+
+<p id = "AbyssianCat_Dc" class = "textfont">
+
+    <b> <u><strong>Abyssian Cat </strong></u></b>
+    <br/> &nbsp; <br/>
+    The Abyssinian is a slender, fine-boned, medium-sized cat. The head is moderately wedge-shaped, with a slight break
+    at the muzzle, and nose and chin ideally forming a straight vertical line when viewed in profile. They have alert, relatively large pointed ears.
+    The eyes are almond-shaped and are gold, green, hazel or copper depending on coat color. The legs tend to belong in proportion to a graceful body,
+    with small oval paws; the tail is likewise long and tapering.
+    <br/>  <br/>
+
+    Abyssinians are a popular breed thanks in large part to their unusual intelligence and generally extroverted, playful, willful personalities.
+    They are said to become depressed without constant activity and the attention of their owners.
+    Veterinarian Joan O. Joshua has written that the "dog-like attachment to the owners" of Abyssinian and Burmese cats causes "greater dependence on human contacts".
+    This stands in contrast to the mere "tolerant acceptance of human company" based around "comforts" that multiple other breeds display
+    <br/>  <br/>
+
+    Abyssinians, affectionately known as Abys, are affectionate, loyal and normally mix well with children and other pets.
+    Known for their curiosity, playfulness and need to explore their surroundings,
+    Abyssinians are people-oriented cats who like to participate in the activities taking place around them.
+    <br/>  <br/>
+
+    The 2008 study "The Ascent of Cat Breeds: Genetic Evaluations of Breeds and Worldwide Random-bred Populations" by Lipinski et al.
+    conducted at UC Davis by the team led by leading feline geneticist Dr Leslie Lyons found that the Abyssinian has a low level of genetic diversity,
+    a heterozygosity value of 0.45 within a range of 0.34–0.69 for all breeds studied, and has genetic markers common to both Southeast Asian and Western
+    breeds .
+</p>
+
+<p id = "RagdollCats_Dc" class = "textfont">
+
+    <b> <u><strong>Ragdoll Cat </strong></u></b>
+    <br/> &nbsp; <br/>
+
+    One of the largest breeds of cats, the ragdoll is also one of the most affectionate, often referred to as “puppy-cat”
+    because of its dog-like personality. Ragdolls are extremely mild-mannered and friendly, and often seek out human companionship,
+    such as following people around the house, sleeping with or flopping on their owners. "This breed is particularly good with children
+    and other pets and is easily trained to learn the same tricks as dogs, such as playing fetch, rolling over or begging.
+    <br/> &nbsp; <br/>
+
+    The Ragdoll is a cat breed with a color point coat and blue eyes. They are large and muscular semi-longhair cats with a soft and silky coat.
+    Developed by American breeder Ann Baker in the 1960s, they are best known for their docile and placid temperament and affectionate nature.
+    The name "Ragdoll" is derived from the tendency of individuals from the original breeding stock to go limp and relaxed when picked up.
+    <br/> &nbsp; <br/>
+
+    The Ragdoll is one of the largest domesticated cat breeds, with a sturdy body, large frame, and proportionate legs.
+    A fully-grown female weighs from 8 to 15 pounds (3.6 to 6.8 kg). Males are substantially larger, ranging from 12 to 20 pounds (5.4 to 9.1 kg) or more.
+    The genes for point coloration are responsible for the distinctive blue eyes of the Ragdoll. More intense shades of blue are favored in cat shows.
+    Although the breed has a plush coat, it consists mainly of long guard hairs, while the lack of a dense undercoat results, according to the Cat Fanciers' Association,
+    in "reduced shedding and matting".
+</p>
+
+<p id="CornishRexCats_Dc" class = "textfont">
+
+    <b> <u><strong>Cornish Rex Cat </strong></u></b>
+    <br/> &nbsp; <br/>
+
+    to fetch balls and toys, enjoys the company of other pets, and is typically not a couch potato.
+    The breed has a reputation for racing about, often performing acrobatics when very excited.
+    The Cornish rex is an adventurous breed, often finding unusual nooks and crannies to explore, such as the washing machine or refrigerator.
+    It is easily adaptable to new situations and is known to get along well with shy or timid children.
+    <br/> &nbsp; <br/>
+
+    The coat of a Cornish Rex is extremely fine and sometimes curly. Their light coat means that they are best suited for indoor living in warm and dry conditions,
+    as they are sensitive to low temperatures. They like to stay near warm places such as computer monitors, light bulbs, laps and shoulders.
+    The breed is sometimes referred to as the Greyhound of the cats, because of the sleek appearance and the galloping run characteristic of the breed.
+    These cats tend to stay playful and kittenish throughout their long lives. Some Cornish Rexes like to play fetch,
+    or do acrobatic jumps. The Cornish Rex is an adventurous cat and is very intelligent. It can readily adapt to new situations and will explore wherever it can go.
+    <br/> &nbsp; <br/>
+
+    Despite some belief to the contrary, the Cornish Rex's short hair does not make it non- or hypo-allergenic.
+    Allergic reactions from cats are not the result of hair length, but from a glyco-protein known as Fel d 1, produced in the sebaceous glands of the skin, saliva, and urine.
+    Most people who have cat allergies are reacting to this protein in cat saliva and cat dander: when the cat cleans its fur, the saliva dries and is transformed into dust which people breathe in.
+    Since Cornish Rex cats groom as much as or even more than ordinary cats, a Cornish Rex cat can still produce a reaction in people who are allergic to cats. However, it is widely reported to cause lesser to little allergic reaction.
+    It is recommended a potential owner visit a cattery to check their own tolerance.
+
+</p>
+
+<p id="ExoticShorthairCats_Dc" class = "textfont">
+
+    <b> <u><strong>Exotic Short Hair Cat </strong></u></b>
+    <br/> &nbsp; <br/>
+
+    The exotic cat’s personality tends to mimic that of a Persian cat: sweet, affectionate and playful.
+    Exotic cats are known to show a great deal of affection and loyalty, and commonly follow their owners throughout the home.
+    Generally friendly towards other animals, exotic cats have a gentle and tenderhearted disposition.
+    With their tame, gentle personality and rare meowing, they are good companions for children.
+    <br/> &nbsp; <br/>
+
+    Exotic Shorthairs have a gentle and calm personality reminiscent of the Persian, but are generally livelier than their longhaired ancestors.
+    Curious and playful, they are friendly to other cats and dogs, but they don't like being left alone and need the presence of their owner.
+    They tend to show more affection and loyalty than most breeds and make excellent lap cats. Their calm, steady nature makes them ideal apartment cats for city dwellers.
+    Nonetheless, Exotics retain some of the energetic spark of the American Shorthair, and they are often capable mouse hunters.
+    <br/> &nbsp; <br/>
+
+    Unlike the high-maintenance Persian, the Exotic is able to keep its own fur tidy with little human assistance, though weekly brushing and
+    combing is recommended to remove loose hair and reduce shedding and hairballs.
+    As with other flat-faced animals, the Exotic's tear ducts are prone to overflowing due to the nasolacrimal duct,
+    which can dampen and stain the face. This can be relieved by periodically wiping the cat's face with a cloth moistened with
+    water or one of the commercial preparations made expressly for the purpose.
+</p>
+
+<p id="HimalayanCats_Dc" class = "textfont">
+
+    <b> <u><strong>Himalayan Cat </strong></u></b>
+    <br/> &nbsp; <br/>
+
+    Himalayan cats are known for their sweet temperament, intelligence and playful interaction.
+    Much like Siamese cats, the Himalayan breed enjoys a good game of fetch and can usually be entertained for hours with a simple scrap of balled-up paper or a cat toy.
+    These cats bond well with their families, preferring to spend more time in their company than on their own.
+    <br/> &nbsp; <br/>
+
+    There is little or no information from the literature or early pictorial representations to indicate how ancient the four main groups of cats are; these being the two varieties of tabby,
+    the single coloured black or white, and the sex-linked orange (marmalade or tortoiseshell cats). In addition, there are other breeds of cat that are more closely controlled by humans, such as
+    the Manx, the Persian, Siamese, and Abyssinian, to name but a few. The Cat Fanciers' Association considers the Himalayan Persian simply a color variation of the Persian rather than a separate breed,
+    although they do compete in their own color division. It was for the color that the breed was named "Himalayan": a reference to the coloration of Himalayan animals, in particular the Himalayan rabbit.
+    It has been suggested that the Persian long-haired cats are descended from Pallas's cat, Felis manul, a wild cat that inhabits central Asia and which is unmarked with spots or stripes and has very long soft fur.
+    <br/> &nbsp; <br/>
+
+    Himalayan cats are good indoor companions. By and large, they are sweet-tempered, intelligent, and generally very social, but they can be very moody at times. Because of their heritage from the Siamese cats,
+    they tend to be more active than Persians. They possess a playful side as well. Like the Siamese, most Himalayans love to play fetch, and a scrap of crumpled paper or a kitty toy will entertain them for hours.
+    Himalayan cats are devoted and dependent upon their humans for companionship and protection.
+</p>
+
+
+<footer>
+    <p class="footer_p">
+        <a class="footer_des email" href="mailto:sajana.2019527@iit.ac.lk">sajana.2019527@iit.ac.lk</a>
+        <span class="footer_sep">|</span><a class="footer_des dev" href="page-editor/about4.html">Sajana Karunanayake</a>
+    </p>
+    <span class="footer_sep footer_sep--large">|</span>
+    <p class="footer_p">
+        IIT-ID: <span class="footer_des">2019527</span>
+        <span class="footer_sep">|</span> Westminster-ID: <span class="footer_des">W1761515</span>
+    </p>
+</footer>
+</body>
+<script src="js/common.js"></script>
+
+<script src="js/Image_Gallery_Test3.js"></script>
+</html>

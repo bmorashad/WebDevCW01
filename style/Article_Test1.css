@@ -1,0 +1,34 @@
+html{
+    text-align:left;
+    font-family: "IBM plex", sans-serif;
+    background-color: palegoldenrod;
+
+}
+
+/*---------------------------*/
+.icon{
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+}
+.catImages{
+    height: 60%;
+    width: 60%;
+
+}
+#articleContent{
+    margin: 20% 20% 0 20%;
+}
+.contentTitles{
+    margin: 0 0 0 -20%;
+}
+#overView{
+    float: left;
+    width: 60%;
+    margin: 0 0 0 10% ;
+
+
+}
+#top{
+    margin: 5% 0 0 5%;
+}
