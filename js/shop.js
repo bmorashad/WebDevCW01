@@ -98,7 +98,7 @@ let addToCart = () => {
             // itmCur: 'rs',
             itmPrice: `<span class="cart_price pink mono">${parseInt(itm.querySelector('.itm_price').innerHTML)}</span>`,
             itmQnt: setQnt,//`${parseInt(itm.querySelector('input').value)}`,
-            itmRm: `<div class="cart_remove"><img class="remove_img" alt="remove item" src="../img/icon/remove.png" id="itm${document.querySelector('.cart_id_col').querySelectorAll('.td').length}"><span class="store_row_no">${document.querySelector('.cart_id_col').querySelectorAll('.td').length}</span></div>`
+            itmRm: `<div class="cart_remove"><img class="remove_img" alt="remove item" src="img/icon/remove.png" id="itm${document.querySelector('.cart_id_col').querySelectorAll('.td').length}"><span class="store_row_no">${document.querySelector('.cart_id_col').querySelectorAll('.td').length}</span></div>`
         }
     const itmDetArr = Object.values(itmDet)
     const cartCols = document.querySelectorAll('.cart_table_col')
