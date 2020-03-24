@@ -1,9 +1,7 @@
-// Global Variables & Adding Event Listeners
+// Global Variables For Event Listeners
 let category = document.querySelector('#category')
 let clear = document.querySelector('.clear_cart')
 let cartBtn = document.querySelector('.cart_btn')
-
-//Tst
 const firstName = document.querySelector('#firstname')
 const email = document.querySelector('#email')
 const phone = document.querySelector('#phone')
@@ -15,67 +13,8 @@ const cartModal = document.querySelector('.cart_modal')
 const formInvalidModal = document.querySelector('.form_invalid_modal')
 const okBtn = document.querySelectorAll('.ok_btn')
 const undone = document.querySelector('.undone_notify')
-// Item Database OLD
-// let food = [
-//     {
-//         name: 'WHISKAS® Dry Cat Food Beefsssssssssssssssssssssssssssssssss Flavour',
-//         img: 'img/shop/food101.jpg',
-//         price: 1200
-//     }, 
-//     {
-//         name: 'Meow Mix® Original Choice',
-//         img: 'img/shop/food201.jpg',
-//         price: 800
-//     },
-//     {
-//         name: 'Chicken Flavor Dry Cat Food',
-//         img: 'img/shop/food301.jpg',
-//         price: 4500
-//     }
-// ]
-// let toy = [
-//     {
-//         name: 'Hartz Just For Cats Cat Toy',
-//         img: 'img/shop/toy101.jpg',
-//         price: 650
-//     }, 
-//     {
-//         name: 'Petstages Cat Tracks Cat Toy',
-//         img: 'img/shop/toy201.jpg',
-//         price: 800
-//     },
-//     {
-//         name: 'Bergan Turboscratcher Cat Toy (Assorted)',
-//         img: 'img/shop/toy301.jpg',
-//         price: 1500
-//     }
-// ]
-// let med = [
-//     {
-//         name: 'Bayer Advantage II Flea Prevention',
-//         img: 'img/shop/med101.jpg',
-//         price: 5000
-//     }, 
-//     {
-//         name: 'NODENS CAT Hip & Joint Glucosamine',
-//         img: 'img/shop/med201.jpg',
-//         price: 2000
-//     },
-//     {
-//         name: 'HomeoPet Nose Relief, 15 ml',
-//         img: 'img/shop/med301.jpg',
-//         price: 2000
-//     },
-//     {
-//         name: 'Nutramax Cosequin Sprinkle Capsules',
-//         img: 'img/shop/med401.jpg',
-//         price: 2000
-//     }
-// ]
-// let all = food.concat(toy).concat(med)
 
-//Tst itemData NEW
-
+// Items Database
 let items = {
     food: [{
                 name: 'WHISKAS® Dry Cat Food Beef Flavour',
@@ -130,7 +69,7 @@ let items = {
 }
 items['all'] = items['food'].concat(items['med'], items['toy'])
 
-// console.log(all)
+
 // Event Handlers
 
 let qntIncrement = () => {
@@ -138,12 +77,6 @@ let qntIncrement = () => {
     if (qntInput.value < 9) {
         qntInput.value++
     }
-    // let style = document.createElement('style')
-        // else {
-    //     let sheet = window.document.styleSheets[2];
-    //     sheet.insertRule('.increment, .increment:hover, .increment:active { background: #ccc; color: #888 }', sheet.cssRules.length);
-    // }
-    // console.log(qntInput)
 }
 let qntDecrement = () => {
     let qntInput = event.target.previousElementSibling
@@ -152,7 +85,6 @@ let qntDecrement = () => {
     }
 }
 let addToCart = () => {
-
     let btn = event.target
     let itm = btn.parentElement.parentElement
     let setQnt = `<button class="cart_counter increment">+</button>
@@ -204,52 +136,6 @@ let addToCart = () => {
     }
     
     return inCart
-    // Object.values(itmDet).forEach(val => {
-    //     let span = document.createElement('span');
-    //     span.className = 'td'
-    //     let itmTst = document.createTextNode(val)
-    //     span.appendChild(itmTst)
-    //     let col = cols.querySelectorAll('.td')
-    //     let lstRow = col[col.length-1]
-    //     lstRow.after(span)
-    // })
-    // cols.forEach(el => {
-    //     let span = document.createElement('span');
-    //     span.className = 'td'
-    //     let itmTst = document.createTextNode(itmDetArr[])
-    //     span.appendChild(itmTst)
-    //     let col = el.querySelectorAll('.td')
-    //     let lstRow = col[col.length-1]
-    //     lstRow.after(span)
-    // })
-    // let itmTst = document.createTextNode(itmNo)
-    // span.appendChild(itmTst)
-    // let col = document.querySelector('.cart_id_col').querySelectorAll('.td')
-    // let lstRow = col[col.length-1]
-    // lstRow.after(span)
-    // let itmNoHtml = `<span class="td">${itmNo}</span>`
-    // let itmImgHtml = `<span class="td"><img src="${itmImg}" class="cart_img"></span>`
-    // let itmDesHtml = `<span class="td">${itmDes}</span>`
-    // let itmQntHtml = `<span class="td">${itmQnt}</span>`
-    // let itmCurHtml = `<span class="td">${itmCur}</span>`
-    // let itmPriceHtml = `<span class="td">${itmPrice}</span>`
-    // let itmRmHtml = '<span class="td"><div class="cart_remove">X</div></span>'
-
-        /* <span class="td">1</span>
-    <span class="td"><img src="img/shop/food/food101.jpg" class="cart_img"></span>
-    <span class="td">Cat Whisks</span>
-    <span class="td">2</span>
-    <span class="td"><span class="mono">rs</span></span>
-    <span class="td"><span class="cart_price pink mono">2000</span></span>
-    <span class="td cart_total"><span class="cart_price pink mono">101500</span></span>
-    <span class=    itmDet.forEach(el => console.log(el))
-"td cart_total"><span class="pink">TOTAL</span></span> */
-
-
-
-    // console.log(itmImgHtml)
-
-    //  console.log(itmTotalPrice)
 }
 
 function show(ele, display) {
@@ -259,9 +145,8 @@ function show(ele, display) {
 function hide(ele) {
     ele.style.display = 'none'
 }
-// function setWidthToParent(ele) {
-//     ele.style.width = document.querySelector('html').offsetWidth - document.querySelector('.col1').offsetWidth
-// }
+
+// returns the item state in cart
 let checkCart = (itmDes, itmQnt) => {
     const itmLst = document.querySelector('.itm_des_col').querySelectorAll('.td')
     const qntLst = document.querySelector('.cart_qnt_col').querySelectorAll('.cart_qnt_input')
@@ -283,6 +168,7 @@ let checkCart = (itmDes, itmQnt) => {
     }
     return inCart
 }
+
 let setTotalPrice = () => {
     let totalPrice = 0
     const totalPriceClass = document.querySelector('.cart_price_total')
@@ -307,6 +193,7 @@ let setTotalPrice = () => {
         spanPrice.innerHTML = `<span class="cart_price_total pink mono">${totalPrice}</span>`
     }
 }
+
 let clearCart = () => {
     const cart = document.querySelectorAll('.cart_table_col')
     cart.forEach(el => {
@@ -315,145 +202,9 @@ let clearCart = () => {
         span.forEach(el => el.remove())
         cartTotal.forEach(el => el.remove())
     })
-        // cart.forEach(el => {
-    //     let span = el.querySelectorAll('span')
-    //     span.forEach(el => {
-    //         if (el.className != 'th') {
-    //             el.remove()
-    //         }
-    //     })
-    // })
 }
 
-let changeItemsOld = () => {
-    document.querySelector('.showcase').innerHTML = ''
-    const getCategory = document.querySelector('#category').querySelector('option:checked').value
-    
-    switch(getCategory) {
-        case 'food':
-            food.forEach(itm => {
-                const showcase = document.querySelector('.showcase')
-                const itmDiv = document.createElement('div')
-                itmDiv.className = 'item'
-                const itmDivInner = `<img class="itm_img"src="${itm.img}">
-                                    <div class="item_des">
-                                        <hr class="item_title_sep">
-                                        <p class="item_title_p"><span>${itm.name}</span></p>
-                                        <hr class="item_title_sep">
-                                    </div>
-                                    <p class="item_price_p">PRICE: <span class="currency">RS <span class="itm_price">${itm.price}</span></span></p>
-                                    <div class="quantity">
-                                        <p style="font-size: 1.2rem; font-weight: 600; color: #555555;">Quantity:</p>
-                                        <div class="increaser">
-                                            <button class="counter increment">+</button>
-                                            <input type="text" value="1" class="qnt_input" readonly>
-                                            <button class="counter decrement">-</button>
-                                        </div>
-                                    </div>
-                                    <div class="add_item">
-                                        <button class="add" id="add2">Add Item</button>
-                                    </div>`
-                showcase.appendChild(itmDiv)
-                itmDiv.innerHTML = itmDivInner
-                
-            })
-            break
-        case 'toy':
-            toy.forEach(itm => {
-                const showcase = document.querySelector('.showcase')
-                const itmDiv = document.createElement('div')
-                itmDiv.className = 'item'
-                const itmDivInner = `<img class="itm_img"src="${itm.img}">
-                                    <div class="item_des">
-                                        <hr class="item_title_sep">
-                                        <p class="item_title_p"><span>${itm.name}</span></p>
-                                        <hr class="item_title_sep">
-                                    </div>
-                                    <p class="item_price_p">PRICE: <span class="currency">RS <span class="itm_price">${itm.price}</span></span></p>
-                                    <div class="quantity">
-                                        <p style="font-size: 1.2rem; font-weight: 600; color: #555555;">Quantity:</p>
-                                        <div class="increaser">
-                                            <button class="counter increment">+</button>
-                                            <input type="text" value="1" class="qnt_input" readonly>
-                                            <button class="counter decrement">-</button>
-                                        </div>
-                                    </div>
-                                    <div class="add_item">
-                                        <button class="add" id="add2">Add Item</button>
-                                    </div>`
-                showcase.appendChild(itmDiv)
-                itmDiv.innerHTML = itmDivInner
-                
-            })
-            break
-        case 'med':
-            med.forEach(itm => {
-                const showcase = document.querySelector('.showcase')
-                const itmDiv = document.createElement('div')
-                itmDiv.className = 'item'
-                const itmDivInner = `<img class="itm_img"src="${itm.img}">
-                                    <div class="item_des">
-                                        <hr class="item_title_sep">
-                                        <p class="item_title_p"><span>${itm.name}</span></p>
-                                        <hr class="item_title_sep">
-                                    </div>
-                                    <p class="item_price_p">PRICE: <span class="currency">RS <span class="itm_price">${itm.price}</span></span></p>
-                                    <div class="quantity">
-                                        <p style="font-size: 1.2rem; font-weight: 600; color: #555555;">Quantity:</p>
-                                        <div class="increaser">
-                                            <button class="counter increment">+</button>
-                                            <input type="text" value="1" class="qnt_input" readonly>
-                                            <button class="counter decrement">-</button>
-                                        </div>
-                                    </div>
-                                    <div class="add_item">
-                                        <button class="add" id="add2">Add Item</button>
-                                    </div>`
-                showcase.appendChild(itmDiv)
-                itmDiv.innerHTML = itmDivInner
-                
-            })
-            break
-            default:
-                all.forEach(itm => {
-                    const showcase = document.querySelector('.showcase')
-                    const itmDiv = document.createElement('div')
-                    itmDiv.className = 'item'
-                    const itmDivInner = `<img class="itm_img"src="${itm.img}">
-                                        <div class="item_des">
-                                            <hr class="item_title_sep">
-                                            <p class="item_title_p"><span>${itm.name}</span></p>
-                                            <hr class="item_title_sep">
-                                        </div>
-                                        <p class="item_price_p">PRICE: <span class="currency">RS <span class="itm_price">${itm.price}</span></span></p>
-                                        <div class="quantity">
-                                            <p style="font-size: 1.2rem; font-weight: 600; color: #555555;">Quantity:</p>
-                                            <div class="increaser">
-                                                <button class="counter increment">+</button>
-                                                <input type="text" value="1" class="qnt_input" readonly>
-                                                <button class="counter decrement">-</button>
-                                            </div>
-                                        </div>
-                                        <div class="add_item">
-                                            <button class="add" id="add2">Add Item</button>
-                                        </div>`
-                    showcase.appendChild(itmDiv)
-                    itmDiv.innerHTML = itmDivInner
-                    
-                })
-                
-}
-    // Adding EventListener
-    let addItem = document.querySelectorAll('.add')
-    let qntIncrease = document.querySelectorAll('.increment')
-    let qntDecrease = document.querySelectorAll('.decrement')
-
-    qntIncrease.forEach(counter => counter.addEventListener('click', qntIncrement))
-    qntDecrease.forEach(counter => counter.addEventListener('click', qntDecrement))
-    addItem.forEach(btn => btn.addEventListener('click', addToCart));
-    setSameHeightElement()
-}
-// Tst new changeItems 
+// changeItems on category selection 
 let changeItems = () => {
     document.querySelector('.showcase').innerHTML = ''
     const getCategory = document.querySelector('#category').querySelector('option:checked').value
@@ -519,6 +270,7 @@ let changeItems = () => {
         show(notification, 'flex')
         setTimeout('(function(ele) {ele.style.visibility = "hidden"})(notification)', 3000)
     }));
+    // sets equal height for item name element
     setSameHeightElement()
 }
 
@@ -528,12 +280,11 @@ function removeItm(itmNo) {
     cols.forEach(col => {
         col.querySelectorAll('.td')[rowToRemove].remove()
     })
+    // removes total info col completely
     if (!cols[0].querySelector('.td')) {
         const total = document.querySelectorAll('.cart_total')
-        // forEach isn't working without throwing any error
         total.forEach(el => el.remove())
     }
-
     if (document.querySelectorAll('.td').length != 0){
         setTotalPrice()
     }
@@ -547,27 +298,14 @@ let itmNoReset = () => {
         document.querySelectorAll('.remove_img')[i].id = "itm" + i
     }
 }
-
+// sets equal height for item name element
 let setSameHeightElement = () => {
-    // console.log('done')
     const itmNames = document.querySelectorAll('.item_title_p') 
     let itmNamesText = []
-    // const p1 = document.querySelectorAll('.item_title_p')[0]
-    // p1.style.height = style.height
-    // console.log(style.height)
-    // Testing
     for(let i = 0; i<itmNames.length; i++) {
         itmNamesText.push(itmNames[i].innerHTML.length)
     }
     index = itmNamesText.indexOf(Math.max(...itmNamesText))
-    // let index = 1
-    // for(let i = 0; i < itmNames.length; i++) {
-    //     // if (i < itmNames.length) { //Changed this at IIT idk why did i even add this
-    //         if (itmNames[i].innerHTML.length > itmNames[index].innerHTML.length) {
-    //                 index = i
-    //         }
-    //     // }
-    // }
     const style = getComputedStyle(itmNames[index])
     itmNames.forEach(name => {
         if (name.innerHTML != itmNames[index].innerHTML) {
@@ -585,7 +323,6 @@ let hideModal = (ele) => {
     }
 }
 
-//Tst Success
 function formFeedback(field) {
     const fieldName = field.name
     let isFormInvalid = emptyFieldFeedback(field)
@@ -677,6 +414,7 @@ function isTel(field) {
     }
     return valid
 }
+// check unnessary spaces in phone number
 function isNoSpace(value) {
     for(i=0; i<value.length; i++) {
         if (value[i] == ' ') {
@@ -721,7 +459,6 @@ function requiredFieldOnSkip() {
         }
     } 
 }
-// Tst ONSUBMIT
 function onSubmitFeedBack(){
     const requiredField = document.querySelectorAll('.required')
     let firstInvalidField = 0
@@ -797,25 +534,6 @@ function makeBill() {
     document.querySelector('.bill_modal').addEventListener('click', function(){hideModal(document.querySelector('.bill_modal'))})
     document.querySelector('.bill_modal').style.visibility = 'visible'
     document.querySelector('.bill_modal').style.display = 'flex'
-
-    // <tr>
-    //     <td style="max-width: 50px;">T-shirt sdwddsfsfsfwf sfsfsfsf ddddddd</td>
-    //     <td class="qnt"> <button class="counter increment">+</button>
-    //         <input type="text" value="1" class="qnt_input" readonly>
-    //         <button class="counter decrement">-</button></td>
-    //     <td class="numbers">400.00</td>
-    //     <td class="numbers">800.00</td>
-    // </tr>
-    // <tr>
-    //     <td>Pen Drive</td>
-    //     <td>3</td>
-    //     <td class="numbers">200.00</td>
-    //     <td class="numbers">600.00</td>
-    // </tr>
-    // <tr class="total">
-    //     <th colspan="2">Total Price</th>
-    //     <th class="numbers" colspan="2">1400.00</th>
-    // </tr>
 }
 function formContainerPositionOnWindowHeight() {
     if(window.innerHeight < document.querySelector('.form_container').offsetHeight) {
@@ -835,10 +553,8 @@ function formReset() {
 }
 
 document.querySelector('.form_reset').addEventListener('click', formReset)
-// Event Listeners Tst
-// Don't need this anymore since notification postion changed to *sticky* from *fixed*
-// window.addEventListener('resize', function(){setWidthToParent(notification)})
-//2
+
+// Event Listeners
 let formInvalidModalListener = false
 order.addEventListener('submit', function(){
     const firstInvalidField = onSubmitFeedBack()
