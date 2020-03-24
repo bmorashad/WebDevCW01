@@ -1,12 +1,7 @@
-* {
+/* * {
 	margin: 0;
 	padding: 0;
-}
-html {
-	scroll-behavior: smooth;
-	font-size: 10px;
-	height: 100%;
-}
+} */
 /* Font Size Change */
 .zoom_group {
 	z-index: 9999;
