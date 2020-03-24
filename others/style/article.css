@@ -1,0 +1,37 @@
+body {
+  font-family:  'IBM Plex Sans', sans-serif;
+}
+
+
+body {
+  background-color: #E3DBDB;
+  
+}
+p {
+  color: black;
+}
+h1 {
+  
+  font-family: verdana;
+  font-size: 300%;
+
+}
+article {
+                
+  background-color: #DAE7E4;
+  padding-top: 10px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+  margin-bottom: 10px;
+  margin-right: 150px;
+  margin-left: 150px;
+                
+            }
+.reading{
+  border: 1px solid black; 
+  padding: 10px;
+   background-color: #A5C8BF;
+}			
+
+
