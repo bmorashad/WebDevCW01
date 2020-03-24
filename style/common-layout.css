@@ -78,8 +78,9 @@
   }
   
   .topnav a.active {
-	background-color: red;
+	background-color: rgba(255, 0, 119, 0.808);
 	color: white;
+	font-weight: 700;
   }
   
   

@@ -522,7 +522,7 @@ form {
     padding: 8px 15px;
     border: 0px solid #c7c7c7;
     border-radius: 5px;
-    background: #ff3131;
+    background: rgb(232, 0, 108);
     color: #ffffff;
     font-size: 1.4rem;
     font-weight: 600;
@@ -531,10 +531,10 @@ form {
     transition: 0.2s;
 }
 .clear_cart:hover {
-    background: #e03232;
+    background: rgb(182, 0, 85);
 }
 .clear_cart:active {
-    background: #a31b1b;
+    background: rgb(128, 0, 60);
 }
 /* Bill Container */
 .bill_container {
