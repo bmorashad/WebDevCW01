@@ -200,7 +200,7 @@
     padding: 6px 20%;
     border: 0px solid #c7c7c7;
     border-radius: 5px;
-    background: #ff3131;
+    background: #e6551c;;
     color: #ffffff;
     font-size: 1.6rem;
     font-weight: 500;
@@ -209,10 +209,10 @@
     transition: 0.2s;
 }
 .add:hover, .add:focus {
-    background: #e20202;
+    background: #da3e00;;
 }
 .add:active {
-    background: #af0000;
+    background: #992b00;;
 }
 .shop_heading {
     margin: 20px 0 40px 0;
